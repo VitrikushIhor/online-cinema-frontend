@@ -1,16 +1,15 @@
 @import "../../../../styles/variables";
 
-.gallery {
-  @apply flex items-center overflow-x-auto flex-nowrap py-3;
-  -webkit-overflow-scrolling: touch;
+.testImage {
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+}
+
+.gallery {
+  @apply flex items-center py-5;
 }
 
 .item {
-  @apply relative transition-transform flex items-end shadow-lg rounded-layout overflow-hidden;
+  @apply relative transition-transform flex items-end shadow-lg rounded-layout;
   flex: 0 0 auto;
 
   &:hover {
@@ -18,7 +17,7 @@
   }
 
   &.vertical {
-    @apply mr-4 last:mr-0 w-1/5 h-72;
+    @apply mr-4 last:mr-0 w-1/5 h-80;
     max-width: 200px;
   }
 
@@ -36,7 +35,9 @@
   }
 
   img {
-    @apply image-like-bg;
+    @apply rounded-layout;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .content {
