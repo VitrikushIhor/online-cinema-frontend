@@ -1,10 +1,11 @@
-import React, { FC } from 'react'
+import React, { FC, useMemo, useState } from 'react'
 
 import Gallery from '@/ui/Gallery/Gallery'
 import { IGalleryItem } from '@/ui/Gallery/gallery-interface'
 import Heading from '@/ui/Heading/Heading'
 import SubHeading from '@/ui/Heading/SubHeading'
 import Meta from '@/ui/Meta/Meta'
+import Pagination from '@/ui/Pagination/Pagination'
 import Slider from '@/ui/Slider/Slider'
 import { ISlide } from '@/ui/Slider/slider-interface'
 
@@ -14,7 +15,16 @@ export interface IHome {
 	actors: IGalleryItem[]
 }
 
+let PageSize = 5
 const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
+	const [currentPage, setCurrentPage] = useState(1)
+
+	const currentTableData = useMemo(() => {
+		const firstPageIndex = (currentPage - 1) * PageSize
+		const lastPageIndex = firstPageIndex + PageSize
+		return trendingMovies.slice(firstPageIndex, lastPageIndex)
+	}, [currentPage, trendingMovies])
+
 	return (
 		<>
 			<Meta
@@ -30,12 +40,22 @@ const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 
 				<div className="my-10">
 					<SubHeading title="Trending now" />
-					{trendingMovies.length && <Gallery items={trendingMovies} />}
+					{trendingMovies.length && (
+						<>
+							<Gallery items={currentTableData} />
+							<Pagination
+								currentPage={currentPage}
+								totalCount={trendingMovies.length}
+								pageSize={PageSize}
+								onPageChange={(page: number) => setCurrentPage(page)}
+							/>
+						</>
+					)}
 				</div>
 
 				<div>
 					<SubHeading title="Best actors" />
-					{actors.length && <Gallery items={actors} />}
+					{actors.length && <Gallery items={actors.slice(0, 5)} />}
 				</div>
 			</Meta>
 		</>
