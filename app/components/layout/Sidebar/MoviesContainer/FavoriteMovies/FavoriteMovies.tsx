@@ -22,13 +22,13 @@ const FavoriteMovies: FC<IFavoriteMovies> = () => {
 			<SkeletonLoader count={3} className="h-28 mb-4" />
 		</div>
 	) : (
-		<MovieList
+		favoritesMovies!.length > 0 ?	<MovieList
 			list={{
 				link: '/favorites',
 				movies: favoritesMovies?.slice(0, 3) || [],
 				title: 'Favorites',
 			}}
-		/>
+		/>: null
 	)
 }
 
