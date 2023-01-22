@@ -3,14 +3,7 @@
 }
 
 .movies {
-  @apply flex flex-wrap mt-8;
-  a > {
-    @apply mr-8 animate-fade;
-  }
-
-  > a:nth-child(3n) {
-    @apply mr-0;
-  }
+  @apply flex flex-wrap mt-8 justify-around;
 }
 
 .button {
