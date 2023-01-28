@@ -1,3 +1,10 @@
 .wrapper {
   @apply relative;
 }
+
+@media (max-width: 570px) {
+
+  .wrapper {
+    top: -100px;
+  }
+}

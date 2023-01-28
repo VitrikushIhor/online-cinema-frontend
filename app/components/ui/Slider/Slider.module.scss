@@ -29,4 +29,30 @@
       }
     }
   }
+
+  @media (max-width: 570px) {
+
+    .slide {
+      @apply h-56;
+
+
+      .content {
+        @apply p-5;
+
+        .heading {
+          @apply text-3xl  mb-0.5;
+        }
+
+        .subHeading {
+          @apply text-xs;
+        }
+
+        .button {
+          @apply p-1 px-6;
+        }
+      }
+    }
+
+
+  }
 }

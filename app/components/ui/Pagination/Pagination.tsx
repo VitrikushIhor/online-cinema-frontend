@@ -4,6 +4,8 @@ import SlideArrow from '@/ui/Slider/SlideArrow/SlideArrow'
 
 import { usePagination } from '@/hooks/usePagination'
 
+import styles from './Pagination.module.scss'
+
 interface IPagination {
 	onPageChange: any
 	totalCount: number
@@ -25,10 +27,9 @@ const Pagination = ({
 		siblingCount,
 		pageSize,
 	})
-	// @ts-ignore
-	let lastPage = paginationRange[paginationRange.length - 1]
+	let lastPage = paginationRange![paginationRange!.length - 1]
 	return (
-		<div className="relative bottom-80">
+		<div className={styles.arrowContainer}>
 			<SlideArrow
 				disabled={currentPage === 1}
 				variant="left"

@@ -25,3 +25,23 @@
     }
   }
 }
+
+
+@media (max-width: 570px) {
+  .nav {
+    @apply mb-10;
+    width: 100%;
+
+    > ul {
+      > li {
+
+        > a {
+          @apply px-1 py-4 text-lg transition-colors relative text-white text-opacity-60 hover:text-opacity-100;
+          font-size: 16px;
+
+
+        }
+      }
+    }
+  }
+}

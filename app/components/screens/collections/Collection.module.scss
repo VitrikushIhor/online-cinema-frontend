@@ -34,30 +34,10 @@ $shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
     @apply z-1;
   }
 
-  .behind {
-    @apply absolute overflow-hidden z-0 transition-transform;
-
-    &.second {
-      @apply opacity-60 -top-1.5 left-2.5 right-2.5 bottom-4;
-    }
-
-    &.third {
-      @apply opacity-40 -top-3 left-5 right-5 bottom-8;
-    }
-  }
 
   &:hover {
     @apply -translate-y-1;
 
-    .behind {
-      &.second {
-        transform: translateY(1px);
-      }
-
-      &.third {
-        transform: translateY(2px);
-      }
-    }
   }
 
   .content {
@@ -67,4 +47,29 @@ $shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
       @apply font-semibold mb-1 text-white text-shadow;
     }
   }
+}
+
+@media (max-width: 570px) {
+
+  .collections {
+    @apply flex flex-wrap mt-10;
+
+    > a {
+      @apply mr-0;
+    }
+
+  }
+
+  .collection {
+    @apply relative flex items-end mb-10 h-44 transition-transform;
+    width: 100%;
+
+    @include fade-bg-gradient(0deg);
+
+    &::before {
+      @apply rounded-layout;
+    }
+
+  }
+
 }

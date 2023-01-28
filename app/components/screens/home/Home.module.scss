@@ -1,0 +1,20 @@
+.heading {
+  @apply mb-8 text-xl;
+}
+
+.containerGallery {
+  @apply my-10;
+}
+
+@media (max-width: 570px) {
+
+
+  .heading {
+    @apply mb-4;
+    font-size: 1.1rem;
+  }
+
+  .subHeading {
+    @apply text-base mb-2;
+  }
+}

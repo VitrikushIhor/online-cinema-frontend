@@ -13,7 +13,7 @@ import styles from './Catalog.module.scss'
 const Catalog: FC<ICatalog> = ({ title, movies, description }) => {
 	return (
 		<Meta title={title} description={description}>
-			<Heading title={title} className="text-3xl" />
+			<Heading title={title} className={styles.heading} />
 			{description && (
 				<Description text={description} className={styles.description} />
 			)}

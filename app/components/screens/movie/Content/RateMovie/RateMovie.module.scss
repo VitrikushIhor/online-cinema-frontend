@@ -17,3 +17,9 @@
     @apply text-yellow-700 text-3xl font-semibold animate-scaleIn;
   }
 }
+
+@media (max-width: 570px) {
+  .wrapper {
+    width: 100%;
+  }
+}

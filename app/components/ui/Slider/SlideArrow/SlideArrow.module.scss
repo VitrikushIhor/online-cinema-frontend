@@ -8,4 +8,21 @@
   &.right {
     @apply right-8;
   }
+
+
+}
+
+@media (max-width: 570px) {
+
+  .arrow {
+    @apply p-1  bottom-5;
+
+    &.left {
+      @apply right-14;
+    }
+
+    &.right {
+      @apply right-4;
+    }
+  }
 }

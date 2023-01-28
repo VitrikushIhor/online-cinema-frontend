@@ -6,6 +6,7 @@ import {
 	firstMenu,
 	userMenu,
 } from '@/components/layout/Navigation/MenuContainer/menu.data'
+import Search from '@/components/layout/Sidebar/Search/Search'
 
 import { Accordion } from '@/ui/Acordion/Accordion'
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
@@ -31,6 +32,7 @@ const BurgerMenu: FC<{ open: boolean }> = ({ open }) => {
 			}}
 		>
 			<Logo />
+			<Search />
 			<div>
 				<Accordion menu={firstMenu} />
 				{isLoading ? (

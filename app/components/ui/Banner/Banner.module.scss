@@ -5,3 +5,9 @@
 
   @include fade-bg-gradient();
 }
+
+@media (max-width: 570px) {
+  .banner {
+    @apply h-48
+  }
+}

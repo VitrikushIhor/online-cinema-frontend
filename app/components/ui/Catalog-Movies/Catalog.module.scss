@@ -1,5 +1,9 @@
 .heading {
-  @apply mb-3;
+  @apply mb-3 text-3xl;
+}
+
+.description {
+
 }
 
 .movies {
@@ -8,4 +12,23 @@
 
 .button {
   @apply btn-primary py-2 px-10;
+}
+
+@media (max-width: 570px) {
+
+
+  .heading {
+    @apply mb-4;
+    font-size: 1.1rem;
+  }
+
+  .description {
+    @apply text-base mb-2;
+  }
+
+  .movies {
+    @apply flex flex-wrap mt-8 justify-around;
+  }
+
+
 }
