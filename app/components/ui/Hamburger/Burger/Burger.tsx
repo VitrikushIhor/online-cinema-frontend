@@ -12,11 +12,18 @@ const Burger: FC<IBurger> = ({ open, setOpen }) => {
 		<div
 			className={styles.button}
 			onClick={() => setOpen(!open)}
-			style={{ transform: `${open ? 'translateX(0)' : 'translateX(-100%)'}}` }}
+			// style={{ background: `${open ? '#0D0C1D' : '#EFFFFA'}` }}
 		>
-			<div />
-			<div />
-			<div />
+			<div style={{ transform: `${open ? 'rotate(45deg)' : 'rotate(0)'}` }} />
+
+			<div
+				style={{
+					opacity: `${open ? '0' : '1'}`,
+					// transform: `${open ? 'translateX(20px)' : 'translateX(0)'}`,
+				}}
+			/>
+
+			<div style={{ transform: `${open ? 'rotate(-45deg)' : 'rotate(0)'}` }} />
 		</div>
 	)
 }

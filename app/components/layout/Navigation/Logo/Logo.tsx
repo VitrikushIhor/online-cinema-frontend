@@ -6,7 +6,7 @@ import logoImage from '@/assets/logo.png'
 
 const Logo: FC = () => {
 	return (
-		<Link className="px-layout mb-10" href="/">
+		<Link className="px-layout mb-10 logo" href="/">
 			<Image
 				src={logoImage}
 				alt={'LOGO'}

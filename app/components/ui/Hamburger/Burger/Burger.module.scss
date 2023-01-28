@@ -1,9 +1,8 @@
 .button {
-
   position: absolute;
-  top: 5%;
-  left: 2rem;
   display: flex;
+  right: 1rem;
+  top: 12px;
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
@@ -12,25 +11,20 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
+  z-index: 101;
 
   &:focus {
     outline: none;
   }
 
   div {
-    background: #EFFFFA;
     width: 2rem;
     height: 0.25rem;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
+    background: red;
+
   }
-
 }
-
-//primaryDark: '#0D0C1D',
-//primaryLight: '#EFFFFA',
-//primaryHover: '#343078',
-//mobile: '576px',

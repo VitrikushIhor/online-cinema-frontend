@@ -3,6 +3,10 @@ $bar-width: 20%;
 .layout {
   @apply relative;
 
+  > div:nth-child(2) {
+    display: none;
+  }
+
   > div:first-child,
   > div:last-child {
     @apply fixed top-0 bottom-0;
@@ -33,7 +37,11 @@ $bar-width: 20%;
     @apply right-0 border-l border-l-gray-800;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 570px) {
+
+    > div:nth-child(2) {
+      display: block;
+    }
 
     > div:first-child,
     > div:last-child {

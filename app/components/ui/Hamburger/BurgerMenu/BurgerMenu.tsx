@@ -1,38 +1,45 @@
-import Link from 'next/link'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
+
+import Logo from '@/components/layout/Navigation/Logo/Logo'
+import { usePopularGenres } from '@/components/layout/Navigation/MenuContainer/genres/usePopularGenres'
+import {
+	firstMenu,
+	userMenu,
+} from '@/components/layout/Navigation/MenuContainer/menu.data'
+
+import { Accordion } from '@/ui/Acordion/Accordion'
+import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
 
 import styles from './BurgerMenu.module.scss'
 
-export interface IBurger {
-	open: boolean
-	setOpen: (open: boolean) => void
-}
+const BurgerMenu: FC<{ open: boolean }> = ({ open }) => {
+	const { isLoading, data } = usePopularGenres()
 
-const BurgerMenu: FC<IBurger> = ({ setOpen, open }) => {
+	useEffect(() => {
+		if (open) {
+			document.body.classList.add('body_hidden')
+		} else {
+			document.body.classList.remove('body_hidden')
+		}
+	}, [open])
+
 	return (
 		<nav
 			className={styles.nav}
-			onClick={() => setOpen(!open)}
-			style={{ transform: `${open ? 'translateX(0)' : 'translateX(-100%)'}}` }}
+			style={{
+				transform: `${open ? 'translateX(0)' : 'translateX(100%) '}`,
+			}}
 		>
-			<Link href="/">
-				<span role="img" aria-label="about us">
-					&#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;
-				</span>
-				About us
-			</Link>
-			<Link href="/">
-				<span role="img" aria-label="price">
-					&#x1f4b8;
-				</span>
-				Pricing
-			</Link>
-			<Link href="/">
-				<span role="img" aria-label="contact">
-					&#x1f4e9;
-				</span>
-				Contact
-			</Link>
+			<Logo />
+			<div>
+				<Accordion menu={firstMenu} />
+				{isLoading ? (
+					<SkeletonLoader count={1} className="" />
+				) : (
+					<Accordion menu={{ title: 'Genres', items: data || [] }} />
+				)}
+				<Accordion menu={userMenu} />
+			</div>
 		</nav>
 	)
 }
