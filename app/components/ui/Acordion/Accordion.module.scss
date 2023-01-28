@@ -3,7 +3,7 @@
   justify-content: space-between;
   border-top: 1px solid #e30b13;
   padding: 10px;
-
+  font-size: 1.2rem;
 }
 
 .item {
@@ -27,7 +27,7 @@
   a {
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
 
     &:hover {
       color: #e30b13;
