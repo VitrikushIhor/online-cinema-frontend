@@ -1,9 +1,11 @@
 import dynamic from 'next/dynamic'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 
 import MenuItem from '@/components/layout/Navigation/MenuContainer/MenuItem'
 import { IMenu } from '@/components/layout/Navigation/MenuContainer/menu.interface'
+
+import useOutside from '@/hooks/useOutside'
 
 import styles from './Accordion.module.scss'
 
@@ -13,22 +15,22 @@ const DynamicAuthItems = dynamic(
 )
 
 export const Accordion: FC<{ menu: IMenu }> = ({ menu: { items, title } }) => {
-	const [show, setShow] = useState(false)
+	const { isShow, setIsShow, ref } = useOutside(false)
 	const toggleAccordion = () => {
-		setShow(!show)
+		setIsShow(!isShow)
 	}
 	return (
-		<div className={styles.item} onClick={toggleAccordion}>
+		<div className={styles.item} ref={ref} onClick={toggleAccordion}>
 			<div
 				className={styles.title}
-				style={{ color: `${show ? '#e30b13' : '#ffffff'}` }}
+				style={{ color: `${isShow ? '#e30b13' : '#ffffff'}` }}
 			>
 				<div>{title}</div>
 				<div className={styles.ExpandIcon}>
-					{show ? <IoIosArrowUp /> : <IoIosArrowDown />}
+					{isShow ? <IoIosArrowUp /> : <IoIosArrowDown />}
 				</div>
 			</div>
-			{show && (
+			{isShow && (
 				<ul className={styles.AccordionContent}>
 					{items.map((item: any) => (
 						<MenuItem item={item} key={item.title} />

@@ -15,16 +15,10 @@ export interface IHome {
 	slides: ISlide[]
 	trendingMovies: IGalleryItem[]
 	actors: IGalleryItem[]
+	PageSize: number
 }
 
-const PageSize = 3
-const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
-	// const [PageSize, setPageSize] = useState(0)
-	// useEffect(() => {
-	// 	setPageSize(window.innerWidth < 600 ? 3 : 5)
-	// 	console.log(window.innerWidth < 600 ? 3 : 5)
-	// }, [])
-
+const Home: FC<IHome> = ({ slides, trendingMovies, actors, PageSize }) => {
 	const [currentPage, setCurrentPage] = useState(1)
 	const currentTableData = useMemo(() => {
 		const firstPageIndex = (currentPage - 1) * PageSize

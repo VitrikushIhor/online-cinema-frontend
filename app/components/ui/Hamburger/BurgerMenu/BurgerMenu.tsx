@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useRef } from 'react'
 
 import Logo from '@/components/layout/Navigation/Logo/Logo'
 import { usePopularGenres } from '@/components/layout/Navigation/MenuContainer/genres/usePopularGenres'
@@ -9,13 +9,16 @@ import {
 import Search from '@/components/layout/Sidebar/Search/Search'
 
 import { Accordion } from '@/ui/Acordion/Accordion'
+import { IBurger } from '@/ui/Hamburger/Burger/Burger'
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
 
 import styles from './BurgerMenu.module.scss'
 
-const BurgerMenu: FC<{ open: boolean }> = ({ open }) => {
+const BurgerMenu: FC<IBurger> = ({ open, setOpen }) => {
 	const { isLoading, data } = usePopularGenres()
+	const hamburger = useRef<HTMLDivElement>(null)
 
+	// useOnClickOutside(hamburger, () => setOpen(false))
 	useEffect(() => {
 		if (open) {
 			document.body.classList.add('body_hidden')
