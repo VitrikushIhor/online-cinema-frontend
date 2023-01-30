@@ -18,10 +18,11 @@ export interface IActorPage {
 const Actor: FC<IActorPage> = ({ actor, movies }) => {
 	return (
 		<Meta title={actor.name} description={actor.name}>
-			<Heading title={actor.name} />
+			<Heading className={styles.heading} title={actor.name} />
 
-			<div>
-				<Image width={150} height={22} alt={actor.name} src={actor.photo} />
+			<div className={styles.headContainer}>
+				<Image width={170} height={42} alt={actor.name} src={actor.photo} />
+				<div>{actor.description}</div>
 			</div>
 
 			<section className={styles.movies}>

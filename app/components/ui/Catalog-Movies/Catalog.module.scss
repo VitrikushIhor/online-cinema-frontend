@@ -1,13 +1,23 @@
 .heading {
-  @apply mb-3 text-3xl;
+  @apply mb-5 text-3xl;
+  text-align: center;
 }
 
-.description {
 
+.headContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > div:last-child {
+    @apply text-xl text-white text-shadow;
+    text-align: center;
+    margin-top: 2rem;
+  }
 }
 
 .movies {
-  @apply flex flex-wrap mt-8 justify-around;
+  @apply flex flex-wrap mt-8 justify-between;
 }
 
 .button {
@@ -16,10 +26,21 @@
 
 @media (max-width: 570px) {
 
+  .headContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    > div:last-child {
+      @apply text-base text-white text-shadow ;
+      width: 100%;
+    }
+  }
 
   .heading {
     @apply mb-4;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .description {

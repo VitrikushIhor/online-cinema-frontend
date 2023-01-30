@@ -47,6 +47,16 @@ const ActorEdit: FC = () => {
 								error={errors.name}
 								style={{ width: '31%' }}
 							/>
+
+							<Field
+								{...register('description', {
+									required: 'Description is required!',
+								})}
+								placeholder="Description"
+								error={errors.description}
+								style={{ width: '31%' }}
+							/>
+
 							<div style={{ width: '31%' }}>
 								<SlugField
 									register={register}

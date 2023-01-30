@@ -1,4 +1,4 @@
-import {TypeMaterialIconName} from "@/shared/interfaces/icon.interface";
+import { TypeMaterialIconName } from '@/shared/interfaces/icon.interface'
 
 export interface IParameters {
 	year: number
@@ -12,6 +12,7 @@ export interface IActor {
 	name: string
 	countMovies: number
 	slug: string
+	description: string
 }
 
 export interface IGenre {
