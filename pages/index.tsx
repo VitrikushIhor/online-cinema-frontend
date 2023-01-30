@@ -14,15 +14,8 @@ import { errorCatch } from '../app/api/api.helpers'
 import { getActorUrl, getMovieUrl } from '../app/config/url.config'
 
 const HomePage: NextPage<IHome> = ({ trendingMovies, actors, slides }) => {
-	// const size = useWindowSize()
-	let PageSize = window.innerWidth < 600 ? 3 : 5
 	return (
-		<Home
-			trendingMovies={trendingMovies}
-			actors={actors}
-			slides={slides}
-			PageSize={PageSize}
-		/>
+		<Home trendingMovies={trendingMovies} actors={actors} slides={slides} />
 	)
 }
 
@@ -74,7 +67,6 @@ export const getStaticProps: GetStaticProps = async () => {
 				actors: [],
 				slides: [],
 				trendingMovies: [],
-				PageSize: 5,
 			} as IHome,
 		}
 	}

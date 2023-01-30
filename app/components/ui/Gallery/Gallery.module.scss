@@ -54,6 +54,7 @@
 
   .gallery {
     @apply py-3;
+    overflow: hidden;
   }
   .item {
     @apply rounded-layout;

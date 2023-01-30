@@ -9,22 +9,26 @@ import Pagination from '@/ui/Pagination/Pagination'
 import Slider from '@/ui/Slider/Slider'
 import { ISlide } from '@/ui/Slider/slider-interface'
 
+import { useWindowSize } from '@/hooks/useWindowSize'
+
 import styles from './Home.module.scss'
 
 export interface IHome {
 	slides: ISlide[]
 	trendingMovies: IGalleryItem[]
 	actors: IGalleryItem[]
-	PageSize: number
 }
 
-const Home: FC<IHome> = ({ slides, trendingMovies, actors, PageSize }) => {
+const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
+	const size = useWindowSize()
+	let PageSize = size <= 600 ? 3 : 5
+
 	const [currentPage, setCurrentPage] = useState(1)
 	const currentTableData = useMemo(() => {
 		const firstPageIndex = (currentPage - 1) * PageSize
 		const lastPageIndex = firstPageIndex + PageSize
 		return trendingMovies.slice(firstPageIndex, lastPageIndex)
-	}, [currentPage, trendingMovies])
+	}, [currentPage, trendingMovies, PageSize])
 
 	return (
 		<>
