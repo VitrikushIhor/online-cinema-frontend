@@ -5,8 +5,6 @@ import Home, { IHome } from '@/screens/home/Home'
 import { IGalleryItem } from '@/ui/Gallery/gallery-interface'
 import { ISlide } from '@/ui/Slider/slider-interface'
 
-import { useWindowSize } from '@/hooks/window'
-
 import { ActorsService } from '@/services/actor/actor-service'
 import { MoviesService } from '@/services/movies/movie.service'
 
@@ -16,8 +14,8 @@ import { errorCatch } from '../app/api/api.helpers'
 import { getActorUrl, getMovieUrl } from '../app/config/url.config'
 
 const HomePage: NextPage<IHome> = ({ trendingMovies, actors, slides }) => {
-	const size = useWindowSize()
-	let PageSize = size < 600 ? 3 : 5
+	// const size = useWindowSize()
+	let PageSize = window.innerWidth < 600 ? 3 : 5
 	return (
 		<Home
 			trendingMovies={trendingMovies}
