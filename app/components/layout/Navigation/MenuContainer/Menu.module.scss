@@ -12,9 +12,6 @@
 
       > a {
         @apply flex items-center text-gray-600 px-3 mt-6 cursor-pointer;
-        &:hover {
-          color: #ff0009;
-        }
 
         > span {
           @apply ml-3 text-lg hover:text-white;
