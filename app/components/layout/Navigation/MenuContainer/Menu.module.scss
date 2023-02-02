@@ -1,24 +1,52 @@
 .menu {
-  @apply mb-14 animate-fade;
+  @apply animate-fade;
+  margin-bottom: 3.5rem;
 
   .heading {
-    @apply text-gray-500 uppercase text-sm font-semibold pl-layout;
+    @apply text-gray-500;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    padding-left: 2.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .ul {
     > li {
-      @apply px-8 border-r-4 border-r-transparent transition-colors;
-
+      @apply transition-colors;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      border-right-width: 0.4rem;
+      border-right-color: transparent;
 
       > a {
-        @apply flex items-center text-gray-600 px-3 mt-6 cursor-pointer;
+        @apply text-gray-600 ;
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-top: 2.5rem;
+        cursor: pointer;
+
+        &:hover{
+          span{
+            color: white;
+          }
+          svg{
+            color: #1DB954;
+          }
+        }
+
 
         > span {
-          @apply ml-3 text-lg hover:text-white;
+          margin-left: 1rem;
+          font-size: 1.8rem;
+          line-height: 2rem;
         }
 
         > svg {
-          @apply text-2lg;
+          font-size: 2.3rem;
         }
 
         > span,
@@ -28,13 +56,13 @@
       }
 
       &.active {
-        @apply border-r-primary;
+        border-right-color: #1DB954;;
         > a > span {
-          @apply text-white;
+          color: white;
         }
 
         > a > svg {
-          @apply fill-primary;
+          fill:#1DB954 ;
         }
       }
     }

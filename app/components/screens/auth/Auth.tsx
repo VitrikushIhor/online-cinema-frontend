@@ -38,7 +38,7 @@ const Auth: FC = () => {
 		<Meta title={'Auth'}>
 			<section className={styles.wrapper}>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<Heading className={'mb-6'} title={'Auth'} />
+					<Heading className={styles.heading} title={'Auth'} />
 					<AuthFields
 						formState={formState}
 						register={registerInput}

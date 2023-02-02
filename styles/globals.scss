@@ -7,13 +7,27 @@
 @import './react-select';
 @import 'react-redux-toastr/src/styles/index';
 
+html{
+  font-size: calc(100vw / 1920 * 10);
+  @media (max-width: 1024px) {
+    font-size: calc(100vw / 768 * 10);
+
+  }
+  @media (max-width: 767px) {
+    font-size: calc(100vw / 500 * 10);
+
+  }
+  @media (max-width: 500px) {
+    font-size: calc(100vw / 375 * 10);
+
+  }
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Outfit', sans-serif;
-
-
   @apply bg-gray-900;
 }
 
@@ -36,11 +50,11 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e30b13;
+  background: #1DB954;
 }
 
 :root {
-  --primary-color: #e30b13;
+  --primary-color: #1DB954;
 }
 
 input[type='file'],

@@ -1,16 +1,46 @@
 .nav {
-  @apply air-block w-4/5 mx-auto mb-10;
+  border-radius: 1.2rem;
+  background-color: #101215;
+  color: #fff;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
 
   > ul {
-    @apply flex justify-evenly items-center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     > li {
-      @apply inline-block;
+      display: inline-block;
 
       > a {
-        @apply block px-5 py-4 text-lg transition-colors relative text-white text-opacity-60 hover:text-opacity-100;
+        @apply text-white text-opacity-60 hover:text-opacity-100;
+        position: relative;
+        color: white;
+        display: block;
+        padding: 2.5rem 1.25rem;
+        font-size: 1.7rem;
+        line-height: 2rem;
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-timing-function: ease-in-out;
+        transition-duration: 200ms;
+        &:hover{
+          color: rgb(29 185 84 / 1);
+        }
 
         &::before {
-          @apply absolute w-full h-0.5 bg-transparent transition-colors left-0 bottom-0 rounded-md;
+          position: absolute;
+          width: 100%;
+          height: 0.12rem;
+          background-color: transparent;
+          transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+          transition-timing-function: ease-in-out;
+          transition-duration: 200ms;
+          left: 0;
+          bottom: 0;
+          border-radius: 0.375rem;
           content: '';
         }
 
@@ -18,7 +48,7 @@
           @apply text-opacity-100;
 
           &::before {
-            @apply bg-primary;
+            background-color: rgb(29 185 84 / 1);
           }
         }
       }
