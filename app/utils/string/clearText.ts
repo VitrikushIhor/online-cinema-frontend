@@ -1,5 +1,6 @@
+// sets the letter limit and replaces others with ...
 export const onlyText = (
-	_string: string,
+	_string: String,
 	limit: null | number = null
 ): string => {
 	let result = _string
@@ -14,3 +15,4 @@ export const onlyText = (
 
 	return result
 }
+
