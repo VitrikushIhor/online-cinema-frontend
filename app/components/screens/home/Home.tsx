@@ -21,7 +21,7 @@ export interface IHome {
 
 const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 	const size = useWindowSize()
-	let PageSize = size <= 600 ? 3 : 5
+	let PageSize = size <= 600 ? 3 : 6
 
 	const [currentPage, setCurrentPage] = useState(1)
 	const currentTableData = useMemo(() => {
