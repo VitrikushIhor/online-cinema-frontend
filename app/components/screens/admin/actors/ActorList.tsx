@@ -8,6 +8,8 @@ import AdminTable from '@/ui/AdminTable/AdminTable'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 
+import styles from '../home/Admin.module.scss'
+
 const ActorList: FC = () => {
 	const {
 		isLoading,
@@ -21,7 +23,7 @@ const ActorList: FC = () => {
 	return (
 		<Meta title={'Actor'}>
 			<AdminNavigation />
-			<Heading title={'Actors'} />
+			<Heading title={'Actors'} className={styles.heading} />
 			{/*@ts-ignore*/}
 			<AdminHeader
 				handleSearch={handleSearch}

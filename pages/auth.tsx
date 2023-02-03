@@ -1,8 +1,8 @@
-import { FC } from 'react'
+import { NextPage } from 'next'
 
 import Auth from '@/screens/auth/Auth'
 
-const AuthPage: FC = () => {
+const AuthPage: NextPage = () => {
 	return <Auth />
 }
 

@@ -1,27 +1,65 @@
 .list {
-  @apply absolute border border-gray-700 rounded-layout bg-gray-800 w-full animate-fade z-10;
+  @apply animate-fade ;
+  width: 29rem;
+  position: absolute;
+  border-width: 0.2rem;
+  border-radius: 1rem;
+  border-color: rgb(57 57 63 / 1);
+  background-color: rgb(36 37 41 / 1);
   top: calc(100% + 15px);
+  z-index: 10;
+
+  .notFound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    font-size: 2rem;
+    color: white;
+    margin: 1rem 0;
+  }
 
   > a {
-    @apply flex items-center py-3 px-4 relative;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
 
     &::after {
-      @apply absolute -right-0.5 h-0 w-0.5 bg-transparent;
+      position: absolute;
+      right: -0.12rem;
+      height: 0;
+      width: 0.20rem;
+      background-color: transparent;
       content: '';
-      top: 28%;
+      top: 30%;
       transition: height 0.3s ease-in-out, background-color 0.3s ease-in-out;
     }
 
     &:hover::after {
-      @apply bg-primary h-2/5;
+      @apply bg-primary ;
+      height: 50%;
+
+    }
+    &:hover{
+      span{
+        @apply animate-fade;
+        color: #1DB954;
+      }
     }
 
     img {
-      @apply rounded-image;
+      border-radius: 0.5rem;
     }
 
     > span {
-      @apply ml-3 text-white truncate;
+      @apply animate-fade;
+      margin-left: 1rem;
+      color: white;
+      font-size: 2rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
       &:last-child {
         width: 70%;

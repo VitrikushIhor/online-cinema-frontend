@@ -1,37 +1,64 @@
 .button {
-  @apply btn-primary py-2 px-10;
+  @apply btn-primary;
+  padding: 0.5rem 2.5rem;
 }
 
 .common {
-  @apply relative border-b border-gray-600 transition-colors focus-within:border-primary;
-
+  @apply focus-within:border-primary;
+  position: relative;
+  border-bottom-width: 1px;
+  border-color: rgb(102 103 110 / 1);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: ease-in-out;
+  transition-duration: 200ms;
   > label {
-    @apply block;
+    display: block;
 
     > span {
-      @apply text-xs uppercase text-gray-600 block;
+      display: block;
+      font-size: 1.7rem;
+      margin-bottom: 2rem;
+      line-height: 1rem;
+      text-transform: uppercase;
+      color: rgb(102 103 110 / 1);
     }
   }
 }
 
 .field {
-  @apply text-left mb-8;
+  text-align: left;
+  margin-bottom: 4rem;
 
   input {
-    @apply outline-border-none focus:ring-0 bg-transparent text-gray-500 w-full m-0 px-0;
+    @apply  focus:ring-0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: rgb(153 154 165 / 1);
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 2rem;
   }
 }
 
 .uploadField {
-  @apply relative;
+  position: relative;
   .uploadFlex {
-    @apply flex;
+    display: flex;
 
     > .uploadImageContainer {
-      @apply shrink-0 relative w-24 h-24;
+      position: relative;
+      width: 6rem;
+      height: 6rem;
+      flex-shrink: 0;
 
       img {
-        @apply image-like-bg rounded-md;
+        object-position: center;
+        object-fit: cover;
+        pointer-events: none;
+        border-radius: 0.375rem;
       }
 
       > span {
@@ -40,49 +67,98 @@
     }
 
     > label {
-      @apply block mr-6;
+      display: block;
+      margin-right: 1.5rem;
 
       .error {
-        @apply relative -bottom-3;
+        position: relative;
+        bottom: -0.75rem;
       }
 
       > span {
-        @apply text-xs uppercase text-gray-600 block mb-4;
+        display: block;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        text-transform: uppercase;
+        color: rgb(102 103 110 / 1);
+        margin-bottom: 1rem;
       }
 
       > input {
-        @apply block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary opacity-70 file:text-white transition-opacity;
+        display: block;
+        width: 100%;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: rgb(102 103 110 / 1);
+        opacity: 0.7;
+        transition-property: opacity;
+        transition-timing-function: ease-in-out;
+        transition-duration: 200ms;
+        @apply file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary  file:text-white;
       }
 
       &:hover > input {
-        @apply opacity-100;
+        opacity: 1;
       }
     }
   }
 }
 
 .error {
-  @apply absolute -bottom-6 left-0 text-sm w-full text-primary;
+  position: absolute;
+  bottom: -2.5rem;
+  left: 0;
+  line-height: 1.25rem;
+  width: 100%;
+  color: #8f050b;
+  font-size: 2rem;
 }
 
 .editorWrapper {
-  @apply border-0;
+  border-width: 0;
 
   .wrapper {
     .toolbar {
-      @apply mt-4 outline-border-none rounded-t-lg mb-0 bg-gray-600 bg-opacity-40 p-3;
+      margin-top: 1rem;
+      outline: none;
+      border: none;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      margin-bottom: 0;
+      background-color: rgb(102 103 110 / 1);
+      padding: 0.75rem;
+      @apply  bg-opacity-40;
 
       > div {
-        @apply m-0;
+        margin: 0;
 
         > div {
-          @apply outline-border-none shadow-none transition-colors border-gray-500 bg-gray-500 hover:bg-gray-300 mx-1.5;
+          outline: none;
+          border: none;
+          transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+          transition-timing-function: ease-in-out;
+          transition-duration: 200ms;
+          border-color: rgb(153 154 165 / 1);
+          background-color: rgb(153 154 165 / 1);
+          &:hover{
+            background-color: rgb(217 218 232 / 1);
+            margin-left: 0.375rem;
+            margin-right: 0.375rem;
+          }
         }
       }
     }
 
     .editor {
-      @apply h-96 border rounded-b-lg border-gray-700 px-4 text-gray-500 overflow-hidden;
+      height: 24rem;
+      border-width: 1px;
+      border-bottom-right-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      border-color: rgb(57 57 63 / 1);
+      padding-left: 1rem;
+      padding-right: 1rem;
+      color: rgb(153 154 165 / 1);
+      overflow: hidden;
     }
   }
 }

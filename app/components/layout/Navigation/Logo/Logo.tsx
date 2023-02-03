@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { FC } from 'react'
 
 import logoImage from '@/assets/logo.png'
-
+import styles from "./Logo.module.scss"
 const Logo: FC = () => {
 	return (
-		<Link className="px-layout mb-10 logo" href="/">
+		<Link className={`${styles.Logo} logo`}   href="/">
 			<Image
 				src={logoImage}
 				alt={'LOGO'}

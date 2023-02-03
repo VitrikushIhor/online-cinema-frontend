@@ -3,23 +3,22 @@ import { FC } from 'react'
 import { useFavorites } from '@/screens/admin/favorites/useFavorites'
 
 import NotAuthFavorites from '@/components/layout/Sidebar/MoviesContainer/FavoriteMovies/NotAuthFavorites'
-import MovieList from '@/components/layout/Sidebar/MoviesContainer/MovieList'
+import MovieList from '@/components/layout/Sidebar/MoviesContainer/MovieList/MovieList'
 
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
 
 import { useAuth } from '@/hooks/useAuth'
+import styles from './FavoriteMovies.module.scss'
 
-interface IFavoriteMovies {}
-
-const FavoriteMovies: FC<IFavoriteMovies> = () => {
+const FavoriteMovies: FC = () => {
 	const { isLoading, favoritesMovies } = useFavorites()
 	const { user } = useAuth()
 
-	if (!user) return <NotAuthFavorites />
+	if (!user) return <NotAuthFavorites className={styles.notAuth} />
 
 	return isLoading ? (
-		<div className="mt-11">
-			<SkeletonLoader count={3} className="h-28 mb-4" />
+		<div className={styles.wrapper}>
+			<SkeletonLoader count={3} className={styles.loader} />
 		</div>
 	) : (
 		favoritesMovies!.length > 0 ?	<MovieList

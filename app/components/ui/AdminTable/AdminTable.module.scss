@@ -1,24 +1,51 @@
 .item {
-  @apply flex items-center justify-between bg-gray-700 bg-opacity-20 mt-4 px-5 rounded-lg transition-colors hover:bg-opacity-50;
-
+  @apply bg-opacity-20 hover:bg-opacity-50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(57 57 63 / 1);
+  margin-top: 1.2rem;
+  padding: 0 1.25rem;
+  border-radius: 1rem;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: ease-in-out;
+  transition-duration: 200ms;
   > div {
-    @apply text-white text-opacity-80 py-3;
+    color: white;
     width: 24%;
+    font-size: 1.6rem;
+    padding: 1.2rem 0;
 
     &:last-child {
-      @apply text-right justify-end;
+      text-align: right;
+      justify-content: flex-end;
     }
   }
 }
 
 .itemHeader {
-  @apply bg-primary bg-opacity-20 shadow-lg mt-8 hover:bg-opacity-20;
+  @apply  shadow-lg  hover:bg-opacity-20;
+  background-color: rgb(29 185 84 / 0.2);
+  margin-top: 2rem;
 
   > div {
-    @apply text-opacity-90 font-semibold py-2.5;
+    @apply text-opacity-90;
+    font-weight: 600;
+    font-size: 1.6rem;
+    padding: 1.2rem 0;
   }
 }
 
 .notFound {
-  @apply text-lg text-white text-opacity-60 text-center py-3;
+  @apply  text-opacity-60 ;
+  font-size: 1.7rem;
+  line-height: 1.75rem;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.loader{
+  margin-top: 2rem;
+  border: 1rem;
 }

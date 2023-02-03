@@ -13,9 +13,10 @@ const SearchList: FC<{ movies: IMovie[] }> = ({ movies }) => {
 				movies.map((movie) => (
 					<Link key={movie._id} href={`/movie/${movie.slug}`}>
 						<Image
+							 className={styles.image}
 							src={movie.poster || ''}
-							width={50}
-							height={50}
+							width={60}
+							height={60}
 							alt={movie.title}
 							draggable={false}
 						/>
@@ -23,7 +24,7 @@ const SearchList: FC<{ movies: IMovie[] }> = ({ movies }) => {
 					</Link>
 				))
 			) : (
-				<div className="text-white text-center my-4">Movies not found!</div>
+				<div className={styles.notFound}>Movies not found!</div>
 			)}
 		</div>
 	)
