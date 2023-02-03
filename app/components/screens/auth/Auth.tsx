@@ -5,7 +5,7 @@ import AuthFields from '@/screens/auth/AuthField'
 import { IAuthInput } from '@/screens/auth/auth-interface'
 import { useAuthRedirect } from '@/screens/auth/useAuthRedirect'
 
-import Button from '@/ui/Form-Elements/Button'
+import Button from '@/ui/Form-Elements/Button/Button'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 

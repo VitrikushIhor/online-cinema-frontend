@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { FieldError, UseFormRegister } from 'react-hook-form'
 
-import Field from '@/ui/Form-Elements/Field'
+import Field from '@/ui/Form-Elements/Field/Field'
 
 import styles from './SlugField.module.scss'
 

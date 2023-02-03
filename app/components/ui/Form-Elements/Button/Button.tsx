@@ -1,10 +1,11 @@
 import { ButtonHTMLAttributes, FC } from 'react'
 
-interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {}
+import styles from './Button.module.scss'
 
+interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {}
 const Button: FC<IButton> = ({ children, className, ...rest }) => {
 	return (
-		<button className={`${className} btn-primary py-2 px-10`} {...rest}>
+		<button className={`${className}  ${styles.btnPrimary}`} {...rest}>
 			{children}
 		</button>
 	)

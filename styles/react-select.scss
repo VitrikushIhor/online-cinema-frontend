@@ -9,6 +9,7 @@
 
     &--menu-is-open {
       border-color: var(--primary-color) !important;
+
     }
   }
 
@@ -43,7 +44,7 @@
   }
 
   &__multi-value__label {
-    font-size: 80% !important;
+    font-size: 90% !important;
     color: rgba(white, 0.7) !important;
   }
 
@@ -59,6 +60,7 @@
   &__menu {
     background-color: #292a2e !important;
     color: rgba(white, 0.6) !important;
+    font-size: 1.6rem;
   }
 
   &__option {
@@ -76,9 +78,13 @@
     }
 
     .form-control__control {
-      @apply outline-border-none transition-all;
+      outline: none;
+      border: none;
       border-color: #ced4da !important;
       box-shadow: none !important;
+      transition-property: all;
+      transition-timing-function: ease-in-out;
+      transition-duration: 200ms;
     }
 
     &:hover,
