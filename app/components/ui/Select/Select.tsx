@@ -4,7 +4,7 @@ import makeAnimated from 'react-select/animated'
 
 import { IOption, ISelect } from '@/ui/Select/select-interface'
 
-import formStyles from '../Form-Elements/Field.module.scss'
+import formStyles from '../Form-Elements/Field/Field.module.scss'
 
 import styles from './Select.module.scss'
 

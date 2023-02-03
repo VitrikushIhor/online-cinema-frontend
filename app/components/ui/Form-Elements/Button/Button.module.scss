@@ -1,0 +1,12 @@
+
+.btnPrimary{
+	background-color: #1DB954;
+	color: white;
+	border-radius: 1.5rem;
+	transition: background-color .3s ease-in-out;
+	padding: 1.6rem 10rem;
+	font-size: 1.6rem;
+	&:hover{
+		background-color: #1DB920;
+	}
+}

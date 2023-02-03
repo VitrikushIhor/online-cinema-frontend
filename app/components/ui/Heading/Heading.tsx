@@ -1,16 +1,14 @@
 import { FC } from 'react'
 
-interface IHeading {
+import styles from './Heading.module.scss'
+
+export interface IHeading {
 	title: string
 	className?: string
 }
 
 const Heading: FC<IHeading> = ({ title, className }) => {
-	return (
-		<h1 className={`text-white text-opacity-80 font-semibold ${className}`}>
-			{title}
-		</h1>
-	)
+	return <h1 className={`${styles.head} ${className}`}>{title}</h1>
 }
 
 export default Heading

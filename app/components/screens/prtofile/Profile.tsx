@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import AuthFields from '@/screens/auth/AuthField'
 import { useProfile } from '@/screens/prtofile/useProfile'
 
-import Button from '@/ui/Form-Elements/Button'
+import Button from '@/ui/Form-Elements/Button/Button'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'

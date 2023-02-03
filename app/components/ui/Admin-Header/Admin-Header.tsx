@@ -1,6 +1,6 @@
 import { ChangeEvent, FC } from 'react'
 
-import Button from '@/ui/Form-Elements/Button'
+import Button from '@/ui/Form-Elements/Button/Button'
 import SearchField from '@/ui/Search-Field/SearchField'
 
 import styles from './AdminHeader.module.scss'

@@ -24,7 +24,6 @@ const ActorList: FC = () => {
 		<Meta title={'Actor'}>
 			<AdminNavigation />
 			<Heading title={'Actors'} className={styles.heading} />
-			{/*@ts-ignore*/}
 			<AdminHeader
 				handleSearch={handleSearch}
 				searchTerm={searchTerm}
