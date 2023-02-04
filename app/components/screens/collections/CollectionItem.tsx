@@ -16,6 +16,14 @@ const CollectionItem: FC<{ collection: ICollection }> = ({ collection }) => {
 			<div className={styles.content}>
 				<div className={styles.title}>{collection.title}</div>
 			</div>
+
+			<div className={`${styles.behind} ${styles.second}`}>
+				<CollectionImage collection={collection} />
+			</div>
+
+			<div className={`${styles.behind} ${styles.third}`}>
+				<CollectionImage collection={collection} />
+			</div>
 		</Link>
 	)
 }
