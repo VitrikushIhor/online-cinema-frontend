@@ -3,73 +3,107 @@
 $shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
 0 3px 3px 0 rgb(0 0 0 / 15%);
 
-.collections {
-  @apply flex flex-wrap items-center mt-10;
 
+.description{
+  font-size: 1.6rem;
+  margin: 2.5rem 0;
+}
+.collections {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
   > a {
-    @apply mr-8 animate-fade;
+    @apply  animate-fade;
+    margin-right: 2rem;
   }
 
   > a:nth-child(3n) {
-    @apply mr-0;
+    margin-right: 0;
   }
 }
 
 .collection {
-  @apply relative flex items-end mb-10 h-44 transition-transform;
-  width: 31%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 200ms;
+
+  height: 16rem;
+  width: 32%;
+  margin-bottom: 4rem;
 
   @include fade-bg-gradient(0deg);
 
   &::before {
-    @apply rounded-layout;
+    border-radius: 0.8rem;
   }
 
   img {
-    @apply rounded-layout image-like-bg;
+    border-radius: 0.8rem;
+    object-position: center;
+    object-fit: cover;
+    pointer-events: none;
     box-shadow: $shadow;
   }
 
   > span {
-    @apply z-1;
+    z-index: 131;
   }
 
+  .behind {
+    overflow: hidden;
+    z-index: 0;
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 200ms;
+
+    &.second {
+      position: absolute;
+      top: -0.5rem;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+    }
+
+    &.third {
+      position: absolute;
+      top: -1rem;
+      left: 2rem;
+      right: 2rem;
+      bottom: 2rem;
+    }
+  }
 
   &:hover {
     @apply -translate-y-1;
 
+    .behind {
+      &.second {
+        transform: translateY(0.5px);
+      }
+
+      &.third {
+        transform: translateY(1px);
+      }
+    }
   }
 
   .content {
-    @apply relative z-2 text-center m-3 w-full;
-
-    .title {
-      @apply font-semibold mb-1 text-white text-shadow;
-    }
-  }
-}
-
-@media (max-width: 570px) {
-
-  .collections {
-    @apply flex flex-wrap mt-10;
-
-    > a {
-      @apply mr-0;
-    }
-
-  }
-
-  .collection {
-    @apply relative flex items-end mb-10 h-44 transition-transform;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 0.75rem;
     width: 100%;
 
-    @include fade-bg-gradient(0deg);
-
-    &::before {
-      @apply rounded-layout;
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: rgb(255 255 255 / 1);
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
     }
-
   }
-
 }
