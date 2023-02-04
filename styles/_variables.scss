@@ -24,3 +24,16 @@
     );
   }
 }
+
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade {
+  animation: fade .5s ease-in-out;
+}

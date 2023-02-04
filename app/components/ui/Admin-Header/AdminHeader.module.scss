@@ -1,7 +1,12 @@
 .header {
-  @apply flex items-center justify-between mt-8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2.5rem 0;
 
   > button {
-    @apply bg-primary bg-opacity-80;
+    @apply bg-opacity-80;
+    background-color: rgb(29 185 84 / 1);
+    font-size: 1.6rem;
   }
 }

@@ -1,0 +1,10 @@
+.container{
+	display: flex;
+	>div{
+		width: 50%;
+		margin-right: 2rem;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}

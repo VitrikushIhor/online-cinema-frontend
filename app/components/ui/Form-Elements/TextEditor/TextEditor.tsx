@@ -8,7 +8,7 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 
 import { ITextEditor } from '@/ui/Form-Elements/field-interface'
 
-import styles from './Field.module.scss'
+import styles from './TextEditor.module.scss'
 
 const TextEditor: FC<ITextEditor> = ({
 	placeholder,
@@ -39,7 +39,13 @@ const TextEditor: FC<ITextEditor> = ({
 	}
 
 	return (
-		<div className={cn(styles.common, styles.editorWrapper, 'animate-fade')}>
+		<div
+			className={cn(
+				styles.commonEditorWrapper,
+				styles.editorWrapper,
+				'animate-fade'
+			)}
+		>
 			<label>
 				<span>{placeholder}</span>
 
@@ -71,7 +77,9 @@ const TextEditor: FC<ITextEditor> = ({
 					/>
 				</div>
 
-				{error && <div className={styles.error}>{error.message}</div>}
+				{error && (
+					<div className={styles.errorEditorWrapper}>{error.message}</div>
+				)}
 			</label>
 		</div>
 	)

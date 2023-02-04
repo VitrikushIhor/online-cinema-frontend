@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { FC } from 'react'
 
-import styles from '@/ui/Catalog-Movies/Catalog.module.scss'
+import stylesCatalog from '@/ui/Catalog-Movies/Catalog.module.scss'
 import GalleryItem from '@/ui/Gallery/GalleryItem'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
@@ -9,6 +9,8 @@ import Meta from '@/ui/Meta/Meta'
 import { IActor, IMovie } from '@/shared/interfaces/movie.interface'
 
 import { getMovieUrl } from '../../../config/url.config'
+
+import styles from './Actor.module.scss'
 
 export interface IActorPage {
 	movies: IMovie[]
@@ -25,7 +27,7 @@ const Actor: FC<IActorPage> = ({ actor, movies }) => {
 				<div>{actor.description}</div>
 			</div>
 
-			<section className={styles.movies}>
+			<section className={stylesCatalog.movies}>
 				{movies.map((movie) => (
 					<GalleryItem
 						item={{

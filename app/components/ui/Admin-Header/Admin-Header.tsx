@@ -1,6 +1,6 @@
 import { ChangeEvent, FC } from 'react'
 
-import AdminCreateButton from '@/ui/Admin-Button/AdminCreateButton'
+import Button from '@/ui/Form-Elements/Button/Button'
 import SearchField from '@/ui/Search-Field/SearchField'
 
 import styles from './AdminHeader.module.scss'
@@ -19,7 +19,11 @@ const AdminHeader: FC<IAdminHeader> = ({
 	return (
 		<div className={styles.header}>
 			<SearchField handleSearch={handleSearch} searchTerm={searchTerm} />
-			{onClick && <AdminCreateButton onClick={onClick} />}
+			{onClick && (
+				<Button className={styles.button} onClick={onClick}>
+					Create New
+				</Button>
+			)}
 		</div>
 	)
 }

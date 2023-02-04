@@ -1,20 +1,43 @@
 .wrapper {
-  @apply mt-32;
+  margin-top: 20rem;
+  .heading{
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
   > form {
-    @apply mx-auto w-1/2 air-block bg-opacity-80 p-7 text-center;
+    @apply  bg-opacity-80 ;
+    text-align: center;
+    padding: 1.75rem;
+    border-radius: 0.8rem;
+    background-color: #101215;
+    color: #fff;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
     .button {
-      @apply mt-12 shadow-lg;
+      @apply shadow-lg;
+      margin-top: 2rem;
       > button {
+        font-size: 1.5rem;
+        height: 4rem;
+        width: 15rem;
+        padding: 0;
         &:first-child {
-          @apply rounded-r-none;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
         }
 
         &:last-child {
-          @apply opacity-80 hover:opacity-100 transition-opacity;
-          border-radius: 0.65rem;
-          border-top-left-radius: 0px;
-          border-bottom-left-radius: 0px;
-          background-color: #8f050b;
+          opacity: 0.8;
+          border-radius: 0 1.2rem 1.2rem 0;
+          background-color: #00630d;
+          transition-property: opacity;
+          transition-timing-function: ease-in-out;
+          transition-duration: 200ms;
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }

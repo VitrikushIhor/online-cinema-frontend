@@ -1,8 +1,14 @@
 .heading {
-  @apply mb-5 text-3xl;
-  text-align: center;
+  margin-bottom: 1.25rem;
+  font-size: 3rem;
+  line-height: 2.25rem;
 }
 
+.description{
+  font-size: 1.7rem;
+  line-height: 2rem;
+  margin: 2.5rem 0;
+}
 
 .headContainer {
   display: flex;
@@ -10,20 +16,34 @@
   align-items: center;
 
   > div:last-child {
-    @apply text-xl text-white text-shadow;
     text-align: center;
     margin-top: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: rgb(255 255 255 / 1);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
   }
 }
 
 .movies {
-  @apply flex flex-wrap mt-8 justify-between;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: space-between;
 }
 
 .button {
-  @apply btn-primary py-2 px-10;
-}
+  background-color: #1DB954;
+  color: #fff;
+  border-radius: 0.65rem;
+  transition: background-color .3s ease-in-out;
+  padding: 0.5rem 2.5rem;
 
+  &:hover {
+    background-color: #1DB920;
+  }
+
+}
 @media (max-width: 570px) {
 
   .headContainer {

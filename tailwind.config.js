@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
 
-const primary = '#E30B13'
+const primary = '#1DB954'
 
 module.exports = {
 	content: [
@@ -87,7 +87,7 @@ module.exports = {
 					borderRadius: '0.65rem',
 					transition: 'background-color .3s ease-in-out',
 					'&:hover': {
-						backgroundColor: '#ff0009',
+						backgroundColor: '#1DB920',
 					},
 				},
 
@@ -108,29 +108,29 @@ module.exports = {
 					color: theme('colors.white'),
 					boxShadow: theme('boxShadow.lg'),
 				},
-			}),
-				addUtilities({
-					'.text-shadow': {
-						textShadow: '1px 1px rgba(0, 0, 0, 0.4)',
-					},
+			})
+			addUtilities({
+				'.text-shadow': {
+					textShadow: '1px 1px rgba(0, 0, 0, 0.4)',
+				},
 
-					'.outline-border-none': {
-						outline: 'none',
-						border: 'none',
-					},
+				'.outline-border-none': {
+					outline: 'none',
+					border: 'none',
+				},
 
-					'.flex-center-between': {
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'space-between',
-					},
+				'.flex-center-between': {
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'space-between',
+				},
 
-					'.image-like-bg': {
-						objectPosition: 'center',
-						objectFit: 'cover',
-						pointerEvents: 'none',
-					},
-				})
+				'.image-like-bg': {
+					objectPosition: 'center',
+					objectFit: 'cover',
+					pointerEvents: 'none',
+				},
+			})
 		}),
 	],
 }

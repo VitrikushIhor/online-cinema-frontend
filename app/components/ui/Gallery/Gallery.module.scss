@@ -2,11 +2,20 @@
 
 
 .gallery {
-  @apply flex items-center py-5;
+  display: flex;
+  align-items: center;
+  padding-top: 1.3rem;
 }
 
 .item {
-  @apply relative transition-transform flex items-end shadow-lg rounded-layout;
+  @apply shadow-lg;
+  position: relative;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 200ms;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 0.8rem;
   flex: 0 0 auto;
 
   &:hover {
@@ -14,38 +23,52 @@
   }
 
   &.vertical {
-    @apply mr-4 last:mr-0 w-1/5 h-80;
-    max-width: 200px;
+    margin-right: 1rem;
+    width: 16%;
+    height: 22rem;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &.horizontal {
-    @apply mb-8 h-44;
-    width: 31%;
+    height: 16rem;
+    width: 32%;
+    margin-bottom: 2rem;
   }
 
   &.withText {
     @include fade-bg-gradient(0deg);
 
     &::before {
-      @apply rounded-layout;
+      border-radius: 0.8rem;
     }
   }
 
   img {
-    @apply rounded-layout;
     max-width: 100%;
     max-height: 100%;
+    border-radius: 0.8rem;
   }
 
   .content {
-    @apply relative z-2 text-center m-3 w-full;
-
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 0.75rem;
+    width: 100%;
     .title {
-      @apply font-semibold mb-1 text-white text-shadow;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: rgb(255 255 255 / 1);
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
     }
 
     .subTitle {
-      @apply text-gray-500 text-shadow;
+      font-size: 1.4rem;
+      color: rgb(153 154 165 / 1);
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
     }
   }
 }

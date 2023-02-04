@@ -3,12 +3,13 @@ import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { stripHtml } from 'string-strip-html'
 
+import { GenreEditInfo } from '@/screens/admin/genre/GenreEditInfo/GenreEditInfo'
 import { IGenreEditInput } from '@/screens/admin/genre/genre-edit-inteface'
 import { useGetGenreEdit } from '@/screens/admin/genre/useGenreEdit'
 
 import AdminNavigation from '@/ui/Admin-Navigation/AdminNavigation'
-import Button from '@/ui/Form-Elements/Button'
-import Field from '@/ui/Form-Elements/Field'
+import Button from '@/ui/Form-Elements/Button/Button'
+import Field from '@/ui/Form-Elements/Field/Field'
 import SlugField from '@/ui/Form-Elements/SlugField/SlugField'
 import fromStyles from '@/ui/Form-Elements/admin-form.module.scss'
 import Heading from '@/ui/Heading/Heading'
@@ -18,7 +19,7 @@ import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
 import generateSlug from '@/utils/string/generateSlug'
 
 const DynamicTextEditor = dynamic(
-	() => import('@/ui/Form-Elements/TextEditor'),
+	() => import('@/ui/Form-Elements/TextEditor/TextEditor'),
 	{
 		ssr: false,
 	}
@@ -47,30 +48,11 @@ const GenreEdit: FC = () => {
 				) : (
 					<>
 						<div className={fromStyles.fields}>
-							<Field
-								{...register('name', {
-									required: 'Name is required!',
-								})}
-								placeholder="Name"
-								error={errors.name}
-								style={{ width: '31%' }}
-							/>
-							<div style={{ width: '31%' }}>
-								<SlugField
-									register={register}
-									generate={() =>
-										setValue('slug', generateSlug(getValues('name')))
-									}
-									error={errors.slug}
-								/>
-							</div>
-							<Field
-								{...register('icon', {
-									required: 'Icon is required!',
-								})}
-								placeholder="Icon"
-								error={errors.icon}
-								style={{ width: '31%' }}
+							<GenreEditInfo
+								getValues={getValues}
+								setValue={setValue}
+								errors={errors}
+								register={register}
 							/>
 						</div>
 						<Controller

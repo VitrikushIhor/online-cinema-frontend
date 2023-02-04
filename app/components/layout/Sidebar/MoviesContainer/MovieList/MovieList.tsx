@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { FC } from 'react'
 
-import MovieItem from '@/components/layout/Sidebar/MoviesContainer/MovieItem'
+import MovieItem from '@/components/layout/Sidebar/MoviesContainer/MovieList/MovieItem'
 
 import { IMovie } from '@/shared/interfaces/movie.interface'
 

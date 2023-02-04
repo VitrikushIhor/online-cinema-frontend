@@ -1,44 +1,96 @@
 .wrapper {
-  @apply mt-12 rounded-2xl overflow-hidden shadow-xl relative animate-fade;
+  @apply shadow-xl  animate-fade;
+  margin-top: 3rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
 
   .controls {
-    @apply flex-center-between absolute bottom-3 left-6 right-6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0.75rem;
+    left: 1.5rem;
+    right: 1.5rem;
 
     > div:first-child {
-      @apply flex-center-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
       > button {
-        @apply text-2xl text-white mr-3 outline-none opacity-60 hover:opacity-100 transition-opacity;
+        line-height: 2rem;
+        color: rgb(255 255 255 / 1);
+        margin-right: 0.75rem;
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        opacity: 0.6;
+        transition-property: opacity;
+        transition-timing-function: ease-in-out;
+        transition-duration: 200ms;
+        font-size: 2.5rem;
+        &:hover{
+          opacity: 1;
+        }
       }
 
       .playButton {
-        @apply text-4xl;
+        font-size: 2.5rem;
+        line-height: 2.5rem;
       }
 
       .timeControls {
-        @apply flex items-center text-white ml-4 opacity-60;
+        display: flex;
+        align-items: center;
+        color: rgb(255 255 255 / 1);
+        margin-left: 2rem;
+        opacity: 0.6;
+        font-size: 1.5rem;
 
         > p:nth-child(2) {
-          @apply mx-2;
+          margin-left: 0.7rem;
+          margin-right: 0.7rem;
+
         }
       }
     }
 
     > div:last-child {
-      @apply flex items-center;
+      display: flex;
+      align-items: center;
 
       > button {
-        @apply text-white text-3xl outline-none opacity-60 hover:opacity-100 transition-opacity;
+        color: rgb(255 255 255 / 1);
+        font-size: 2.5rem;
+        line-height: 2.25rem;
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        opacity: 0.6;
+        transition-property: opacity;
+        transition-timing-function: ease-in-out;
+        transition-duration: 200ms;
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
 
   .progressBarContainer {
-    @apply absolute left-4 right-4 bottom-14 bg-gray-600 rounded-layout h-1;
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 4.5rem;
+    background-color: rgb(102 103 110 / 1);
     width: calc(100% - 2rem);
+    border-radius: 0.8rem;
+    height: 0.4rem;
 
     .progressBar {
-      @apply rounded-2xl h-full bg-primary;
+      border-radius: 1rem;
+      height: 100%;
+      background-color: rgb(29 185 84 / 1);
     }
   }
 }

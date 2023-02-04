@@ -8,7 +8,7 @@ import { IMovie } from '@/shared/interfaces/movie.interface'
 
 import { getGenresListEach } from '@/utils/movie/getGenreList'
 
-import { getGenreUrl, getMovieUrl } from '../../../../config/url.config'
+import { getGenreUrl, getMovieUrl } from '../../../../../config/url.config'
 
 import styles from './MovieList.module.scss'
 
@@ -17,10 +17,10 @@ const MovieItem: FC<{ movies: IMovie }> = ({ movies }) => {
 		<div className={styles.item}>
 			<Link href={getMovieUrl(movies.slug)}>
 				<Image
+					 className={styles.Image}
 					src={movies.poster}
 					alt={movies.title}
-					width={65}
-					height={97}
+					 layout="fill"
 					draggable={false}
 					priority
 				/>

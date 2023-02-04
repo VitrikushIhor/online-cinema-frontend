@@ -1,20 +1,32 @@
 .heading {
-  @apply mb-8 text-xl;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.info{
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .containerGallery {
-  @apply my-10;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.subHeading{
+  font-size: 1.8rem;
 }
 
 @media (max-width: 570px) {
 
 
   .heading {
-    @apply mb-4;
+    margin-bottom: 1rem;
     font-size: 1.1rem;
   }
 
   .subHeading {
-    @apply text-base mb-2;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 }
