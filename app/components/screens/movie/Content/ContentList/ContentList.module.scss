@@ -1,28 +1,28 @@
 .list {
-  @apply flex items-center mb-1;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 
   > .name {
-    @apply mr-2 text-white text-opacity-60;
+    margin-right: 0.7rem;
+    font-size: 1.3rem;
+    color: rgb(255 255 255 / 0.6);
   }
 
   > .links {
-    @apply text-white text-opacity-90;
+    color: rgb(255 255 255 /  0.9);
     > a {
-      @apply text-link;
+      font-size: 1.3rem;
+      line-height: 2rem;
+      text-underline-offset: 0.4rem;
+      color: rgba(255, 255, 255, .9);
+      transition: text-decoration-color .3s ease-in-out;
+      text-decoration-line: underline;
+      text-decoration-color: rgba(255, 255, 255, 0.2);
+    &:hover {
+      text-decoration-color: #1DB954;
     }
   }
 }
-
-@media (max-width: 570px) {
-  .list {
-    @apply mb-1;
-
-    > .name {
-      @apply text-xs;
-    }
-
-    > .links {
-      @apply text-xs;
-    }
-  }
 }
+

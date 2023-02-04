@@ -13,6 +13,8 @@ import SubHeading from '@/ui/Heading/SubHeading'
 
 import { IMovie } from '@/shared/interfaces/movie.interface'
 
+import styles from './Movie.module.scss'
+
 export interface IMoviePage {
 	movie: IMovie
 	similarMovies: IGalleryItem[]
@@ -28,7 +30,6 @@ const DynamicRateMovie = dynamic(
 		ssr: false,
 	}
 )
-
 const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 	useUpdateCountOpened(movie.slug)
 	return (
@@ -38,9 +39,9 @@ const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 				Detail={() => <Content movie={movie} />}
 			/>
 			<DynamicPlayer slug={movie.slug} videoSource={movie.videoUrl} />
-			<div className="mt-12">
-				<SubHeading title={'Similar'} />
-				<Gallery items={similarMovies} />
+			<div className={styles.subContainer}>
+				<SubHeading title={'Similar'} className={styles.subHead} />
+				<Gallery items={similarMovies} className={styles.movieGallery} />
 				<DynamicRateMovie slug={movie.slug} id={movie._id} />
 			</div>
 		</Meta>
