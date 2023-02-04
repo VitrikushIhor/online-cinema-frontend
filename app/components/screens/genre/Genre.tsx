@@ -10,7 +10,6 @@ export interface IGenrePage {
 }
 
 const Genre: FC<IGenrePage> = ({ genre, movies }) => {
-	console.log(genre)
 	return (
 		<Catalog
 			title={genre.name}
