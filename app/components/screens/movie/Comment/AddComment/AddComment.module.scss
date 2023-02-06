@@ -1,0 +1,26 @@
+.container {
+	margin-top: 3rem;
+	width: calc(100% - 2.5rem);
+	.comment {
+		position: relative;
+		button {
+			transition: color 0.3s ease-in-out;
+			position: absolute;
+			font-size: 1.8rem;
+			line-height: 1.75rem;
+			right: 0.5rem;
+			top: 1.7rem;
+			color: rgb(255 255 255 / 1);
+			&:hover {
+				color: #1db954;
+			}
+		}
+		span {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+		div {
+			font-size: 1.4rem;
+		}
+	}
+}

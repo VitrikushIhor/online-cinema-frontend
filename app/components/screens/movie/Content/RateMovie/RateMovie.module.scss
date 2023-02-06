@@ -1,44 +1,48 @@
 .wrapper {
-  width: 60%;
-  margin: 2.5rem auto;
-  border-radius: 0.8rem;
-  background-color: #101215;
-  color: #fff;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  padding: 3rem;
-  text-align: center;
+	width: 60%;
+	margin: 2.5rem auto;
+	border-radius: 0.8rem;
+	background-color: #101215;
+	color: #fff;
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+	padding: 3rem;
+	text-align: center;
 
-  > h3 {
-    font-size: 1.8rem;
-    line-height: 2rem;
-    font-weight: 600;
-  }
+	> h3 {
+		font-size: 1.8rem;
+		line-height: 2rem;
+		font-weight: 600;
+	}
 
-  > p {
-    margin-top: 1rem;
-    margin-bottom: 0.75rem;
-    font-size: 1.3rem;
-    line-height: 1.75rem;
-    opacity: 0.6;
-  }
+	> p {
+		margin-top: 1rem;
+		margin-bottom: 0.75rem;
+		font-size: 1.3rem;
+		line-height: 1.75rem;
+		opacity: 0.6;
+	}
 
-  > div {
-    font-size: 4rem;
-    line-height: 2.5rem;
-    opacity: 0.9;
-  }
+	> div {
+		font-size: 4rem;
+		line-height: 2.5rem;
+		opacity: 0.9;
+	}
 
-  > .thanks {
-    @apply animate-scaleIn;
-    color: rgb(245 197 33 / 1);
-    font-size: 1.7rem;
-    line-height: 2.25rem;
-    font-weight: 600;
-  }
+	> .thanks {
+		@apply animate-scaleIn;
+		color: rgb(245 197 33 / 1);
+		font-size: 1.7rem;
+		line-height: 2.25rem;
+		font-weight: 600;
+	}
+
+	.btn {
+		width: 14rem;
+	}
 }
 
 @media (max-width: 570px) {
-  .wrapper {
-    width: 100%;
-  }
+	.wrapper {
+		width: 100%;
+	}
 }

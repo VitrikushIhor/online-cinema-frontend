@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 
-import AuthFields from '@/screens/auth/AuthField'
+import { ProfileContent } from '@/screens/prtofile/ProfileContent/ProfileContent'
 import { useProfile } from '@/screens/prtofile/useProfile'
 
 import Button from '@/ui/Form-Elements/Button/Button'
@@ -16,7 +16,7 @@ import styles from './Profile.module.scss'
 export interface IProfileInput extends Pick<IUser, 'email' | 'password'> {}
 
 const Profile: FC = () => {
-	const { formState, register, handleSubmit, setValue } =
+	const { formState, register, handleSubmit, setValue, control } =
 		useForm<IProfileInput>({
 			mode: 'onChange',
 		})
@@ -28,7 +28,11 @@ const Profile: FC = () => {
 				{isLoading ? (
 					<SkeletonLoader count={2} />
 				) : (
-					<AuthFields formState={formState} register={register} />
+					<ProfileContent
+						formState={formState}
+						register={register}
+						control={control}
+					/>
 				)}
 				<Button>Update</Button>
 			</form>
