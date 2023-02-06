@@ -3,6 +3,7 @@ import { useQuery } from 'react-query'
 
 import AddCommentForm from '@/screens/movie/Comment/AddComment/AddComment'
 import CommentItem from '@/screens/movie/Comment/CommentItem/CommentItem'
+import { IComment } from '@/screens/movie/Comment/comment-interface'
 
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
 
@@ -37,8 +38,8 @@ const Comments: FC<{ movieId: string }> = ({ movieId }) => {
 				) : data?.length ? (
 					<>
 						<div>
-							{data.map((comment: any) => (
-								<CommentItem comment={comment} key={user?._id} />
+							{data.map((comment: IComment, index: number) => (
+								<CommentItem comment={comment} key={index + comment._id} />
 							))}
 						</div>
 					</>

@@ -4,7 +4,7 @@ import { FC } from 'react'
 
 import { IUser } from '@/shared/interfaces/user.interface'
 
-import testAvatar from '@/assets/avatar-test.jpg'
+import testAvatar from '../../../assets/avatar.jpg'
 
 import styles from './UserAvatar.module.scss'
 
