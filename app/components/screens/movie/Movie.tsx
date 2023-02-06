@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import { FC } from 'react'
 
+import Comments from '@/screens/movie/Comment/Comment'
 import Content from '@/screens/movie/Content/Content'
 import { useUpdateCountOpened } from '@/screens/movie/useUpdateCountOpened'
 
@@ -23,10 +24,6 @@ const DynamicPlayer = dynamic(() => import('@/ui/Video-Player/VideoPlayer'), {
 	ssr: false,
 })
 
-const DynamicComments = dynamic(() => import('./Comment/Comment'), {
-	ssr: false,
-})
-
 const DynamicRateMovie = dynamic(
 	() => import('./Content/RateMovie/RateMovie'),
 	{
@@ -43,7 +40,7 @@ const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 				Detail={() => <Content movie={movie} />}
 			/>
 			<DynamicPlayer slug={movie.slug} videoSource={movie.videoUrl} />
-			<DynamicComments movieId={movie._id} />
+			<Comments movieId={movie._id} />
 			<div className={styles.subContainer}>
 				<SubHeading title={'Similar'} className={styles.subHead} />
 				<Gallery items={similarMovies} className={styles.movieGallery} />
