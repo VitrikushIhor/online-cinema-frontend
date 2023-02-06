@@ -4,7 +4,7 @@ import { FC } from 'react'
 
 import { IUser } from '@/shared/interfaces/user.interface'
 
-import testAvatar from '../../../assets/avatar.jpg'
+import Avatar from '@/assets//avatar.jpg'
 
 import styles from './UserAvatar.module.scss'
 
@@ -18,7 +18,7 @@ const UserAvatar: FC<{ user: IUser; isWhite?: boolean }> = ({
 				<Image
 					layout="fill"
 					alt={`${user ? user.userName : ''}`}
-					src={user.avatar ? user.avatar : testAvatar}
+					src={user.avatar ? user.avatar : Avatar}
 				/>
 				<div className={styles.avatarName}>{user.userName}</div>
 			</span>
