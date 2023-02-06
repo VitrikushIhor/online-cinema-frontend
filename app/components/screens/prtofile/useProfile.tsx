@@ -11,6 +11,7 @@ import { toastError } from '@/utils/toast-error'
 export const useProfile = (setValue: UseFormSetValue<IProfileInput>) => {
 	const { isLoading } = useQuery('Profile', () => UsersService.getProfile(), {
 		onSuccess({ data }) {
+			console.log(data)
 			setValue('email', data.email)
 		},
 		onError(error) {

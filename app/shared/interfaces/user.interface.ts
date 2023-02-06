@@ -3,5 +3,7 @@ export interface IUser {
 	email: string
 	password: string
 	isAdmin: boolean
+	userName: string
+	avatar: string
 	createdAt: string
 }

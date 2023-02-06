@@ -45,7 +45,7 @@ const AuthFields: FC<IAuthFields> = ({
 						: {}
 				)}
 				placeholder="Password"
-				type="password"
+				type="text"
 				/*@ts-ignore*/
 				error={errors.password}
 			/>

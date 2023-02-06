@@ -4,12 +4,11 @@ import { FC } from 'react'
 import Content from '@/screens/movie/Content/Content'
 import { useUpdateCountOpened } from '@/screens/movie/useUpdateCountOpened'
 
-import Meta from '@/components/ui/Meta/Meta'
-
 import Banner from '@/ui/Banner/Banner'
 import Gallery from '@/ui/Gallery/Gallery'
 import { IGalleryItem } from '@/ui/Gallery/gallery-interface'
 import SubHeading from '@/ui/Heading/SubHeading'
+import Meta from '@/ui/Meta/Meta'
 
 import { IMovie } from '@/shared/interfaces/movie.interface'
 
@@ -24,6 +23,10 @@ const DynamicPlayer = dynamic(() => import('@/ui/Video-Player/VideoPlayer'), {
 	ssr: false,
 })
 
+const DynamicComments = dynamic(() => import('./Comment/Comment'), {
+	ssr: false,
+})
+
 const DynamicRateMovie = dynamic(
 	() => import('./Content/RateMovie/RateMovie'),
 	{
@@ -32,6 +35,7 @@ const DynamicRateMovie = dynamic(
 )
 const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 	useUpdateCountOpened(movie.slug)
+
 	return (
 		<Meta title={movie.title} description={`Watch ${movie.title}`}>
 			<Banner
@@ -39,6 +43,7 @@ const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 				Detail={() => <Content movie={movie} />}
 			/>
 			<DynamicPlayer slug={movie.slug} videoSource={movie.videoUrl} />
+			<DynamicComments movieId={movie._id} />
 			<div className={styles.subContainer}>
 				<SubHeading title={'Similar'} className={styles.subHead} />
 				<Gallery items={similarMovies} className={styles.movieGallery} />

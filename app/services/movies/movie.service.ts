@@ -1,22 +1,26 @@
-import {IMovieEditInput} from '@/screens/admin/movie/movie-edit-inteface'
+import { IMovieEditInput } from '@/screens/admin/movie/movie-edit-inteface'
+import {
+	IComment,
+	ICommentDto,
+} from '@/screens/movie/Comment/comment-interface'
 
-import {IMovie} from '@/shared/interfaces/movie.interface'
+import { IMovie } from '@/shared/interfaces/movie.interface'
 
-import axios, {axiosClassic} from '../../api/interceptors'
-import {getMoviesUrl} from '../../config/api.config'
+import axios, { axiosClassic } from '../../api/interceptors'
+import { getCommentUrl, getMoviesUrl } from '../../config/api.config'
 
 export const MoviesService = {
 	async getMovies(searchTerm?: string) {
 		return axiosClassic.get<IMovie[]>(getMoviesUrl(``), {
 			params: searchTerm
 				? {
-					searchTerm,
-				}
+						searchTerm,
+				  }
 				: {},
 		})
 	},
 	async getPopularMovies() {
-		const {data: movies} = await axiosClassic.get<IMovie[]>(
+		const { data: movies } = await axiosClassic.get<IMovie[]>(
 			getMoviesUrl('/most-popular')
 		)
 		return movies
@@ -48,5 +52,11 @@ export const MoviesService = {
 		return axiosClassic.post(getMoviesUrl('/update-count-opened'), {
 			slug,
 		})
+	},
+	async createComment(body: ICommentDto) {
+		return axios.post<string>(getCommentUrl(``), body)
+	},
+	async getByComments(movieId: string) {
+		return axios.get<IComment[]>(getCommentUrl(`/by-movie/${movieId}`))
 	},
 }
