@@ -6,12 +6,11 @@ import AdminNavigation from '@/ui/Admin-Navigation/AdminNavigation'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 
-import styles from "./Admin.module.scss"
 const Admin: FC = () => {
 	return (
 		<Meta title={'Admin Panel'}>
 			<AdminNavigation />
-			<Heading title={'Some Statistics'} className={styles.heading} />
+			<Heading title={'Some Statistics'}/>
 			<Statistics />
 		</Meta>
 	)

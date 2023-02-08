@@ -8,7 +8,6 @@ import AdminTable from '@/ui/AdminTable/AdminTable'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 
-import styles from '../home/Admin.module.scss'
 
 const GenreList: FC = () => {
 	const {
@@ -23,7 +22,7 @@ const GenreList: FC = () => {
 	return (
 		<Meta title={'Genre'}>
 			<AdminNavigation />
-			<Heading title={'Genres'} className={styles.heading} />
+			<Heading title={'Genres'}/>
 			<AdminHeader
 				handleSearch={handleSearch}
 				searchTerm={searchTerm}

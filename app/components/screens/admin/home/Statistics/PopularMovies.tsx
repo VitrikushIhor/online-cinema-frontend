@@ -25,7 +25,7 @@ const PopularMovies: FC = () => {
 	)
 	return (
 		<div className={cn(styles.block, styles.popular)}>
-			<SubHeading title={'The most popular movies'} className={styles.subHeading} />
+			<SubHeading title={'The most popular movies'}/>
 			{isLoading ? (
 				<SkeletonLoader className={styles.loader} />
 			) : (

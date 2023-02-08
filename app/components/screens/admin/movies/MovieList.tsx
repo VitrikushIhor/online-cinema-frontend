@@ -8,7 +8,6 @@ import AdminTable from '@/ui/AdminTable/AdminTable'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 
-import styles from '../home/Admin.module.scss'
 
 const MovieList: FC = () => {
 	const {
@@ -23,7 +22,7 @@ const MovieList: FC = () => {
 	return (
 		<Meta title={'Movie'}>
 			<AdminNavigation />
-			<Heading title={'Movies'} className={styles.heading} />
+			<Heading title={'Movies'} />
 			<AdminHeader
 				handleSearch={handleSearch}
 				searchTerm={searchTerm}
