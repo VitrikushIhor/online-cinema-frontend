@@ -1,4 +1,6 @@
 @import "../../../../../styles/mixins";
+@import "../../../../../styles/class";
+@import "../../../../../styles/animations";
 
 .favorites {
   display: flex;
@@ -9,7 +11,6 @@
 .containerLoader {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
 
   .skeletonLoader {
     position: relative;
@@ -25,15 +26,17 @@
 }
 
 .itemWrapper {
-  @apply animate-fade hover:-translate-y-3;
+  @apply hover:-translate-y-3;
   position: relative;
   margin-bottom: 2rem;
-  height: 11rem;
+  height: 16rem;
   margin-right: 2rem;
-  transition-property: transform;
-  transition-timing-function: ease-in-out;
-  transition-duration: 200ms;
+  @extend  %tTransform;
+  @extend  %animateFade;
   width: 31%;
+
+
+
 
   &:nth-child(3n) {
     margin-right: 0;
@@ -53,7 +56,7 @@
     @include fade-bg-gradient(0deg);
 
     &::before {
-      @apply z-2;
+      z-index: 2;
     }
 
     img {
@@ -67,10 +70,11 @@
       z-index: 3;
       text-align: center;
       margin: 1rem;
+      font-size: 1.7rem;
       width: 100%;
       font-weight: 600;
       color: rgb(255 255 255 / 1);
-      text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+      @extend %tShadow;
     }
   }
 

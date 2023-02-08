@@ -1,40 +1,38 @@
+@import '../../../../../styles/animations';
 .arrow {
-  @apply bg-opacity-30 animate-fade;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  color: rgb(255 255 255 / 1);
-  font-size: 2.5rem;
-  line-height: 2rem;
-  padding: 0.5rem;
-  position: absolute;
-  z-index: 20;
-  bottom: 2rem;
+	@extend %animateFade;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 9999px;
+	background-color: rgb(255 255 255 /0.3);
+	color: rgb(255 255 255 / 1);
+	font-size: 2.5rem;
+	line-height: 2rem;
+	padding: 0.5rem;
+	position: absolute;
+	z-index: 20;
+	bottom: 2rem;
 
-  &.left {
-    right: 6.5rem;
-  }
+	&.left {
+		right: 6.5rem;
+	}
 
-  &.right {
-    right: 2rem;
-  }
-
-
+	&.right {
+		right: 2rem;
+	}
 }
 
 @media (max-width: 570px) {
+	.arrow {
+		@apply p-1  bottom-5;
 
-  .arrow {
-    @apply p-1  bottom-5;
+		&.left {
+			@apply right-14;
+		}
 
-    &.left {
-      @apply right-14;
-    }
-
-    &.right {
-      @apply right-4;
-    }
-  }
+		&.right {
+			@apply right-4;
+		}
+	}
 }

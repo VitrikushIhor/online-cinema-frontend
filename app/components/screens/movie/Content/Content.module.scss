@@ -1,72 +1,71 @@
+@import '../../../../../styles/class';
 .content {
-  position: relative;
-  z-index: 2;
-  padding: 2rem;
+	position: relative;
+	z-index: 2;
+	padding: 2rem;
 
-  > h1 {
-    color: rgb(255 255 255 / 1);
-    text-transform: uppercase;
-    font-size: 3.2rem;
-    line-height: 1;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
-  }
+	> h1 {
+		color: rgb(255 255 255 / 1);
+		text-transform: uppercase;
+		font-size: 3.2rem;
+		line-height: 1;
+		font-weight: 600;
+		margin-bottom: 0.25rem;
+		@extend %tShadow;
+	}
 
-  .details {
-    color: rgb(255 255 255 / 0.8);
-    margin-top: 0.85rem;
-    margin-bottom: 0.85rem;
-    font-size: 1.5rem;
-  }
+	.details {
+		color: rgb(255 255 255 / 0.8);
+		margin-top: 0.85rem;
+		margin-bottom: 0.85rem;
+		font-size: 1.5rem;
+	}
 
-  .rating {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-    line-height: 1.75rem;
-    opacity: 0.9;
+	.rating {
+		position: absolute;
+		bottom: 2rem;
+		right: 2rem;
+		display: flex;
+		align-items: center;
+		font-size: 2rem;
+		line-height: 1.75rem;
+		opacity: 0.9;
 
-    > svg {
-      fill: #F5C521;
-      margin-bottom: 0.12rem;
-    }
+		> svg {
+			fill: #f5c521;
+			margin-bottom: 0.12rem;
+		}
 
-    > span {
-      color: rgb(255 255 255 / 1);
-      margin-left: 0.5rem;
-    }
-  }
-
-
+		> span {
+			color: rgb(255 255 255 / 1);
+			margin-left: 0.5rem;
+		}
+	}
 }
 
 @media (max-width: 570px) {
-  .content {
-    @apply p-3;
+	.content {
+		@apply p-3;
 
-    > h1 {
-      @apply text-2xl  mb-0.5;
-    }
+		> h1 {
+			@apply text-2xl  mb-0.5;
+		}
 
-    .rating {
-      @apply bottom-4 right-3  text-xl ;
+		.rating {
+			@apply bottom-4 right-3  text-xl;
 
-      > svg {
-        @apply fill-yellow-700 mb-0.5;
-      }
+			> svg {
+				@apply fill-yellow-700 mb-0.5;
+			}
 
-      > span {
-        @apply text-white ml-2;
-      }
-    }
+			> span {
+				@apply text-white ml-2;
+			}
+		}
 
-    .details {
-      @apply my-1;
-      font-size: 0.8rem;
-    }
-  }
+		.details {
+			@apply my-1;
+			font-size: 0.8rem;
+		}
+	}
 }

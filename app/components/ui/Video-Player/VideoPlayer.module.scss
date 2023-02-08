@@ -1,9 +1,11 @@
+@import "../styles/animations";
 .wrapper {
-	@apply shadow-xl  animate-fade;
+	@apply shadow-xl ;
 	margin-top: 3rem;
 	border-radius: 1rem;
 	overflow: hidden;
 	position: relative;
+	@extend %animateFade;
 
 	.controls {
 		display: flex;
@@ -26,9 +28,7 @@
 				outline: 2px solid transparent;
 				outline-offset: 2px;
 				opacity: 0.6;
-				transition-property: opacity;
-				transition-timing-function: ease-in-out;
-				transition-duration: 200ms;
+@extend %tOpacity;
 				font-size: 2.5rem;
 				&:hover {
 					opacity: 1;
@@ -66,9 +66,7 @@
 				outline: 2px solid transparent;
 				outline-offset: 2px;
 				opacity: 0.6;
-				transition-property: opacity;
-				transition-timing-function: ease-in-out;
-				transition-duration: 200ms;
+				@extend %tOpacity;
 				&:hover {
 					opacity: 1;
 				}

@@ -1,3 +1,23 @@
+.slide-animation-enter {
+	opacity: 0;
+	transform: scale(0.9);
+}
+
+.slide-animation-enter-active {
+	opacity: 1;
+	transform: translateX(0);
+	transition: opacity 300ms, transform 300ms;
+}
+
+.slide-animation-exit {
+	opacity: 1;
+}
+
+.slide-animation-exit-active {
+	opacity: 0;
+	transform: scale(0.9);
+	transition: opacity 300ms, transform 300ms;
+}
 
 @keyframes fade {
 	from {
@@ -7,7 +27,31 @@
 		opacity: 1;
 	}
 }
+
 .animate-fade {
-	animation: fade .5s ease-in-out;
+	animation: fade 0.5s ease-in-out;
 }
 
+%animateFade {
+	animation: fade 0.5s ease-in-out;
+}
+
+%tTransform {
+	transition-property: transform;
+	transition-timing-function: ease-in-out;
+	transition-duration: 200ms;
+}
+
+%tOpacity {
+	transition-property: opacity;
+	transition-timing-function: ease-in-out;
+	transition-duration: 200ms;
+}
+
+%tColor {
+	//transition-colors
+	transition-property: color, background-color, border-color,
+		text-decoration-color, fill, stroke;
+	transition-timing-function: ease-in-out;
+	transition-duration: 200ms;
+}

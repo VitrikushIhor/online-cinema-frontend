@@ -1,21 +1,20 @@
+@import '../../../../../styles/animations';
 .actions {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 
-  > button {
-    @apply hover:opacity-100;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    font-size: 2.3rem;
-    line-height: 1.75rem;
-    color: rgb(29 185 84 / 1);
-    transition-property: opacity;
-    transition-timing-function: ease-in-out;
-    transition-duration: 200ms;
+	> button {
+		@apply hover:opacity-100;
+		outline: none;
+		border: none;
+		background-color: transparent;
+		font-size: 2.3rem;
+		line-height: 1.75rem;
+		color: rgb(29 185 84 / 1);
+		@extend %tOpacity;
 
-    &:first-child {
-      margin-right: 1.5rem;
-    }
-  }
+		&:first-child {
+			margin-right: 1.5rem;
+		}
+	}
 }

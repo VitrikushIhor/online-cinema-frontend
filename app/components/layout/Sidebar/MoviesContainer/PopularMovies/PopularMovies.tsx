@@ -7,8 +7,7 @@ import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
 
 import { MoviesService } from '@/services/movies/movie.service'
 
-
-import styles from "./PopularMovies.module.scss"
+import styles from './PopularMovies.module.scss'
 
 const PopularMovies: FC = () => {
 	const { data: popularMovies, isLoading } = useQuery('PopularMovies', () =>

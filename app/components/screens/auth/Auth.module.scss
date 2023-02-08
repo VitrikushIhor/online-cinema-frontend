@@ -1,3 +1,4 @@
+@import "../styles/animations";
 .wrapper {
   margin-top: 20rem;
   .heading{
@@ -32,9 +33,7 @@
           opacity: 0.8;
           border-radius: 0 1.2rem 1.2rem 0;
           background-color: #00630d;
-          transition-property: opacity;
-          transition-timing-function: ease-in-out;
-          transition-duration: 200ms;
+@extend %tOpacity;
           &:hover {
             opacity: 1;
           }

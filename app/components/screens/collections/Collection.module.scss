@@ -1,7 +1,7 @@
 @import '../../../../styles/mixins';
+@import '../../../../styles/class';
+@import '../../../../styles/animations';
 
-$shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
-0 3px 3px 0 rgb(0 0 0 / 15%);
 
 
 .collections {
@@ -10,7 +10,7 @@ $shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
   align-items: center;
   margin-top: 3.5rem;
   > a {
-    @apply  animate-fade;
+    @extend %animateFade;
     margin-right: 2rem;
   }
 
@@ -23,9 +23,7 @@ $shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
   position: relative;
   display: flex;
   align-items: flex-end;
-  transition-property: transform;
-  transition-timing-function: ease-in-out;
-  transition-duration: 200ms;
+  @extend %tTransform;
 
   height: 16rem;
   width: 32%;
@@ -52,9 +50,7 @@ $shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
   .behind {
     overflow: hidden;
     z-index: 0;
-    transition-property: transform;
-    transition-timing-function: ease-in-out;
-    transition-duration: 200ms;
+    @extend %tTransform;
 
     &.second {
       position: absolute;
@@ -99,7 +95,7 @@ $shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
       font-weight: 600;
       margin-bottom: 0.25rem;
       color: rgb(255 255 255 / 1);
-      text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+      @extend %tShadow;
     }
   }
 }

@@ -1,100 +1,101 @@
+@import '../../../../../../styles/animations';
 .list {
-  @apply animate-fade;
-  margin-top: 3.5rem;
+	@extend %animateFade;
+	margin-top: 3.5rem;
 
-  .heading {
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 2rem;
-    margin-bottom: 2rem;
-    color: white;
-    text-transform: capitalize;
-  }
+	.heading {
+		font-weight: 700;
+		font-size: 2rem;
+		line-height: 2rem;
+		margin-bottom: 2rem;
+		color: white;
+		text-transform: capitalize;
+	}
 
-  .button {
-    width: 29rem;
-    height: 5rem;
-    display: flex;
-    font-size: 1.8rem;
-    background-color: #1DB954;
-    color: #fff;
-    border-radius: 1.2rem;
-    transition: background-color .3s ease-in-out;
-    justify-content: center;
-    align-items: center;
-    &:hover {
-      background-color: #1DB920;
-    }
-  }
+	.button {
+		width: 29rem;
+		height: 5rem;
+		display: flex;
+		font-size: 1.8rem;
+		background-color: #1db954;
+		color: #fff;
+		border-radius: 1.2rem;
+		transition: background-color 0.3s ease-in-out;
+		justify-content: center;
+		align-items: center;
+		&:hover {
+			background-color: #1db920;
+		}
+	}
 
-  .item {
-    display: flex;
-    margin-bottom: 2rem;
-    align-items: stretch;
+	.item {
+		display: flex;
+		margin-bottom: 2rem;
+		align-items: stretch;
 
-    > a {
-      width: 9rem;
-      height: 14rem;
-      position: relative;
+		> a {
+			width: 9rem;
+			height: 14rem;
+			position: relative;
 
-      .Image {
-        @apply transition-colors;
-        border-radius: 1rem;
-        border: 0.2rem solid transparent !important;
-        width: 100%;
-        height: 100%;
-        position: relative !important;
-        object-fit: cover;
-      }
+			.Image {
+				@extend %tColor;
+				border-radius: 1rem;
+				border: 0.2rem solid transparent !important;
+				width: 100%;
+				height: 100%;
+				position: relative !important;
+				object-fit: cover;
+			}
 
-      &:hover {
-        img {
-          border-color: #1DB954 !important;
-        }
-      }
-    }
+			&:hover {
+				img {
+					border-color: #1db954 !important;
+				}
+			}
+		}
 
-    .info {
-      display: flex;
-      margin-left: 2rem;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 61%;
+		.info {
+			display: flex;
+			margin-left: 2rem;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 61%;
 
-      .title {
-        color: white;
-        font-size: 2rem;
-        line-height: 2rem;
-        font-weight: 500;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        margin-bottom: 1rem;
-      }
+			.title {
+				color: white;
+				font-size: 2rem;
+				line-height: 2rem;
+				font-weight: 500;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				margin-bottom: 1rem;
+			}
 
-      .genres {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-        color: rgb(102 103 110 / 1);
-      }
+			.genres {
+				font-size: 1.5rem;
+				line-height: 1.5rem;
+				color: rgb(102 103 110 / 1);
+			}
 
-      .rating {
-        display: flex;
-        align-items: center;
-        margin-bottom: 0.5rem;
-        > svg {
-          fill: #F5C521;
-          margin-right: 0.5rem;
-          line-height: 1.75rem;
-          font-size: 2.7rem;
-        }
-        > span {
-          color: white;
-          font-size: 1.7rem;
-          font-weight: 500;
-          padding-top: 0.12rem;
-        }
-      }
-    }
-  }
+			.rating {
+				display: flex;
+				align-items: center;
+				margin-bottom: 0.5rem;
+				> svg {
+					fill: #f5c521;
+					margin-right: 0.5rem;
+					line-height: 1.75rem;
+					font-size: 2.7rem;
+				}
+				> span {
+					color: white;
+					font-size: 1.7rem;
+					font-weight: 500;
+					padding-top: 0.12rem;
+				}
+			}
+		}
+	}
 }
