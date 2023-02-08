@@ -1,6 +1,6 @@
-@import "../styles/animations";
+@import '../../../../styles/animations';
 .wrapper {
-	@apply shadow-xl ;
+	@apply shadow-xl;
 	margin-top: 3rem;
 	border-radius: 1rem;
 	overflow: hidden;
@@ -28,7 +28,7 @@
 				outline: 2px solid transparent;
 				outline-offset: 2px;
 				opacity: 0.6;
-@extend %tOpacity;
+				@extend %tOpacity;
 				font-size: 2.5rem;
 				&:hover {
 					opacity: 1;
