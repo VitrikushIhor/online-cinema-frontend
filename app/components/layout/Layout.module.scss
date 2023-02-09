@@ -1,65 +1,60 @@
-$bar-width: 20%;
-
+@import '../../../styles/variables';
 .layout {
-  position: relative;
+	position: relative;
 
-  > div:nth-child(2) {
-    display: none;
-  }
+	> div:nth-child(2) {
+		display: none;
+	}
 
-  > div:first-child,
-  > div:last-child {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
+	> div:first-child,
+	> div:last-child {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
 
-    &:hover {
-      overflow-y: auto;
+		&:hover {
+			overflow-y: auto;
 
-      &::-webkit-scrollbar {
-        width: 3px;
-      }
-    }
+			&::-webkit-scrollbar {
+				width: 3px;
+			}
+		}
 
-    width: $bar-width;
-    max-width: 350px;
-  }
+		width: $bar-width;
+		max-width: 350px;
+	}
 
-  > div:first-child {
-    @apply border-r-gray-800;
-    border-right-width: 1px;
-    left: 0;
-  }
+	> div:first-child {
+		left: 0;
+		border: 0.3rem none rgb(36 37 41 / 1);
+		border-right-style: solid;
+	}
 
-  > .center {
-    min-height: 100vh;
-    padding: 2.75rem;
-    margin: 0 $bar-width;
-  }
+	> .center {
+		padding: 2.75rem;
+		margin: 0 $bar-width;
+	}
 
-  > div:last-child {
-    right: 0;
-    border-left-width: 1px;
-    @apply border-l-gray-800;
-  }
+	> div:last-child {
+		right: 0;
+		border: 0.3rem none rgb(36 37 41 / 1);
+		border-left-style: solid;
+	}
 
-  @media (max-width: 570px) {
+	@media (max-width: 570px) {
+		> .center {
+			margin: 0;
+			padding: 20px;
+		}
 
+		> div:nth-child(2) {
+			display: block;
+		}
 
-    > .center {
-      margin: 0;
-      padding: 20px;
-    }
-
-    > div:nth-child(2) {
-      display: block;
-    }
-
-    > div:first-child,
-    > div:last-child {
-      display: none;
-    }
-  }
+		> div:first-child,
+		> div:last-child {
+			display: none;
+		}
+	}
 }
-

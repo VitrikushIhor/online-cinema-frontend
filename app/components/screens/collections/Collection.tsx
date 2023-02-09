@@ -21,8 +21,8 @@ const description = 'In this section you will find all genres on our site'
 const Collection: FC<{ collections: ICollection[] }> = ({ collections }) => {
 	return (
 		<Meta title={title} description={description}>
-			<Heading title={title} className={styles.heading} />
-			<Description text={description} className={styles.description} />
+			<Heading title={title} />
+			<Description text={description}/>
 
 			<section className={styles.collections}>
 				{collections.map((collection) => (

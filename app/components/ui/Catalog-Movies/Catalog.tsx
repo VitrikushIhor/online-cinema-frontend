@@ -13,9 +13,9 @@ import styles from './Catalog.module.scss'
 const Catalog: FC<ICatalog> = ({ title, movies, description }) => {
 	return (
 		<Meta title={title} description={description}>
-			<Heading title={title} className={styles.heading} />
+			<Heading title={title} />
 			{description && (
-				<Description text={description} className={styles.description} />
+				<Description text={description}/>
 			)}
 
 			<section className={styles.movies}>

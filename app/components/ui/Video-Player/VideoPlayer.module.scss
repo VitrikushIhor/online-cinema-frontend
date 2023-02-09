@@ -1,16 +1,23 @@
+@import '../../../../styles/animations';
+@import '../../../../styles/class';
 .wrapper {
-	@apply shadow-xl  animate-fade;
+	@extend %boxShadow;
 	margin-top: 3rem;
 	border-radius: 1rem;
 	overflow: hidden;
 	position: relative;
-
+	@extend %animateFade;
+	.video {
+		display: block;
+		width: 100% !important;
+		height: auto !important;
+	}
 	.controls {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		position: absolute;
-		bottom: 0.75rem;
+		bottom: 0.25rem;
 		left: 1.5rem;
 		right: 1.5rem;
 
@@ -26,10 +33,10 @@
 				outline: 2px solid transparent;
 				outline-offset: 2px;
 				opacity: 0.6;
-				transition-property: opacity;
-				transition-timing-function: ease-in-out;
-				transition-duration: 200ms;
+				@extend %tOpacity;
 				font-size: 2.5rem;
+				background: transparent;
+				cursor: pointer;
 				&:hover {
 					opacity: 1;
 				}
@@ -66,9 +73,9 @@
 				outline: 2px solid transparent;
 				outline-offset: 2px;
 				opacity: 0.6;
-				transition-property: opacity;
-				transition-timing-function: ease-in-out;
-				transition-duration: 200ms;
+				@extend %tOpacity;
+				background: transparent;
+				cursor: pointer;
 				&:hover {
 					opacity: 1;
 				}

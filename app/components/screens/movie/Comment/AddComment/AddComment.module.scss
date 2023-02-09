@@ -1,16 +1,24 @@
+@import '../../../../../../styles/animations';
 .container {
 	margin-top: 3rem;
 	width: calc(100% - 2.5rem);
 	.comment {
 		position: relative;
+		input {
+			border: 0.2rem none #303241;
+			border-bottom-style: solid;
+			background-color: transparent;
+		}
 		button {
-			transition: color 0.3s ease-in-out;
 			position: absolute;
 			font-size: 1.8rem;
 			line-height: 1.75rem;
 			right: 0.5rem;
 			top: 1.7rem;
 			color: rgb(255 255 255 / 1);
+			background: transparent;
+			@extend %tColor;
+			cursor: pointer;
 			&:hover {
 				color: #1db954;
 			}

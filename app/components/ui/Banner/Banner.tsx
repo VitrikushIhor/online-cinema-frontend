@@ -16,7 +16,7 @@ const Banner: FC<IBanner> = ({ Detail, image }) => {
 				src={image}
 				draggable={false}
 				layout="fill"
-				className="image-like-bg object-top"
+				className=""
 				unoptimized
 				priority
 			/>

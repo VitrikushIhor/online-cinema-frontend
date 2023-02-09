@@ -24,7 +24,7 @@ const Profile: FC = () => {
 	return (
 		<Meta title={'Profile'}>
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.from}>
-				<Heading className={'mb-6'} title={'Profile'} />
+				<Heading  title={'Profile'} />
 				{isLoading ? (
 					<SkeletonLoader count={2} />
 				) : (

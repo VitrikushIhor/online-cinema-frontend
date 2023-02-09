@@ -1,24 +1,24 @@
-.adminForm{
-	width: 50%;
+@import '../../../../../styles/animations';
+.adminForm {
 	margin-top: 3rem;
 }
 
-.loader{
+.loader {
 	height: 7rem;
 	margin-top: 2rem;
 }
 
-.textLink{
+.textLink {
 	display: block;
 	margin-bottom: 1.75rem;
 	text-underline-offset: 4px;
-	color: rgba(255, 255, 255, .9);
-	transition: text-decoration-color .3s ease-in-out;
+	color: rgba(255, 255, 255, 0.9);
 	text-decoration-line: underline;
 	text-decoration-color: rgba(255, 255, 255, 0.2);
 	font-size: 2rem;
-
-	&:hover{
-		text-decoration-color: #1DB920;
+	background-color: transparent;
+	@extend %tColor;
+	&:hover {
+		text-decoration-color: #1db920;
 	}
 }

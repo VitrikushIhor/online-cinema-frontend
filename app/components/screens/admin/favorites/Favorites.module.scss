@@ -1,50 +1,85 @@
-@import "../../../../../styles/variables";
+@import '../../../../../styles/mixins';
+@import '../../../../../styles/class';
+@import '../../../../../styles/animations';
 
 .favorites {
-  @apply flex flex-wrap mt-12;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 3rem;
 }
 
 .containerLoader {
-  @apply w-full flex flex-wrap;
+	width: 100%;
+	display: flex;
 
-  .skeletonLoader {
-    @apply relative mb-8 h-44;
-    width: 31%;
+	.skeletonLoader {
+		position: relative;
+		margin-bottom: 2rem;
+		height: 11rem;
+		width: 31%;
 
-    &:nth-child(1),
-    &:nth-child(3) {
-      @apply mr-8;
-    }
-  }
+		&:nth-child(1),
+		&:nth-child(3) {
+			margin-right: 2rem;
+		}
+	}
 }
 
 .itemWrapper {
-  @apply relative mb-8 h-44 mr-8 animate-fade transition-transform hover:-translate-y-3;
-  width: 31%;
+	@apply hover:-translate-y-3;
+	position: relative;
+	margin-bottom: 2rem;
+	height: 16rem;
+	margin-right: 2rem;
+	@extend %tTransform;
+	@extend %animateFade;
+	width: 31%;
 
-  &:nth-child(3n) {
-    @apply mr-0;
-  }
+	&:nth-child(3n) {
+		margin-right: 0;
+	}
 
-  .item {
-    @apply relative z-1 w-full h-full flex items-end shadow-lg rounded-layout overflow-hidden;
+	.item {
+		@extend %boxShadow;
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: flex-end;
+		border-radius: 0.8rem;
+		overflow: hidden;
 
-    @include fade-bg-gradient(0deg);
+		@include fade-bg-gradient(0deg);
 
-    &::before {
-      @apply z-2;
-    }
+		&::before {
+			z-index: 2;
+		}
 
-    img {
-      @apply image-like-bg;
-    }
+		img {
+			object-position: center;
+			object-fit: cover;
+			pointer-events: none;
+		}
 
-    .title {
-      @apply relative z-3 text-center m-4 w-full font-semibold text-white text-shadow;
-    }
-  }
+		.title {
+			position: relative;
+			z-index: 3;
+			text-align: center;
+			margin: 1rem;
+			font-size: 1.7rem;
+			width: 100%;
+			font-weight: 600;
+			color: rgb(255 255 255 / 1);
+			@extend %tShadow;
+		}
+	}
 
-  > button {
-    @apply z-3 block -left-3 -top-1 right-auto;
-  }
+	> button {
+		z-index: 3;
+		display: block;
+		left: -0.75rem;
+		top: -0.25rem;
+		right: auto;
+	}
 }

@@ -23,10 +23,6 @@
 		position: relative;
 		border-radius: 9999px;
 	}
-
-	.isVerified {
-		@apply text-white text-xs absolute bottom-0 right-0;
-	}
 }
 
 .avatarName {

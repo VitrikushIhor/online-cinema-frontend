@@ -43,7 +43,7 @@ const TextEditor: FC<ITextEditor> = ({
 			className={cn(
 				styles.commonEditorWrapper,
 				styles.editorWrapper,
-				'animate-fade'
+				'tTransform'
 			)}
 		>
 			<label>

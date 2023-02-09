@@ -1,69 +1,72 @@
+@import '../../../../../../styles/animations';
+
 .list {
-  @apply animate-fade ;
-  width: 29rem;
-  position: absolute;
-  border-width: 0.2rem;
-  border-radius: 1rem;
-  border-color: rgb(57 57 63 / 1);
-  background-color: rgb(36 37 41 / 1);
-  top: calc(100% + 15px);
-  z-index: 10;
+	@extend %animateFade;
 
-  .notFound{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 6rem;
-    font-size: 2rem;
-    color: white;
-    margin: 1rem 0;
-  }
+	width: 29rem;
+	position: absolute;
+	border-width: 0.2rem;
+	border-radius: 1rem;
+	border-color: rgb(57 57 63 / 1);
+	background-color: rgb(36 37 41 / 1);
+	top: calc(100% + 15px);
+	z-index: 10;
 
-  > a {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1rem;
+	.notFound {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 6rem;
+		font-size: 2rem;
+		color: white;
+		margin: 1rem 0;
+	}
 
-    &::after {
-      position: absolute;
-      right: -0.12rem;
-      height: 0;
-      width: 0.20rem;
-      background-color: transparent;
-      content: '';
-      top: 30%;
-      transition: height 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    }
+	> a {
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding: 0.75rem 1rem;
 
-    &:hover::after {
-      @apply bg-primary ;
-      height: 50%;
+		&::after {
+			position: absolute;
+			right: -0.12rem;
+			height: 0;
+			width: 0.2rem;
+			background-color: transparent;
+			content: '';
+			top: 30%;
+			transition: height 0.3s ease-in-out, background-color 0.3s ease-in-out;
+		}
 
-    }
-    &:hover{
-      span{
-        @apply animate-fade;
-        color: #1DB954;
-      }
-    }
+		&:hover::after {
+			background-color: rgb(29 185 84 / 1);
+			height: 50%;
+		}
+		&:hover {
+			span {
+				@extend %animateFade;
 
-    img {
-      border-radius: 0.5rem;
-    }
+				color: #1db954;
+			}
+		}
 
-    > span {
-      @apply animate-fade;
-      margin-left: 1rem;
-      color: white;
-      font-size: 2rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+		img {
+			border-radius: 0.5rem;
+		}
 
-      &:last-child {
-        width: 70%;
-      }
-    }
-  }
+		> span {
+			@extend %animateFade;
+			margin-left: 1rem;
+			color: white;
+			font-size: 2rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+
+			&:last-child {
+				width: 70%;
+			}
+		}
+	}
 }

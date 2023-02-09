@@ -1,77 +1,53 @@
+@import '../../../../styles/class';
+@import '../../../../styles/animations';
 .nav {
-  border-radius: 1.2rem;
-  background-color: #101215;
-  color: #fff;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10rem;
+	border-radius: 1.2rem;
+	background-color: #101215;
+	color: #fff;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10rem;
+	@extend %boxShadow;
 
-  > ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    > li {
-      display: inline-block;
+	> ul {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		> li {
+			display: inline-block;
 
-      > a {
-        @apply text-white text-opacity-60 hover:text-opacity-100;
-        position: relative;
-        color: white;
-        display: block;
-        padding: 2.5rem 1.25rem;
-        font-size: 1.7rem;
-        line-height: 2rem;
-        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-        transition-timing-function: ease-in-out;
-        transition-duration: 200ms;
-        &:hover{
-          color: rgb(29 185 84 / 1);
-        }
+			> a {
+				position: relative;
+				color: white;
+				display: block;
+				padding: 2.5rem 1.25rem;
+				font-size: 1.7rem;
+				line-height: 2rem;
+				@extend %tColor;
+				&:hover {
+					@extend %linkShadowPress;
+				}
 
-        &::before {
-          position: absolute;
-          width: 100%;
-          height: 0.12rem;
-          background-color: transparent;
-          transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-          transition-timing-function: ease-in-out;
-          transition-duration: 200ms;
-          left: 0;
-          bottom: 0;
-          border-radius: 0.375rem;
-          content: '';
-        }
+				&::before {
+					position: absolute;
+					width: 100%;
+					height: 0.12rem;
+					background-color: transparent;
+					@extend %tColor;
+					left: 0;
+					bottom: 0;
+					border-radius: 0.375rem;
+					content: '';
+				}
 
-        &.active {
-          @apply text-opacity-100;
-
-          &::before {
-            background-color: rgb(29 185 84 / 1);
-          }
-        }
-      }
-    }
-  }
-}
-
-
-@media (max-width: 570px) {
-  .nav {
-    @apply mb-10;
-    width: 100%;
-
-    > ul {
-      > li {
-
-        > a {
-          @apply px-1 py-4 text-lg transition-colors relative text-white text-opacity-60 hover:text-opacity-100;
-          font-size: 16px;
-
-
-        }
-      }
-    }
-  }
+				&.active {
+					@extend %linkShadowPressAdmin;
+					&::before {
+						background-color: rgb(29 185 84 / 1);
+					}
+				}
+			}
+		}
+	}
 }
