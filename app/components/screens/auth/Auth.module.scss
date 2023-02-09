@@ -1,4 +1,5 @@
 @import '../../../../styles/animations';
+@import '../../../../styles/class';
 .wrapper {
 	margin-top: 20rem;
 	.heading {
@@ -6,19 +7,17 @@
 		font-size: 3rem;
 	}
 	> form {
-		@apply bg-opacity-80;
 		text-align: center;
 		padding: 1.75rem;
 		border-radius: 0.8rem;
 		background-color: #101215;
 		color: #fff;
-		box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-			0 4px 6px -4px rgb(0 0 0 / 0.1);
+		@extend %boxShadow;
 		width: 50%;
 		margin-left: auto;
 		margin-right: auto;
 		.button {
-			@apply shadow-lg;
+			@extend %boxShadow;
 			margin-top: 2rem;
 			> button {
 				font-size: 1.5rem;
@@ -46,7 +45,7 @@
 
 @media (max-width: 570px) {
 	.wrapper {
-		@apply mt-14;
+		margin-top: 3.5rem;
 		> form {
 			width: 90%;
 		}

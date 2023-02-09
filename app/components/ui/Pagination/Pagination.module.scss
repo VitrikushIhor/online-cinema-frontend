@@ -1,12 +1,4 @@
 .arrowContainer {
-  position: relative;
-  bottom: 21rem;
-}
-
-@media (max-width: 570px) {
-  .arrowContainer {
-    @apply relative;
-    bottom: 0;
-    top: -200px;
-  }
+	position: relative;
+	bottom: 21rem;
 }

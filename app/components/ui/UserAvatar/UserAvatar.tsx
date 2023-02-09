@@ -20,7 +20,9 @@ const UserAvatar: FC<{ user: IUser; isWhite?: boolean }> = ({
 					alt={`${user ? user.userName : ''}`}
 					src={user.avatar ? user.avatar : Avatar}
 				/>
-				<div className={styles.avatarName}>{user.userName}</div>
+				<div className={styles.avatarName}>
+					{user.userName ? user.userName : 'Anonym'}
+				</div>
 			</span>
 		</div>
 	)

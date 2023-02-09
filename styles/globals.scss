@@ -1,14 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
+//@tailwind base;
+//@tailwind components;
+//@tailwind utilities;
 
 @import './react-select';
 @import 'react-redux-toastr/src/styles/index';
 
-@import "null";
-@import "fonts";
-@import "class";
-@import "animations";
-
+@import 'null';
+@import 'fonts';
+@import 'class';
+@import 'animations';

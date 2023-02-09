@@ -3,7 +3,7 @@ import { Controller, useForm } from 'react-hook-form'
 
 import { useUserEdit } from '@/screens/admin/user/useUserEdit'
 import { IUserEditInput } from '@/screens/admin/user/user-edit-inteface'
-import AuthFields from '@/screens/auth/AuthField'
+import { ProfileContent } from '@/screens/prtofile/ProfileContent/ProfileContent'
 
 import AdminNavigation from '@/ui/Admin-Navigation/AdminNavigation'
 import Button from '@/ui/Form-Elements/Button/Button'
@@ -14,7 +14,7 @@ import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
 import styles from './UserEdit.module.scss'
 
 const UserEdit: FC = () => {
-	const { handleSubmit, register, formState, control, setValue } =
+	const { reset, handleSubmit, register, formState, control, setValue } =
 		useForm<IUserEditInput>({
 			mode: 'onChange',
 		})
@@ -28,8 +28,12 @@ const UserEdit: FC = () => {
 				{isLoading ? (
 					<SkeletonLoader count={3} className={styles.loader} />
 				) : (
-					<>
-						<AuthFields register={register} formState={formState} />
+					<div>
+						<ProfileContent
+							formState={formState}
+							register={register}
+							control={control}
+						/>
 						<Controller
 							name={'isAdmin'}
 							control={control}
@@ -45,8 +49,8 @@ const UserEdit: FC = () => {
 								</button>
 							)}
 						/>
-						<Button>Update</Button>
-					</>
+						<Button onClick={() => reset()}>Update</Button>
+					</div>
 				)}
 			</form>
 		</Meta>

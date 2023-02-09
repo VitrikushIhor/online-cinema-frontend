@@ -2,93 +2,58 @@
 @import '../../../../styles/class';
 
 .slider {
-  position: relative;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2.5rem;
+	position: relative;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2.5rem;
 
-  .slide {
-    @apply shadow-xl ;
-    position: relative;
-    height: 26rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
+	.slide {
+		@extend %boxShadow;
+		position: relative;
+		height: 26rem;
+		border-radius: 1rem;
+		overflow: hidden;
+		display: flex;
+		align-items: flex-end;
 
-    @include fade-bg-gradient();
+		@include fade-bg-gradient();
 
-    .image {
-      object-position: center;
-      object-fit: cover;
-      pointer-events: none;
-    }
+		.image {
+			object-position: center;
+			object-fit: cover;
+			pointer-events: none;
+		}
 
-    .content {
-      position: relative;
-      z-index: 2;
-      padding: 3rem 3rem;
+		.content {
+			position: relative;
+			z-index: 2;
+			padding: 3rem 3rem;
 
-      .heading {
-        color: rgb(255 255 255 / 1);
-        text-transform: uppercase;
-        font-size: 3.5rem;
-        line-height: 1;
-        font-weight: 600;
-        margin-bottom: 0.25rem;
-        @extend  %tShadow;
-      }
+			.heading {
+				color: rgb(255 255 255 / 1);
+				text-transform: uppercase;
+				font-size: 3.5rem;
+				line-height: 1;
+				font-weight: 600;
+				margin-bottom: 0.25rem;
+				@extend %tShadow;
+			}
 
-      .subHeading {
-        font-size: 1.5rem;
-        color: rgb(217 218 232 / 1);
-        font-weight: 500;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        @extend  %tShadow;
-      }
+			.subHeading {
+				font-size: 1.5rem;
+				color: rgb(217 218 232 / 1);
+				font-weight: 500;
+				text-transform: uppercase;
+				margin-bottom: 1rem;
+				@extend %tShadow;
+			}
 
-      .button {
-        background-color: #1DB954;
-        font-size: 1.5rem;
-        color: #fff;
-        border-radius: 0.65rem;
-        transition: background-color .3s ease-in-out;
-        padding: 0.6rem 5rem;
-
-        &:hover {
-        background-color: #1DB920;
-      }
-      }
-    }
-  }
-
-
-
-  @media (max-width: 570px) {
-
-    .slide {
-      @apply h-56;
-
-
-      .content {
-        @apply p-5;
-
-        .heading {
-          @apply text-3xl  mb-0.5;
-        }
-
-        .subHeading {
-          @apply text-xs;
-        }
-
-        .button {
-          @apply p-1 px-6;
-        }
-      }
-    }
-
-
-  }
+			.button {
+				font-size: 1.5rem;
+				padding: 0.6rem 5rem;
+				@extend %btnStandard;
+			}
+		}
+	}
 }

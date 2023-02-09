@@ -1,30 +1,29 @@
 //Пример
-$fontFamily: "Helvetica Neue";
+$fontFamily: 'Helvetica Neue';
 
 // !===============WIDTH====================
 $md1: 1024px;
 $md2: 767px;
 $md3: 500px;
-
+$bar-width: 20%;
 // !===============COLORS====================
 //Пример
-$cDescription:rgb(255 255 255 / 0.6);
-$cWhite:rgb(255 255 255 / 1);
+$cDescription: rgb(255 255 255 / 0.6);
+$cWhite: rgb(255 255 255 / 1);
 
 //!===============FONT-SIZE====================
-$fzHead:3rem;
-$fZDescription:1.7rem;
-$fZSub:2rem;
+$fzHead: 3rem;
+$fZDescription: 1.7rem;
+$fZSub: 2rem;
 
 //!===============FONT-Weight====================
-$fWeight6:600;
-$fWeight5:500;
-$fWeight3:300;
+$fWeight6: 600;
+$fWeight5: 500;
+$fWeight3: 300;
 //!===============Line-Height====================
-$lineHeNormal:1.75rem;
-
+$lineHeNormal: 1.75rem;
 
 //!===============Box-Shadow====================
 
 $shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
-0 3px 3px 0 rgb(0 0 0 / 15%);
+	0 3px 3px 0 rgb(0 0 0 / 15%);

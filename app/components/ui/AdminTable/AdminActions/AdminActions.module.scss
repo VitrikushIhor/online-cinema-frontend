@@ -4,7 +4,6 @@
 	align-items: center;
 
 	> button {
-		@apply hover:opacity-100;
 		outline: none;
 		border: none;
 		background-color: transparent;
@@ -12,6 +11,9 @@
 		line-height: 1.75rem;
 		color: rgb(29 185 84 / 1);
 		@extend %tOpacity;
+		&:hover {
+			opacity: 1;
+		}
 
 		&:first-child {
 			margin-right: 1.5rem;

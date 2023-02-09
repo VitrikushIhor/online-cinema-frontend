@@ -9,9 +9,8 @@
 }
 
 .item {
-	@apply shadow-lg;
+	@extend %shadowItem;
 	position: relative;
-
 	display: flex;
 	align-items: flex-end;
 	border-radius: 0.8rem;
@@ -63,7 +62,6 @@
 			font-weight: 600;
 			margin-bottom: 0.25rem;
 			color: rgb(255 255 255 / 1);
-
 			@extend %tShadow;
 		}
 

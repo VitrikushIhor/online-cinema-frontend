@@ -42,30 +42,3 @@
 		}
 	}
 }
-
-@media (max-width: 570px) {
-	.content {
-		@apply p-3;
-
-		> h1 {
-			@apply text-2xl  mb-0.5;
-		}
-
-		.rating {
-			@apply bottom-4 right-3  text-xl;
-
-			> svg {
-				@apply fill-yellow-700 mb-0.5;
-			}
-
-			> span {
-				@apply text-white ml-2;
-			}
-		}
-
-		.details {
-			@apply my-1;
-			font-size: 0.8rem;
-		}
-	}
-}
