@@ -8,7 +8,6 @@ import AdminTable from '@/ui/AdminTable/AdminTable'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 
-import styles from '../home/Admin.module.scss'
 
 const UserList: FC = () => {
 	const { isLoading, handleSearch, data, searchTerm, mutateAsync } = useUsers()
@@ -16,7 +15,7 @@ const UserList: FC = () => {
 	return (
 		<Meta title={'Users'}>
 			<AdminNavigation />
-			<Heading title={'Users'} className={styles.heading} />
+			<Heading title={'Users'}/>
 			<AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
 			<AdminTable
 				headerItems={['Email', 'Date register', 'Actions']}

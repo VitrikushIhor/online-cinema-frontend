@@ -36,12 +36,12 @@ const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 				title="Watch movies online"
 				description="Watch MovieApp movies and TV shows online or stream right to your browser."
 			>
-				<Heading title="Watch movies online" className={styles.heading} />
+				<Heading title="Watch movies online"/>
 
 				{slides.length && <Slider slides={slides} />}
 
 				<div className={styles.info}>
-					<SubHeading title="Trending now" className={styles.subHeading} />
+					<SubHeading title="Trending now"/>
 					{trendingMovies.length && (
 						<>
 							<Gallery items={currentTableData} />
@@ -56,7 +56,7 @@ const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 				</div>
 
 				<div>
-					<SubHeading title="Best actors" className={styles.subHeading} />
+					<SubHeading title="Best actors"/>
 					{actors.length && <Gallery items={actors.slice(0, PageSize)} />}
 				</div>
 			</Meta>

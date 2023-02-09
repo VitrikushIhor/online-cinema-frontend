@@ -1,51 +1,48 @@
-.item {
-  @apply bg-opacity-20 hover:bg-opacity-50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgb(57 57 63 / 1);
-  margin-top: 1.2rem;
-  padding: 0 1.25rem;
-  border-radius: 1rem;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: ease-in-out;
-  transition-duration: 200ms;
-  > div {
-    color: white;
-    width: 24%;
-    font-size: 1.6rem;
-    padding: 1.2rem 0;
+@import '../../../../styles/animations';
 
-    &:last-child {
-      text-align: right;
-      justify-content: flex-end;
-    }
-  }
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgb(57 57 63 / 1);
+	margin-top: 1.2rem;
+	padding: 0 1.25rem;
+	border-radius: 1rem;
+	@extend %tColor;
+	> div {
+		color: white;
+		width: 24%;
+		font-size: 1.6rem;
+		padding: 1.2rem 0;
+
+		&:last-child {
+			text-align: right;
+			justify-content: flex-end;
+		}
+	}
 }
 
 .itemHeader {
-  @apply  shadow-lg  hover:bg-opacity-20;
-  background-color: rgb(29 185 84 / 0.2);
-  margin-top: 2rem;
+	box-shadow: 3px 0px 14px 1px rgba(9, 69, 5, 1);
+	background-color: rgb(29 185 84 / 0.2);
+	margin-top: 2rem;
 
-  > div {
-    @apply text-opacity-90;
-    font-weight: 600;
-    font-size: 1.6rem;
-    padding: 1.2rem 0;
-  }
+	> div {
+		font-weight: 600;
+		font-size: 1.6rem;
+		padding: 1.2rem 0;
+	}
 }
 
 .notFound {
-  @apply  text-opacity-60 ;
-  font-size: 1.7rem;
-  line-height: 1.75rem;
-  color: white;
-  text-align: center;
-  padding: 1.5rem 0;
+	font-size: 1.7rem;
+	line-height: 1.75rem;
+	color: white;
+	text-align: center;
+	padding: 1.5rem 0;
 }
 
-.loader{
-  margin-top: 2rem;
-  border: 1rem;
+.loader {
+	margin-top: 2rem;
+	border: 1rem;
 }

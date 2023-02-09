@@ -13,7 +13,7 @@ interface ISlugField {
 
 const SlugField: FC<ISlugField> = ({ generate, register, error }) => {
 	return (
-		<div className="relative">
+		<div style={{ position: 'relative' }}>
 			<Field
 				{...register('slug', {
 					required: 'Slug is required!',

@@ -1,22 +1,23 @@
-
+@import "../../../../styles/variables";
 .head{
-	font-size: 2.5rem;
-	font-weight: 600;
-	color: white;
-	line-height: 1.7rem;
+	font-size: $fzHead;
+	line-height: $lineHeNormal;
+	color: $cWhite;
+	font-weight: $fWeight6;
 }
 
 .descriptionH{
-	font-size: 1.125rem;
-	line-height: 1.75rem;
-	font-weight: 300;
-	color: rgb(255 255 255 / 0.6);
+	font-size: $fZDescription;
+	line-height: $lineHeNormal;
+	font-weight: $fWeight3;
+	color: $cDescription;
+	margin: 2.5rem 0;
 }
 
 .subHead{
-	color: rgb(255 255 255 / 1);
-	font-size: 1.25rem;
-	line-height: 1.75rem;
-	margin-bottom: 1.25rem;
-	font-weight: 600;
+	color: $cWhite;
+	font-size: $fZSub;
+	line-height: $lineHeNormal;
+	font-weight: $fWeight6;
+	margin: 1.5rem 0;
 }

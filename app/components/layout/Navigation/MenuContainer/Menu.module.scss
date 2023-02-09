@@ -1,70 +1,79 @@
+@import '../../../../../styles/animations';
+@import '../../../../../styles/class';
 .menu {
-  @apply animate-fade;
-  margin-bottom: 3.5rem;
+	@extend %animateFade;
+	margin-bottom: 3.5rem;
 
-  .heading {
-    @apply text-gray-500;
-    text-transform: uppercase;
-    font-size: 1.6rem;
-    line-height: 1.25rem;
-    font-weight: 600;
-    padding-left: 2.5rem;
-    padding-bottom: 0.5rem;
-  }
+	.heading {
+		color: rgb(153 154 165 / 1);
+		text-transform: uppercase;
+		font-size: 1.6rem;
+		line-height: 1.25rem;
+		font-weight: 600;
+		padding-left: 2.5rem;
+		padding-bottom: 0.5rem;
+	}
 
-  .ul {
-    > li {
-      @apply transition-colors;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      border-right-width: 0.4rem;
-      border-right-color: transparent;
+	.ul {
+		> li {
+			@extend %tColor;
+			padding-left: 2rem;
+			padding-right: 2rem;
+			border-right-width: 0.4rem;
+			border-right-color: transparent;
 
-      > a {
-        @apply text-gray-600 ;
-        display: flex;
-        align-items: center;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        margin-top: 2.5rem;
-        cursor: pointer;
+			> a {
+				color: rgb(102 103 110 / 1);
+				display: flex;
+				align-items: center;
+				padding-left: 1rem;
+				padding-right: 1rem;
+				margin-top: 2.5rem;
+				span {
+					cursor: pointer;
+					&:hover {
+						color: #ffffff;
+						@extend %linkShadowHover;
+						svg {
+							color: #1db954;
+						}
+					}
+				}
 
-        &:hover{
-          span{
-            color: white;
-          }
-          svg{
-            color: #1DB954;
-          }
-        }
+				&:hover {
+					svg {
+						color: #1db954;
+					}
+				}
 
+				> span {
+					margin-left: 1rem;
+					font-size: 1.8rem;
+					line-height: 2rem;
+				}
 
-        > span {
-          margin-left: 1rem;
-          font-size: 1.8rem;
-          line-height: 2rem;
-        }
+				> svg {
+					font-size: 2.3rem;
+				}
 
-        > svg {
-          font-size: 2.3rem;
-        }
+				> span,
+				> svg {
+					@extend %tColor;
+				}
+			}
 
-        > span,
-        > svg {
-          @apply transition-colors;
-        }
-      }
+			&.active {
+				border: 0.3rem none #1db954;
+				border-right-style: solid;
+				@extend %linkShadowPress;
+				> a > span {
+					color: white;
+				}
 
-      &.active {
-        border-right-color: #1DB954;;
-        > a > span {
-          color: white;
-        }
-
-        > a > svg {
-          fill:#1DB954 ;
-        }
-      }
-    }
-  }
+				> a > svg {
+					fill: #1db954;
+				}
+			}
+		}
+	}
 }

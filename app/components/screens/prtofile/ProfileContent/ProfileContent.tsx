@@ -55,19 +55,8 @@ export const ProfileContent: FC<IProfileContent> = ({
 					error={errors.password}
 				/>
 				<Field
-					{...register(
-						'userName',
-						isPasswordRequired
-							? {
-									required: 'Password is required!',
-									minLength: {
-										value: 6,
-										message: 'Min length should more 6 symbols!',
-									},
-							  }
-							: {}
-					)}
-					placeholder="user name"
+					{...register('userName')}
+					placeholder="User name"
 					type="text"
 					/*@ts-ignore*/
 					error={errors.userName}
@@ -87,9 +76,6 @@ export const ProfileContent: FC<IProfileContent> = ({
 						folder={'avatars'}
 					/>
 				)}
-				rules={{
-					required: 'Photo is required',
-				}}
 			/>
 		</div>
 	)

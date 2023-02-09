@@ -42,8 +42,11 @@ const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 			<DynamicPlayer slug={movie.slug} videoSource={movie.videoUrl} />
 			<Comments movieId={movie._id} />
 			<div className={styles.subContainer}>
-				<SubHeading title={'Similar'} className={styles.subHead} />
-				<Gallery items={similarMovies} className={styles.movieGallery} />
+				<SubHeading title={'Similar'} />
+				<Gallery
+					items={similarMovies.slice(0, 5)}
+					className={styles.movieGallery}
+				/>
 				<DynamicRateMovie slug={movie.slug} id={movie._id} />
 			</div>
 		</Meta>

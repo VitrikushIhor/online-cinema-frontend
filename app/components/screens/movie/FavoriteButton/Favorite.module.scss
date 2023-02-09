@@ -1,35 +1,19 @@
+@import '../../../../../styles/animations';
 .button {
-  position: absolute;
-  right: -1rem;
-  bottom: 5rem;
-  padding-top: 2rem;
-  background-repeat: no-repeat;
-  width: 10rem;
-  height: 5rem;
-  background-position: left;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: transparent;
-  background-size: 2900%;
+	position: absolute;
+	right: -1rem;
+	bottom: 5rem;
+	padding-top: 2rem;
+	background-repeat: no-repeat;
+	width: 10rem;
+	height: 5rem;
+	background-position: left;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: transparent;
+	background-size: 2900%;
 }
 
 .animate {
-  animation: heart-burst 0.8s steps(28) forwards;
-}
-
-@keyframes heart-burst {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
-}
-
-
-@media (max-width: 570px) {
-  .button {
-    @apply bottom-10 pt-1.5 w-20  mx-auto ;
-    right: -0.35rem;
-  }
+	@extend %animateBtn;
 }
