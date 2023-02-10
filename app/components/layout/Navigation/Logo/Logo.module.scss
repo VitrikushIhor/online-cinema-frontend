@@ -1,3 +1,4 @@
+@import '../../../../../styles/mixins';
 .Logo {
 	position: relative;
 	display: block;
@@ -5,4 +6,13 @@
 	height: 6rem;
 	width: 30rem;
 	margin-top: 2rem;
+}
+
+@include media1024 {
+	.Logo {
+		margin-bottom: 1rem;
+		height: 6rem;
+		width: 16rem;
+		margin-top: 1rem;
+	}
 }
