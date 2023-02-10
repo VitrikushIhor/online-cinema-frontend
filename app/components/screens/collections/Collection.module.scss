@@ -1,101 +1,128 @@
 @import '../../../../styles/mixins';
 @import '../../../../styles/class';
-@import '../../../../styles/animations';
-
-
 
 .collections {
-  flex-wrap: wrap;
-  display: flex;
-  align-items: center;
-  margin-top: 3.5rem;
-  > a {
-    @extend %animateFade;
-    margin-right: 2rem;
-  }
+	flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	margin-top: 3.5rem;
+	> a {
+		@extend %animateFade;
+		margin-right: 2rem;
+	}
 
-  > a:nth-child(3n) {
-    margin-right: 0;
-  }
+	> a:nth-child(3n) {
+		margin-right: 0;
+	}
 }
 
 .collection {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  @extend %tTransform;
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	@extend %tTransform;
 
-  height: 16rem;
-  width: 32%;
-  margin-bottom: 4rem;
+	height: 16rem;
+	width: 32%;
+	margin-bottom: 4rem;
 
-  @include fade-bg-gradient(0deg);
+	@include fade-bg-gradient(0deg);
 
-  &::before {
-    border-radius: 0.8rem;
-  }
+	&::before {
+		border-radius: 0.8rem;
+	}
 
-  img {
-    border-radius: 0.8rem;
-    object-position: center;
-    object-fit: cover;
-    pointer-events: none;
-    box-shadow: $shadow;
-  }
+	img {
+		border-radius: 0.8rem;
+		object-position: center;
+		object-fit: cover;
+		pointer-events: none;
+		box-shadow: $shadow;
+	}
 
-  > span {
-    z-index: 131;
-  }
+	> span {
+		z-index: 131;
+	}
 
-  .behind {
-    overflow: hidden;
-    z-index: 0;
-    @extend %tTransform;
+	.behind {
+		overflow: hidden;
+		z-index: 0;
+		@extend %tTransform;
 
-    &.second {
-      position: absolute;
-      top: -0.5rem;
-      left: 1rem;
-      right: 1rem;
-      bottom: 1rem;
-    }
+		&.second {
+			position: absolute;
+			top: -0.5rem;
+			left: 1rem;
+			right: 1rem;
+			bottom: 1rem;
+		}
 
-    &.third {
-      position: absolute;
-      top: -1rem;
-      left: 2rem;
-      right: 2rem;
-      bottom: 2rem;
-    }
-  }
+		&.third {
+			position: absolute;
+			top: -1rem;
+			left: 2rem;
+			right: 2rem;
+			bottom: 2rem;
+		}
+	}
 
-  &:hover {
-    @apply -translate-y-1;
+	&:hover {
+		@apply -translate-y-1;
 
-    .behind {
-      &.second {
-        transform: translateY(0.5px);
-      }
+		.behind {
+			&.second {
+				transform: translateY(0.5px);
+			}
 
-      &.third {
-        transform: translateY(1px);
-      }
-    }
-  }
+			&.third {
+				transform: translateY(1px);
+			}
+		}
+	}
 
-  .content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    margin: 0.75rem;
-    width: 100%;
+	.content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		margin: 0.75rem;
+		width: 100%;
 
-    .title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-      color: rgb(255 255 255 / 1);
-      @extend %tShadow;
-    }
-  }
+		.title {
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin-bottom: 0.25rem;
+			color: rgb(255 255 255 / 1);
+			@extend %tShadow;
+		}
+	}
+}
+
+@include media1024 {
+	.collections {
+		> a {
+			margin-right: 1.5rem;
+		}
+		> a:nth-child(3n) {
+			margin-right: 1.5rem;
+		}
+		> a:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+
+	.collection {
+		height: 15rem;
+		width: 48%;
+		margin-bottom: 3rem;
+
+		&:hover {
+			transform: translateY(-0.3rem);
+		}
+
+		.content {
+			.title {
+				font-size: 1.2rem;
+			}
+		}
+	}
 }
