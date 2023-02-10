@@ -1,6 +1,5 @@
 @import '../../../../../styles/mixins';
 @import '../../../../../styles/class';
-@import '../../../../../styles/animations';
 
 .favorites {
 	display: flex;
@@ -81,5 +80,19 @@
 		left: -0.75rem;
 		top: -0.25rem;
 		right: auto;
+	}
+}
+
+@include media1024 {
+	.itemWrapper {
+		height: 16rem;
+		width: 30%;
+
+		.item {
+			.title {
+				margin: 0.5rem;
+				font-size: 1.3rem;
+			}
+		}
 	}
 }

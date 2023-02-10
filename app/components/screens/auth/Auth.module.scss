@@ -1,5 +1,6 @@
-@import '../../../../styles/animations';
 @import '../../../../styles/class';
+@import '../../../../styles/mixins';
+
 .wrapper {
 	margin-top: 20rem;
 	.heading {
@@ -17,8 +18,10 @@
 		margin-left: auto;
 		margin-right: auto;
 		.button {
-			@extend %boxShadow;
 			margin-top: 2rem;
+			display: flex;
+			justify-content: center;
+
 			> button {
 				font-size: 1.5rem;
 				height: 4rem;
@@ -43,11 +46,25 @@
 	}
 }
 
-@media (max-width: 570px) {
+@include media1024 {
 	.wrapper {
-		margin-top: 3.5rem;
+		margin-top: 13rem;
+		.heading {
+			margin-bottom: 2rem;
+			font-size: 2rem;
+		}
 		> form {
-			width: 90%;
+			padding: 1.75rem;
+			border-radius: 0.8rem;
+			width: 85%;
+			.button {
+				margin-top: 1rem;
+				> button {
+					font-size: 1.2rem;
+					height: 3rem;
+					width: 12rem;
+				}
+			}
 		}
 	}
 }

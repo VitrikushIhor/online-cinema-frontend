@@ -1,4 +1,5 @@
 @import '../../../../../../styles/animations';
+@import '../../../../../../styles/mixins';
 
 .list {
 	@extend %animateFade;
@@ -66,6 +67,38 @@
 
 			&:last-child {
 				width: 70%;
+			}
+		}
+	}
+}
+
+@include media1024 {
+	.list {
+		width: 13rem;
+		.notFound {
+			height: 2rem;
+			font-size: 1rem;
+		}
+
+		> a {
+			padding: 0.5rem 0.7rem;
+			img {
+				width: 6rem;
+				height: 6rem;
+			}
+			&::after {
+				right: -0.1rem;
+				width: 0.2rem;
+				top: 20%;
+			}
+
+			> span {
+				margin-left: 0.8rem;
+				color: white;
+				font-size: 1.3rem;
+				&:last-child {
+					width: 70%;
+				}
 			}
 		}
 	}

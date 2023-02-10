@@ -1,8 +1,9 @@
-@import '../../../../../../styles/animations';
 @import '../../../../../../styles/class';
+@import '../../../../../../styles/mixins';
 .list {
 	@extend %animateFade;
 	margin-top: 3.5rem;
+	margin-bottom: 3.5rem;
 
 	.heading {
 		font-weight: 700;
@@ -86,6 +87,64 @@
 					font-size: 1.7rem;
 					font-weight: 500;
 					padding-top: 0.12rem;
+				}
+			}
+		}
+	}
+}
+
+@include media1024 {
+	.list {
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+
+		.heading {
+			font-size: 1.5rem;
+			line-height: 1rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.button {
+			width: 13.5rem;
+			height: 3.5rem;
+			font-size: 1.4rem;
+		}
+
+		.item {
+			margin-bottom: 1.5rem;
+
+			> a {
+				width: 10rem;
+				height: 13rem;
+			}
+
+			.info {
+				margin-left: 0.6rem;
+				padding-top: 1rem;
+				width: 60%;
+
+				.title {
+					font-size: 1.2rem;
+					margin-bottom: 0.5rem;
+				}
+
+				.genres {
+					font-size: 1.1rem;
+					line-height: 1rem;
+				}
+
+				.rating {
+					margin-bottom: 0.5rem;
+					> svg {
+						fill: #f5c521;
+						margin-right: 0.5rem;
+						line-height: 1rem;
+						font-size: 2rem;
+					}
+					> span {
+						color: white;
+						font-size: 1.4rem;
+					}
 				}
 			}
 		}

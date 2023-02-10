@@ -1,26 +1,21 @@
-
-
-.info{
-  margin-top: 2.5rem;
+.info {
+	margin-top: 2.5rem;
 }
 
 .containerGallery {
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
+	margin-top: 2.5rem;
+	margin-bottom: 2rem;
 }
 
-
 @media (max-width: 570px) {
+	.heading {
+		margin-bottom: 1rem;
+		font-size: 1.1rem;
+	}
 
-
-  .heading {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-  }
-
-  .subHeading {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
+	.subHeading {
+		font-size: 1rem;
+		line-height: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
 }

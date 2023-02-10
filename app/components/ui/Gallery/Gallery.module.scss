@@ -1,6 +1,5 @@
 @import '../../../../styles/mixins';
 @import '../../../../styles/class';
-@import '../../../../styles/animations';
 
 .gallery {
 	display: flex;
@@ -69,6 +68,39 @@
 			font-size: 1.4rem;
 			color: rgb(153 154 165 / 1);
 			@extend %tShadow;
+		}
+	}
+}
+
+@include media1024 {
+	.gallery {
+		padding-top: 1rem;
+		margin-bottom: 1.5rem;
+	}
+	.item {
+		&.horizontal {
+			height: 10rem;
+			width: 49%;
+			margin-bottom: 2rem;
+		}
+		&.vertical {
+			margin-right: 1.7rem;
+			width: 22%;
+			height: 16rem;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		.content {
+			margin: 0.75rem;
+			width: 100%;
+			.title {
+				font-size: 1.2rem;
+			}
+
+			.subTitle {
+				font-size: 1rem;
+			}
 		}
 	}
 }

@@ -21,7 +21,9 @@ export interface IHome {
 
 const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 	const size = useWindowSize()
-	let PageSize = size <= 600 ? 3 : 6
+	// let PageSize = size <= 600 ? 3 : 6 1920
+	// let PageSize = size <= 600 ? 3 : 4 1024
+	let PageSize = size <= 600 ? 3 : 4
 
 	const [currentPage, setCurrentPage] = useState(1)
 	const currentTableData = useMemo(() => {
@@ -36,12 +38,12 @@ const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 				title="Watch movies online"
 				description="Watch MovieApp movies and TV shows online or stream right to your browser."
 			>
-				<Heading title="Watch movies online"/>
+				<Heading title="Watch movies online" />
 
 				{slides.length && <Slider slides={slides} />}
 
 				<div className={styles.info}>
-					<SubHeading title="Trending now"/>
+					<SubHeading title="Trending now" />
 					{trendingMovies.length && (
 						<>
 							<Gallery items={currentTableData} />
@@ -56,7 +58,7 @@ const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 				</div>
 
 				<div>
-					<SubHeading title="Best actors"/>
+					<SubHeading title="Best actors" />
 					{actors.length && <Gallery items={actors.slice(0, PageSize)} />}
 				</div>
 			</Meta>

@@ -1,5 +1,7 @@
 @import '../../../../../styles/animations';
 @import '../../../../../styles/class';
+@import '../../../../../styles/mixins';
+
 .menu {
 	@extend %animateFade;
 	margin-bottom: 3.5rem;
@@ -72,6 +74,45 @@
 
 				> a > svg {
 					fill: #1db954;
+				}
+			}
+		}
+	}
+}
+
+@include media1024 {
+	.menu {
+		margin-bottom: 2rem;
+
+		.heading {
+			font-size: 1.1rem;
+			padding-left: 1rem;
+			padding-bottom: 0.2rem;
+		}
+
+		.ul {
+			> li {
+				padding-left: 0.5rem;
+				padding-right: 0;
+
+				> a {
+					padding-left: 0.5rem;
+					padding-right: 0.3rem;
+					margin-top: 1.2rem;
+
+					> span {
+						margin-left: 0.4rem;
+						font-size: 1.2rem;
+						line-height: 1rem;
+					}
+
+					> svg {
+						font-size: 1.9rem;
+					}
+				}
+
+				&.active {
+					border: 0.2rem none #1db954;
 				}
 			}
 		}

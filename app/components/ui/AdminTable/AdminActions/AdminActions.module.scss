@@ -1,4 +1,6 @@
-@import '../../../../../styles/animations';
+@import '../../../../../styles/class';
+@import '../../../../../styles/mixins';
+
 .actions {
 	display: flex;
 	align-items: center;
@@ -11,12 +13,24 @@
 		line-height: 1.75rem;
 		color: rgb(29 185 84 / 1);
 		@extend %tOpacity;
+		@extend %circleAnimation;
 		&:hover {
 			opacity: 1;
 		}
 
 		&:first-child {
 			margin-right: 1.5rem;
+		}
+	}
+}
+
+@include media1024 {
+	.actions {
+		> button {
+			font-size: 1.7rem;
+			&:first-child {
+				margin-right: 0.5rem;
+			}
 		}
 	}
 }

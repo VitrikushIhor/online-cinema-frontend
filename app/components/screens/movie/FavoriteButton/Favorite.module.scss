@@ -1,4 +1,6 @@
-@import '../../../../../styles/animations';
+@import '../../../../../styles/class';
+@import '../../../../../styles/mixins';
+
 .button {
 	position: absolute;
 	right: -1rem;
@@ -12,8 +14,16 @@
 	margin-right: auto;
 	background-color: transparent;
 	background-size: 2900%;
+	@extend %circleAnimation;
 }
 
 .animate {
 	@extend %animateBtn;
+}
+@include media1024 {
+	.button {
+		right: -1.5rem;
+		bottom: 3rem;
+		width: 7rem;
+	}
 }

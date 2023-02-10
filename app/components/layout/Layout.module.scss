@@ -1,4 +1,6 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
+
 .layout {
 	position: relative;
 
@@ -41,20 +43,33 @@
 		border: 0.3rem none rgb(36 37 41 / 1);
 		border-left-style: solid;
 	}
+}
 
-	@media (max-width: 570px) {
-		> .center {
-			margin: 0;
-			padding: 20px;
-		}
-
-		> div:nth-child(2) {
-			display: block;
-		}
-
+@include media1024 {
+	.layout {
 		> div:first-child,
 		> div:last-child {
-			display: none;
+			&:hover {
+				&::-webkit-scrollbar {
+					width: 0.1rem;
+				}
+			}
+		}
+
+		> div:first-child {
+			border: 0.2rem none rgb(36 37 41 / 1);
+			border-right-style: solid;
+		}
+
+		> .center {
+			padding: 1rem 2.75rem;
+
+			margin: 0 18%;
+		}
+
+		> div:last-child {
+			border: 0.2rem none rgb(36 37 41 / 1);
+			border-left-style: solid;
 		}
 	}
 }
