@@ -73,11 +73,23 @@
 }
 
 @include media1024 {
+	.gallery {
+		padding-top: 1rem;
+		margin-bottom: 1.5rem;
+	}
 	.item {
 		&.horizontal {
 			height: 10rem;
 			width: 49%;
 			margin-bottom: 2rem;
+		}
+		&.vertical {
+			margin-right: 1.7rem;
+			width: 22%;
+			height: 16rem;
+			&:last-child {
+				margin-right: 0;
+			}
 		}
 		.content {
 			margin: 0.75rem;
@@ -87,8 +99,7 @@
 			}
 
 			.subTitle {
-				//зирнути потім
-				font-size: 1.4rem;
+				font-size: 1rem;
 			}
 		}
 	}
