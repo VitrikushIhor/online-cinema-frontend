@@ -17,8 +17,10 @@
 		margin-left: auto;
 		margin-right: auto;
 		.button {
-			@extend %boxShadow;
 			margin-top: 2rem;
+			display: flex;
+			justify-content: center;
+
 			> button {
 				font-size: 1.5rem;
 				height: 4rem;
@@ -39,15 +41,6 @@
 					}
 				}
 			}
-		}
-	}
-}
-
-@media (max-width: 570px) {
-	.wrapper {
-		margin-top: 3.5rem;
-		> form {
-			width: 90%;
 		}
 	}
 }
