@@ -1,5 +1,6 @@
 @import '../../../../styles/class';
-@import '../../../../styles/animations';
+@import '../../../../styles/mixins';
+
 .nav {
 	border-radius: 1.2rem;
 	background-color: #101215;
@@ -46,6 +47,23 @@
 					&::before {
 						background-color: rgb(29 185 84 / 1);
 					}
+				}
+			}
+		}
+	}
+}
+
+@include media1024 {
+	.nav {
+		width: 85%;
+		margin-bottom: 5rem;
+
+		> ul {
+			> li {
+				> a {
+					padding: 1.7rem 1rem;
+					font-size: 1.2rem;
+					line-height: 1rem;
 				}
 			}
 		}

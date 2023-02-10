@@ -1,4 +1,6 @@
-@import '../../../../../../styles/animations';
+@import '../../../../../../styles/class';
+@import '../../../../../../styles/mixins';
+
 .container {
 	margin-top: 3rem;
 	width: calc(100% - 2.5rem);
@@ -19,6 +21,7 @@
 			background: transparent;
 			@extend %tColor;
 			cursor: pointer;
+			@extend %circleAnimation;
 			&:hover {
 				color: #1db954;
 			}
@@ -29,6 +32,25 @@
 		}
 		div {
 			font-size: 1.4rem;
+		}
+	}
+}
+
+@include media1024 {
+	.container {
+		.comment {
+			button {
+				font-size: 1.3rem;
+				right: 0.1rem;
+				top: 0.5rem;
+			}
+			span {
+				font-size: 1rem;
+				margin-bottom: 0;
+			}
+			div {
+				font-size: 1rem;
+			}
 		}
 	}
 }

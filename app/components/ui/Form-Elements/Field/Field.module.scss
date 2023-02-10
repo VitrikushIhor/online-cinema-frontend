@@ -1,4 +1,6 @@
 @import '../../../../../styles/animations';
+@import '../../../../../styles/mixins';
+
 .common {
 	position: relative;
 	border: 0.2rem none rgb(102 103 110 / 1);
@@ -46,4 +48,27 @@
 	width: 100%;
 	color: #8f050b;
 	font-size: 2rem;
+}
+
+@include media1024 {
+	.common {
+		> label {
+			> span {
+				font-size: 1.2rem;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.field {
+		margin-bottom: 4rem;
+
+		input {
+			font-size: 1.2rem;
+		}
+	}
+
+	.error {
+		font-size: 1.2rem;
+	}
 }

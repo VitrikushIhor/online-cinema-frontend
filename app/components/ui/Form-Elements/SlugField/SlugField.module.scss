@@ -1,4 +1,6 @@
 @import '../../../../../styles/animations';
+@import '../../../../../styles/mixins';
+
 .badge {
 	text-transform: uppercase;
 	position: absolute;
@@ -15,5 +17,14 @@
 	padding: 0.4rem;
 	&:hover {
 		background-color: rgb(217 218 232 / 1);
+	}
+}
+
+@include media1024 {
+	.badge {
+		top: 0;
+		right: 0;
+		font-size: 0.7rem;
+		padding: 0.2rem;
 	}
 }

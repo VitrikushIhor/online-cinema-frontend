@@ -1,6 +1,15 @@
 @import '../../../../../styles/class';
+@import '../../../../../styles/mixins';
+
 .btnPrimary {
 	padding: 1.6rem 10rem;
 	font-size: 1.6rem;
 	@extend %btnStandard;
+}
+
+@include media1024 {
+	.btnPrimary {
+		padding: 0.5rem 4rem;
+		font-size: 1.5rem;
+	}
 }
