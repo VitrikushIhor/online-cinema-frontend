@@ -1,6 +1,5 @@
 @import '../../../../styles/mixins';
 @import '../../../../styles/class';
-@import '../../../../styles/animations';
 
 .gallery {
 	display: flex;
@@ -69,6 +68,28 @@
 			font-size: 1.4rem;
 			color: rgb(153 154 165 / 1);
 			@extend %tShadow;
+		}
+	}
+}
+
+@include media1024 {
+	.item {
+		&.horizontal {
+			height: 10rem;
+			width: 49%;
+			margin-bottom: 2rem;
+		}
+		.content {
+			margin: 0.75rem;
+			width: 100%;
+			.title {
+				font-size: 1.2rem;
+			}
+
+			.subTitle {
+				//зирнути потім
+				font-size: 1.4rem;
+			}
 		}
 	}
 }
