@@ -1,3 +1,5 @@
+@import '../../../../styles/mixins';
+
 .heading {
 	margin-bottom: 3rem;
 	text-align: center;
@@ -14,5 +16,24 @@
 		line-height: 1.75rem;
 		color: rgb(255 255 255 / 1);
 		text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+	}
+}
+
+@include media1024 {
+	.heading {
+		margin-bottom: 2rem;
+		font-size: 1.5rem;
+	}
+	.headContainer {
+		img {
+			width: 10rem;
+			height: 15rem;
+		}
+		> div:last-child {
+			text-align: center;
+			margin: 1.5rem 0;
+			font-size: 1.2rem;
+			line-height: 1.5rem;
+		}
 	}
 }

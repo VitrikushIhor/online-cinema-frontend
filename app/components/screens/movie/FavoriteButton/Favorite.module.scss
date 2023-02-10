@@ -1,4 +1,4 @@
-@import '../../../../../styles/animations';
+@import '../../../../../styles/class';
 @import '../../../../../styles/mixins';
 
 .button {
@@ -14,6 +14,7 @@
 	margin-right: auto;
 	background-color: transparent;
 	background-size: 2900%;
+	@extend %circleAnimation;
 }
 
 .animate {

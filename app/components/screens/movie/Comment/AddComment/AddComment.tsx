@@ -44,7 +44,7 @@ const AddCommentForm: FC<{ movieId: string; refetch: any }> = ({
 			<div className={styles.comment}>
 				<Field
 					{...register('message')}
-					placeholder="Введите комментарий"
+					placeholder="Write a comment..."
 					error={errors.message}
 				/>
 

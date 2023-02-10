@@ -1,4 +1,6 @@
 @import '../../../../../styles/class';
+@import '../../../../../styles/mixins';
+
 .loader {
 	height: 30rem;
 }
@@ -68,6 +70,44 @@
 
 		h2 {
 			margin-bottom: 0.25rem;
+		}
+	}
+}
+
+@include media1024 {
+	.loader {
+		height: 15rem;
+	}
+
+	.statistics {
+		margin-top: 2rem;
+
+		.block {
+			height: 23rem;
+		}
+
+		.countUsers {
+			margin-right: 2rem;
+			.number {
+				font-size: 5rem;
+			}
+		}
+
+		.popular {
+			text-align: center;
+			padding: 1rem;
+
+			.descriptionsHeading {
+				font-size: 1rem;
+				margin: 0.5rem 0;
+			}
+			.link {
+				height: 16rem;
+			}
+
+			h2 {
+				font-size: 1.5rem;
+			}
 		}
 	}
 }

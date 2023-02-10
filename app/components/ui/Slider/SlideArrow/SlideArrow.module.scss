@@ -1,8 +1,7 @@
-@import '../../../../../styles/animations';
+@import '../../../../../styles/class';
 @import '../../../../../styles/mixins';
 
 .arrow {
-	@extend %animateFade;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,6 +15,8 @@
 	z-index: 20;
 	bottom: 2rem;
 	cursor: pointer;
+	@extend %animateFade;
+	@extend %circleAnimation;
 
 	&.left {
 		right: 6.5rem;
