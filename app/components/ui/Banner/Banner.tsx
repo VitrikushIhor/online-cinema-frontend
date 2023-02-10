@@ -12,11 +12,10 @@ const Banner: FC<IBanner> = ({ Detail, image }) => {
 	return (
 		<div className={styles.banner}>
 			<Image
-				alt=""
+				alt="banner-logo"
 				src={image}
 				draggable={false}
 				layout="fill"
-				className=""
 				unoptimized
 				priority
 			/>
