@@ -1,12 +1,14 @@
-@import "../../../../styles/variables";
-.head{
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.head {
 	font-size: $fzHead;
 	line-height: $lineHeNormal;
 	color: $cWhite;
 	font-weight: $fWeight6;
 }
 
-.descriptionH{
+.descriptionH {
 	font-size: $fZDescription;
 	line-height: $lineHeNormal;
 	font-weight: $fWeight3;
@@ -14,10 +16,20 @@
 	margin: 2.5rem 0;
 }
 
-.subHead{
+.subHead {
 	color: $cWhite;
 	font-size: $fZSub;
 	line-height: $lineHeNormal;
 	font-weight: $fWeight6;
 	margin: 1.5rem 0;
+}
+
+@include media1024 {
+	.head {
+		font-size: 2rem;
+	}
+	.descriptionH {
+		font-size: 1.4rem;
+		margin: 1.5rem 0;
+	}
 }
