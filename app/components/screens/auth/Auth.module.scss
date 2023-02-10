@@ -1,5 +1,6 @@
-@import '../../../../styles/animations';
 @import '../../../../styles/class';
+@import '../../../../styles/mixins';
+
 .wrapper {
 	margin-top: 20rem;
 	.heading {
@@ -39,6 +40,29 @@
 					&:hover {
 						opacity: 1;
 					}
+				}
+			}
+		}
+	}
+}
+
+@include media1024 {
+	.wrapper {
+		margin-top: 13rem;
+		.heading {
+			margin-bottom: 2rem;
+			font-size: 2rem;
+		}
+		> form {
+			padding: 1.75rem;
+			border-radius: 0.8rem;
+			width: 85%;
+			.button {
+				margin-top: 1rem;
+				> button {
+					font-size: 1.2rem;
+					height: 3rem;
+					width: 12rem;
 				}
 			}
 		}
