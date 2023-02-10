@@ -1,4 +1,6 @@
 @import '../../../../../styles/animations';
+@import '../../../../../styles/mixins';
+
 .arrow {
 	@extend %animateFade;
 	display: flex;
@@ -21,5 +23,22 @@
 
 	&.right {
 		right: 2rem;
+	}
+}
+
+@include media1024 {
+	.arrow {
+		font-size: 1.5rem;
+		padding: 0.5rem;
+		z-index: 20;
+		bottom: 1rem;
+
+		&.left {
+			right: 4.3rem;
+		}
+
+		&.right {
+			right: 1rem;
+		}
 	}
 }
