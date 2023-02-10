@@ -17,3 +17,9 @@
 		object-position: top;
 	}
 }
+
+@include media1024 {
+	.banner {
+		height: 20rem;
+	}
+}

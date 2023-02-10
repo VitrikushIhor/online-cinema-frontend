@@ -1,5 +1,6 @@
-@import '../../../../styles/animations';
 @import '../../../../styles/class';
+@import '../../../../styles/mixins';
+
 .wrapper {
 	@extend %boxShadow;
 	margin-top: 3rem;
@@ -103,4 +104,48 @@
 
 .notAuth {
 	height: 46rem;
+}
+
+@include media1024 {
+	.wrapper {
+		.controls {
+			> div:first-child {
+				> button {
+					margin-right: 0.75rem;
+					font-size: 2rem;
+				}
+
+				.playButton {
+					font-size: 2rem;
+				}
+
+				.timeControls {
+					margin-left: 2rem;
+					font-size: 1.4rem;
+
+					> p:nth-child(2) {
+						margin-left: 0.7rem;
+						margin-right: 0.7rem;
+					}
+				}
+			}
+
+			> div:last-child {
+				> button {
+					font-size: 2rem;
+				}
+			}
+		}
+
+		.progressBarContainer {
+			left: 1rem;
+			right: 1rem;
+			bottom: 3.5rem;
+			height: 0.4rem;
+		}
+	}
+
+	.notAuth {
+		height: 20rem;
+	}
 }

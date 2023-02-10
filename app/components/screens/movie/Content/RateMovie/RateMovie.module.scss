@@ -1,5 +1,6 @@
 @import '../../../../../../styles/class';
-@import '../../../../../../styles/animations';
+@import '../../../../../../styles/mixins';
+
 .wrapper {
 	width: 60%;
 	margin: 2.5rem auto;
@@ -40,5 +41,11 @@
 
 	.btn {
 		width: 14rem;
+	}
+}
+
+@include media1024 {
+	.wrapper {
+		width: 85%;
 	}
 }

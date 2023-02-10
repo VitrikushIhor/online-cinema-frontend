@@ -1,4 +1,6 @@
 @import '../../../../../styles/animations';
+@import '../../../../../styles/mixins';
+
 .button {
 	position: absolute;
 	right: -1rem;
@@ -16,4 +18,11 @@
 
 .animate {
 	@extend %animateBtn;
+}
+@include media1024 {
+	.button {
+		right: -1.5rem;
+		bottom: 3rem;
+		width: 7rem;
+	}
 }

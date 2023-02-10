@@ -1,3 +1,5 @@
+@import '../../../../../styles/mixins';
+
 .comments {
 	background-color: rgb(25 27 31 / 1);
 	border-radius: 1rem;
@@ -34,6 +36,18 @@
 					font-size: 1rem;
 				}
 			}
+		}
+	}
+}
+
+@include media1024 {
+	.comments {
+		> h2 {
+			font-size: 1.5rem;
+		}
+
+		.notFound {
+			font-size: 1.4rem;
 		}
 	}
 }
