@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
-import logoImage from '@/assets/logo.svg'
+import logoImage from '@/assets/Logo.svg'
 
 import styles from './Logo.module.scss'
 

@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from 'react'
+import React, { FC, useEffect, useMemo, useState } from 'react'
 
 import Gallery from '@/ui/Gallery/Gallery'
 import { IGalleryItem } from '@/ui/Gallery/gallery-interface'
@@ -21,10 +21,13 @@ export interface IHome {
 
 const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 	const size = useWindowSize()
-	// let PageSize = size <= 600 ? 4 : 6 1920
-	// let PageSize = size <= 600 ? 4 : 4 1024
-	// let PageSize = size <= 600 ? 4 : 4 1024
-	let PageSize = size <= 500 ? 4 : 4
+	const [PageSize, setPageSize] = useState(0)
+
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			setPageSize(size <= 1024 ? 4 : 6)
+		}
+	}, [size])
 
 	const [currentPage, setCurrentPage] = useState(1)
 	const currentTableData = useMemo(() => {
