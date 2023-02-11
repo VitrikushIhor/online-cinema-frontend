@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { FormState, UseFormRegister } from 'react-hook-form'
 
-import Field from '@/ui/Form-Elements/Field'
+import Field from '@/ui/Form-Elements/Field/Field'
 
 interface IAuthFields {
 	register: UseFormRegister<any>
@@ -45,7 +45,7 @@ const AuthFields: FC<IAuthFields> = ({
 						: {}
 				)}
 				placeholder="Password"
-				type="password"
+				type="text"
 				/*@ts-ignore*/
 				error={errors.password}
 			/>

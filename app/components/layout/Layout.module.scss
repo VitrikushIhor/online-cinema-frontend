@@ -1,25 +1,100 @@
-$bar-width: 20%;
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .layout {
-  @apply relative;
+	position: relative;
 
-  > div:first-child,
-  > div:last-child {
-    @apply fixed top-0 bottom-0 overflow-y-scroll;
-    width: $bar-width;
-    max-width: 350px;
-  }
+	> div:nth-child(2) {
+		display: none;
+	}
 
-  > div:first-child {
-    @apply left-0 border-r border-r-gray-800;
-  }
+	> div:first-child,
+	> div:last-child {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
 
-  > .center {
-    @apply min-h-screen p-layout;
-    margin: 0 $bar-width;
-  }
+		&:hover {
+			overflow-y: auto;
 
-  > div:last-child {
-    @apply right-0 border-l border-l-gray-800;
-  }
+			&::-webkit-scrollbar {
+				width: 3px;
+			}
+		}
+
+		width: $bar-width;
+		max-width: 350px;
+	}
+
+	> div:first-child {
+		left: 0;
+		border: 0.3rem none rgb(36 37 41 / 1);
+		border-right-style: solid;
+	}
+
+	> .center {
+		padding: 2.75rem;
+		margin: 0 $bar-width;
+	}
+
+	> div:last-child {
+		right: 0;
+		border: 0.3rem none rgb(36 37 41 / 1);
+		border-left-style: solid;
+	}
+}
+
+@include media1024 {
+	.layout {
+		> div:first-child,
+		> div:last-child {
+			&:hover {
+				&::-webkit-scrollbar {
+					width: 0.1rem;
+				}
+			}
+		}
+
+		> div:first-child {
+			border: 0.2rem none rgb(36 37 41 / 1);
+			border-right-style: solid;
+		}
+
+		> .center {
+			padding: 1rem 2.75rem;
+
+			margin: 0 18%;
+		}
+
+		> div:last-child {
+			border: 0.2rem none rgb(36 37 41 / 1);
+			border-left-style: solid;
+		}
+	}
+}
+
+@include media767 {
+	.layout {
+		> div:nth-child(2) {
+			display: block;
+		}
+
+		> div:first-child,
+		> div:last-child {
+			display: none;
+		}
+		> .center {
+			padding: 2.75rem;
+			margin: 0;
+		}
+	}
+}
+@include media500 {
+	.layout {
+		> .center {
+			padding: 1.5rem;
+			margin: 0;
+		}
+	}
 }

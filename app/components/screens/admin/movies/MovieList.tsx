@@ -8,6 +8,7 @@ import AdminTable from '@/ui/AdminTable/AdminTable'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 
+
 const MovieList: FC = () => {
 	const {
 		isLoading,

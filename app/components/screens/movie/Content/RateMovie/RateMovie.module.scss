@@ -1,19 +1,78 @@
+@import '../../../../../../styles/class';
+@import '../../../../../../styles/mixins';
+
 .wrapper {
-  @apply w-1/2 mx-auto my-10 air-block p-7 text-center;
+	width: 60%;
+	margin: 2.5rem auto;
+	border-radius: 0.8rem;
+	background-color: #101215;
+	color: #fff;
+	padding: 3rem;
+	text-align: center;
+	@extend %boxShadow;
 
-  > h3 {
-    @apply text-2xl font-semibold;
-  }
+	> h3 {
+		font-size: 1.8rem;
+		line-height: 2rem;
+		font-weight: 600;
+	}
 
-  > p {
-    @apply mt-2 mb-3 text-lg opacity-60;
-  }
+	> p {
+		margin-top: 1rem;
+		margin-bottom: 0.75rem;
+		font-size: 1.3rem;
+		line-height: 1.75rem;
+		opacity: 0.6;
+	}
 
-  > div {
-    @apply text-4xl opacity-90;
-  }
+	> div {
+		font-size: 4rem;
+		line-height: 2.5rem;
+		opacity: 0.9;
+	}
 
-  > .thanks {
-    @apply text-yellow-700 text-3xl font-semibold animate-scaleIn;
-  }
+	> .thanks {
+		@extend %animateScaleIn;
+		color: rgb(245 197 33 / 1);
+		font-size: 1.7rem;
+		line-height: 2.25rem;
+		font-weight: 600;
+	}
+
+	> a {
+		width: 13rem;
+		padding: 0.5rem;
+		font-size: 1.5rem;
+		margin: auto;
+		@extend %btnStandard;
+	}
+}
+
+@include media1024 {
+	.wrapper {
+		width: 85%;
+		> a {
+			padding: 0.5rem;
+			font-size: 1rem;
+		}
+	}
+}
+
+@include media500 {
+	.wrapper {
+		> h3 {
+			font-size: 1.6rem;
+			line-height: 1rem;
+			font-weight: 600;
+		}
+		> p {
+			font-size: 1.1rem;
+			line-height: 1rem;
+		}
+
+		> .thanks {
+			font-size: 1.4rem;
+			line-height: 1.5rem;
+		}
+	}
 }

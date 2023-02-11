@@ -8,16 +8,14 @@ import AdminTable from '@/ui/AdminTable/AdminTable'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 
-interface IUserList {}
 
-const UserList: FC<IUserList> = () => {
+const UserList: FC = () => {
 	const { isLoading, handleSearch, data, searchTerm, mutateAsync } = useUsers()
 
 	return (
 		<Meta title={'Users'}>
 			<AdminNavigation />
-			<Heading title={'USERS'} />
-			{/*@ts-ignore*/}
+			<Heading title={'Users'}/>
 			<AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
 			<AdminTable
 				headerItems={['Email', 'Date register', 'Actions']}

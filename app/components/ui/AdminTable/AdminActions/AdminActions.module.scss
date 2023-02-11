@@ -1,11 +1,36 @@
+@import '../../../../../styles/class';
+@import '../../../../../styles/mixins';
+
 .actions {
-  @apply flex items-center;
+	display: flex;
+	align-items: center;
 
-  > button {
-    @apply outline-border-none bg-transparent text-xl text-primary opacity-80 transition-opacity hover:opacity-100;
+	> button {
+		outline: none;
+		border: none;
+		background-color: transparent;
+		font-size: 2.3rem;
+		line-height: 1.75rem;
+		color: rgb(29 185 84 / 1);
+		@extend %tOpacity;
+		@extend %circleAnimation;
+		&:hover {
+			opacity: 1;
+		}
 
-    &:first-child {
-      @apply mr-4;
-    }
-  }
+		&:first-child {
+			margin-right: 1.5rem;
+		}
+	}
+}
+
+@include media1024 {
+	.actions {
+		> button {
+			font-size: 1.7rem;
+			&:first-child {
+				margin-right: 0.5rem;
+			}
+		}
+	}
 }

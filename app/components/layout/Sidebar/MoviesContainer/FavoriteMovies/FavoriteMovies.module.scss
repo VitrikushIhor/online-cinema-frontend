@@ -1,0 +1,29 @@
+@import '../../../../../../styles/mixins';
+
+.wrapper {
+	margin-top: 2.6rem;
+}
+
+.loader {
+	height: 7rem;
+	margin-bottom: 1rem;
+}
+
+.notAuth {
+	width: 29rem;
+	margin-top: 2.75rem;
+	background-color: rgb(57 57 63 / 1);
+	padding: 0.75rem 1.25rem;
+	border-radius: 1rem;
+	color: white;
+	font-size: 2rem;
+}
+
+@include media1024 {
+	.notAuth {
+		width: 13.5rem;
+		margin-top: 2rem;
+		padding: 0.75rem 1rem;
+		font-size: 1.2rem;
+	}
+}

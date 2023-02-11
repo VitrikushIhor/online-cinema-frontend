@@ -1,11 +1,17 @@
+@import '../../../../styles/animations';
 .selectContainer {
-  @apply relative mb-8 animate-fade;
-
-  > label {
-    @apply block;
-
-    > span {
-      @apply text-xs uppercase text-gray-600 block mb-1;
-    }
-  }
+	@extend %animateFade;
+	position: relative;
+	margin-bottom: 5rem;
+	font-size: 1.3rem;
+	> label {
+		display: block;
+		> span {
+			display: block;
+			margin-bottom: 0.25rem;
+			line-height: 1rem;
+			text-transform: uppercase;
+			color: rgb(102 103 110 / 1);
+		}
+	}
 }

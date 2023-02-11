@@ -1,40 +1,120 @@
+@import '../../../../../styles/animations';
+@import '../../../../../styles/class';
+@import '../../../../../styles/mixins';
+
 .menu {
-  @apply mb-14 animate-fade;
+	@extend %animateFade;
+	margin-bottom: 3.5rem;
 
-  .heading {
-    @apply text-gray-500 uppercase text-sm font-semibold pl-layout;
-  }
+	.heading {
+		color: rgb(153 154 165 / 1);
+		text-transform: uppercase;
+		font-size: 1.6rem;
+		line-height: 1.25rem;
+		font-weight: 600;
+		padding-left: 2.5rem;
+		padding-bottom: 0.5rem;
+	}
 
-  .ul {
-    > li {
-      @apply px-8 border-r-4 border-r-transparent transition-colors;
-      > a {
-        @apply flex items-center text-gray-600 px-3 mt-6 cursor-pointer;
+	.ul {
+		> li {
+			@extend %tColor;
+			padding-left: 2rem;
+			padding-right: 2rem;
+			border-right-width: 0.4rem;
+			border-right-color: transparent;
 
-        > span {
-          @apply ml-3 text-lg hover:text-white;
-        }
+			> a {
+				color: rgb(102 103 110 / 1);
+				display: flex;
+				align-items: center;
+				padding-left: 1rem;
+				padding-right: 1rem;
+				margin-top: 2.5rem;
+				span {
+					cursor: pointer;
+					&:hover {
+						color: #ffffff;
+						@extend %linkShadowHover;
+						svg {
+							color: #1db954;
+						}
+					}
+				}
 
-        > svg {
-          @apply text-2lg;
-        }
+				&:hover {
+					svg {
+						color: #1db954;
+					}
+				}
 
-        > span,
-        > svg {
-          @apply transition-colors;
-        }
-      }
+				> span {
+					margin-left: 1rem;
+					font-size: 1.8rem;
+					line-height: 2rem;
+				}
 
-      &.active {
-        @apply border-r-primary;
-        > a > span {
-          @apply text-white;
-        }
+				> svg {
+					font-size: 2.3rem;
+				}
 
-        > a > svg {
-          @apply fill-primary;
-        }
-      }
-    }
-  }
+				> span,
+				> svg {
+					@extend %tColor;
+				}
+			}
+
+			&.active {
+				border: 0.3rem none #1db954;
+				border-right-style: solid;
+				@extend %linkShadowPress;
+				> a > span {
+					color: white;
+				}
+
+				> a > svg {
+					fill: #1db954;
+				}
+			}
+		}
+	}
+}
+
+@include media1024 {
+	.menu {
+		margin-bottom: 2rem;
+
+		.heading {
+			font-size: 1.1rem;
+			padding-left: 1rem;
+			padding-bottom: 0.2rem;
+		}
+
+		.ul {
+			> li {
+				padding-left: 0.5rem;
+				padding-right: 0;
+
+				> a {
+					padding-left: 0.5rem;
+					padding-right: 0.3rem;
+					margin-top: 1.2rem;
+
+					> span {
+						margin-left: 0.4rem;
+						font-size: 1.2rem;
+						line-height: 1rem;
+					}
+
+					> svg {
+						font-size: 1.9rem;
+					}
+				}
+
+				&.active {
+					border: 0.2rem none #1db954;
+				}
+			}
+		}
+	}
 }

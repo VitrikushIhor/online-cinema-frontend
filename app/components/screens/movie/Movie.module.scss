@@ -1,0 +1,39 @@
+@import '../../../../styles/mixins';
+
+.subContainer {
+	margin-top: 3rem;
+	.movieGallery {
+		a {
+			margin-right: 2.5rem;
+			width: 18%;
+			height: 27rem;
+		}
+	}
+}
+
+@include media1024 {
+	.subContainer {
+		.movieGallery {
+			a {
+				margin-right: 1.7rem;
+				width: 22%;
+				height: 16rem;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
+@include media500 {
+	.subContainer {
+		.movieGallery {
+			a {
+				margin-right: 1.2rem;
+				width: 25%;
+				height: 14rem;
+			}
+		}
+	}
+}

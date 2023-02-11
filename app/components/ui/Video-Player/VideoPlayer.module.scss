@@ -1,44 +1,151 @@
+@import '../../../../styles/class';
+@import '../../../../styles/mixins';
+
 .wrapper {
-  @apply mt-12 rounded-2xl overflow-hidden shadow-xl relative animate-fade;
+	@extend %boxShadow;
+	margin-top: 3rem;
+	border-radius: 1rem;
+	overflow: hidden;
+	position: relative;
+	@extend %animateFade;
+	.video {
+		display: block;
+		width: 100% !important;
+		height: auto !important;
+	}
+	.controls {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: absolute;
+		bottom: 0.25rem;
+		left: 1.5rem;
+		right: 1.5rem;
 
-  .controls {
-    @apply flex-center-between absolute bottom-3 left-6 right-6;
+		> div:first-child {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 
-    > div:first-child {
-      @apply flex-center-between;
+			> button {
+				line-height: 2rem;
+				color: rgb(255 255 255 / 1);
+				margin-right: 0.75rem;
+				outline: 2px solid transparent;
+				outline-offset: 2px;
+				opacity: 0.6;
+				@extend %tOpacity;
+				font-size: 2.5rem;
+				background: transparent;
+				cursor: pointer;
+				&:hover {
+					opacity: 1;
+				}
+			}
 
-      > button {
-        @apply text-2xl text-white mr-3 outline-none opacity-60 hover:opacity-100 transition-opacity;
-      }
+			.playButton {
+				font-size: 2.5rem;
+				line-height: 2.5rem;
+			}
 
-      .playButton {
-        @apply text-4xl;
-      }
+			.timeControls {
+				display: flex;
+				align-items: center;
+				color: rgb(255 255 255 / 1);
+				margin-left: 2rem;
+				opacity: 0.6;
+				font-size: 1.5rem;
 
-      .timeControls {
-        @apply flex items-center text-white ml-4 opacity-60;
+				> p:nth-child(2) {
+					margin-left: 0.7rem;
+					margin-right: 0.7rem;
+				}
+			}
+		}
 
-        > p:nth-child(2) {
-          @apply mx-2;
-        }
-      }
-    }
+		> div:last-child {
+			display: flex;
+			align-items: center;
 
-    > div:last-child {
-      @apply flex items-center;
+			> button {
+				color: rgb(255 255 255 / 1);
+				font-size: 2.5rem;
+				line-height: 2.25rem;
+				outline: 2px solid transparent;
+				outline-offset: 2px;
+				opacity: 0.6;
+				@extend %tOpacity;
+				background: transparent;
+				cursor: pointer;
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
 
-      > button {
-        @apply text-white text-3xl outline-none opacity-60 hover:opacity-100 transition-opacity;
-      }
-    }
-  }
+	.progressBarContainer {
+		position: absolute;
+		left: 1rem;
+		right: 1rem;
+		bottom: 4.5rem;
+		background-color: rgb(102 103 110 / 1);
+		width: calc(100% - 2rem);
+		border-radius: 0.8rem;
+		height: 0.4rem;
 
-  .progressBarContainer {
-    @apply absolute left-4 right-4 bottom-14 bg-gray-600 rounded-layout h-1;
-    width: calc(100% - 2rem);
+		.progressBar {
+			border-radius: 1rem;
+			height: 100%;
+			background-color: rgb(29 185 84 / 1);
+		}
+	}
+}
 
-    .progressBar {
-      @apply rounded-2xl h-full bg-primary;
-    }
-  }
+.notAuth {
+	height: 46rem;
+}
+
+@include media1024 {
+	.wrapper {
+		.controls {
+			> div:first-child {
+				> button {
+					margin-right: 0.75rem;
+					font-size: 2rem;
+				}
+
+				.playButton {
+					font-size: 2rem;
+				}
+
+				.timeControls {
+					margin-left: 2rem;
+					font-size: 1.4rem;
+
+					> p:nth-child(2) {
+						margin-left: 0.7rem;
+						margin-right: 0.7rem;
+					}
+				}
+			}
+
+			> div:last-child {
+				> button {
+					font-size: 2rem;
+				}
+			}
+		}
+
+		.progressBarContainer {
+			left: 1rem;
+			right: 1rem;
+			bottom: 3.5rem;
+			height: 0.4rem;
+		}
+	}
+
+	.notAuth {
+		height: 20rem;
+	}
 }

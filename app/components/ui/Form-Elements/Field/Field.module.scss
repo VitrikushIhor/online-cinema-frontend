@@ -1,0 +1,74 @@
+@import '../../../../../styles/animations';
+@import '../../../../../styles/mixins';
+
+.common {
+	position: relative;
+	border: 0.2rem none rgb(102 103 110 / 1);
+	border-bottom-style: solid;
+	@extend %tColor;
+	&:focus-within {
+		border-color: rgb(29 185 84 / 1);
+	}
+	> label {
+		display: block;
+
+		> span {
+			display: block;
+			font-size: 1.7rem;
+			margin-bottom: 2rem;
+			line-height: 1rem;
+			text-transform: uppercase;
+			color: rgb(102 103 110 / 1);
+		}
+	}
+}
+
+.field {
+	text-align: left;
+	margin-bottom: 4rem;
+
+	input {
+		outline: none;
+		border: none;
+		background-color: transparent;
+		color: rgb(153 154 165 / 1);
+		width: 100%;
+		margin: 0;
+		padding-left: 0;
+		padding-right: 0;
+		font-size: 2rem;
+	}
+}
+
+.error {
+	position: absolute;
+	bottom: -2.5rem;
+	left: 0;
+	line-height: 1.25rem;
+	width: 100%;
+	color: #8f050b;
+	font-size: 2rem;
+}
+
+@include media1024 {
+	.common {
+		> label {
+			> span {
+				font-size: 1.2rem;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.field {
+		margin-bottom: 4rem;
+
+		input {
+			font-size: 1.2rem;
+		}
+	}
+
+	.error {
+		font-size: 1.2rem;
+	}
+}

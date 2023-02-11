@@ -5,9 +5,8 @@ import { navItems } from '@/ui/Admin-Navigation/AdminNavigationData'
 
 import styles from './AdminNavigation.module.scss'
 
-interface IAdminNavigation {}
 
-const AdminNavigation: FC<IAdminNavigation> = () => {
+const AdminNavigation: FC = () => {
 	return (
 		<nav className={styles.nav}>
 			<ul>

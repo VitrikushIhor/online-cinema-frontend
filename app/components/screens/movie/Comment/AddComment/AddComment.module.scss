@@ -1,0 +1,62 @@
+@import '../../../../../../styles/class';
+@import '../../../../../../styles/mixins';
+
+.container {
+	margin-top: 3rem;
+	width: calc(100% - 2.5rem);
+	.comment {
+		position: relative;
+		input {
+			border: 0.2rem none #303241;
+			border-bottom-style: solid;
+			background-color: transparent;
+		}
+		button {
+			position: absolute;
+			font-size: 1.8rem;
+			line-height: 1.75rem;
+			right: 0.5rem;
+			top: 1.7rem;
+			color: rgb(255 255 255 / 1);
+			background: transparent;
+			@extend %tColor;
+			cursor: pointer;
+			@extend %circleAnimation;
+			&:hover {
+				color: #1db954;
+			}
+		}
+		span {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+		div {
+			font-size: 1.4rem;
+		}
+	}
+}
+
+@include media1024 {
+	.container {
+		.comment {
+			button {
+				font-size: 1.3rem;
+				right: 0.1rem;
+				top: 0.5rem;
+			}
+			span {
+				font-size: 1rem;
+				margin-bottom: 0;
+			}
+			div {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+@include media500 {
+	.container {
+		width: calc(100% - 1rem);
+	}
+}

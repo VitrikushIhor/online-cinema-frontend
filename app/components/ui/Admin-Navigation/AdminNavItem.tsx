@@ -3,9 +3,12 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 
-import { INavItem } from '@/ui/Admin-Navigation/AdminNavigationInterface'
 
 import styles from './AdminNavigation.module.scss'
+ export interface INavItem {
+	title: string
+	link: string
+}
 
 const AdminNavItem: FC<{ navItem: INavItem }> = ({
 	navItem: { title, link },

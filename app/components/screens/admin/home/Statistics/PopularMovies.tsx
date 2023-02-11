@@ -13,7 +13,7 @@ import { IMovie } from '@/shared/interfaces/movie.interface'
 
 import { MoviesService } from '@/services/movies/movie.service'
 
-import { getMoviesUrl } from '../../../../../config/api.config'
+import { getMovieUrl } from '../../../../../config/url.config'
 
 const PopularMovies: FC = () => {
 	const { isLoading, data: movie } = useQuery(
@@ -23,20 +23,20 @@ const PopularMovies: FC = () => {
 			select: (data): IMovie => data[0],
 		}
 	)
-	console.log(movie)
 	return (
 		<div className={cn(styles.block, styles.popular)}>
 			<SubHeading title={'The most popular movies'} />
 			{isLoading ? (
-				<SkeletonLoader className="h-48" />
+				<SkeletonLoader className={styles.loader} />
 			) : (
 				movie && (
 					<>
-						<h3>Opened {movie.countOpened} times</h3>
-						<Link href={getMoviesUrl(movie.slug)}>
+						<h3 className={styles.descriptionsHeading}>
+							Opened {movie.countOpened} times
+						</h3>
+						<Link href={getMovieUrl(movie.slug)} className={styles.link}>
 							<Image
-								width={285}
-								height={176}
+								layout="fill"
 								src={movie.bigPoster}
 								alt={movie.title}
 								className={styles.image}

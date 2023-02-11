@@ -1,0 +1,35 @@
+@import '../../../../../styles/animations';
+
+.nav {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	justify-content: space-between;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	padding: 3rem 2rem 2rem;
+	background-color: rgb(25 27 31 / 1);
+	text-align: left;
+	> a:first-child {
+		top: -1.7rem;
+	}
+	@extend %tTransform;
+	.menuContent {
+		height: 60%;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 0 auto 10rem;
+
+		> div:first-child {
+			margin: 0 auto;
+			> div {
+				width: 100%;
+			}
+		}
+	}
+}

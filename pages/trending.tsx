@@ -1,16 +1,16 @@
-import {NextPage} from 'next'
+import { NextPage } from 'next'
 
 import Catalog from '@/ui/Catalog-Movies/Catalog'
 
-import {IMovie} from '@/shared/interfaces/movie.interface'
+import { IMovie } from '@/shared/interfaces/movie.interface'
 
-import {MoviesService} from '@/services/movies/movie.service'
+import { MoviesService } from '@/services/movies/movie.service'
 
-const TrendingPage: NextPage<{ movies: IMovie[] }> = ({movies}) => {
+const TrendingPage: NextPage<{ movies: IMovie[] }> = ({ movies }) => {
 	return (
 		<Catalog
 			title={'Trending Movies'}
-			description={'ваывавыавыавыаывавыа'}
+			description="Trending movies in excellent quality: legal, safe, without ads"
 			movies={movies || []}
 		/>
 	)

@@ -1,3 +1,30 @@
+@import '../../../../../styles/animations';
+@import '../../../../../styles/mixins';
+
 .badge {
-  @apply uppercase absolute top-6 right-3 cursor-pointer rounded-lg py-0.5 px-2 transition-colors border-gray-500 bg-gray-500 hover:bg-gray-300 text-xs text-gray-800;
+	text-transform: uppercase;
+	position: absolute;
+	top: 1.5rem;
+	right: 0.75rem;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	border-color: rgb(153 154 165 / 1);
+	background-color: rgb(153 154 165 / 1);
+	font-size: 1rem;
+	line-height: 1rem;
+	color: rgb(36 37 41 / 1);
+	@extend %tColor;
+	padding: 0.4rem;
+	&:hover {
+		background-color: rgb(217 218 232 / 1);
+	}
+}
+
+@include media1024 {
+	.badge {
+		top: 0;
+		right: 0;
+		font-size: 0.7rem;
+		padding: 0.2rem;
+	}
 }

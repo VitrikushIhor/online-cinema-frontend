@@ -1,3 +1,13 @@
+@import '../../../../styles/mixins';
+
 .sidebar {
-  @apply p-layout;
+	padding-top: 3.5rem;
+	padding-left: 2.5rem;
+}
+
+@include media1024 {
+	.sidebar {
+		padding-top: 1rem;
+		padding-left: 1rem;
+	}
 }

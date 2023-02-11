@@ -1,16 +1,16 @@
-import {NextPage} from 'next'
+import { NextPage } from 'next'
 
 import Catalog from '@/ui/Catalog-Movies/Catalog'
 
-import {IMovie} from '@/shared/interfaces/movie.interface'
+import { IMovie } from '@/shared/interfaces/movie.interface'
 
-import {MoviesService} from '@/services/movies/movie.service'
+import { MoviesService } from '@/services/movies/movie.service'
 
-const FreshPage: NextPage<{ movies: IMovie[] }> = ({movies}) => {
+const FreshPage: NextPage<{ movies: IMovie[] }> = ({ movies }) => {
 	return (
 		<Catalog
 			title={'Fresh Movies'}
-			description={'ваывавыавыавыаывавыа'}
+			description="New movies and series in excellent quality: legal, safe, without ads"
 			movies={movies || []}
 		/>
 	)
@@ -20,7 +20,7 @@ export const getStaticProps: () => Promise<
 	{ props: { movies: IMovie[] } } | { notFound: boolean }
 > = async () => {
 	try {
-		const {data: movies} = await MoviesService.getMovies()
+		const { data: movies } = await MoviesService.getMovies()
 		return {
 			props: {
 				movies,

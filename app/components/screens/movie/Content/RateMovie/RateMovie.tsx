@@ -30,7 +30,6 @@ const RateMovie: FC<IRateMovie> = ({ id, slug }) => {
 							name={'star-rating'}
 							value={rating}
 							onStarClick={handleClick}
-							// emptyStarColor={'#4f4f4f4'}
 						/>
 					)}
 				</>

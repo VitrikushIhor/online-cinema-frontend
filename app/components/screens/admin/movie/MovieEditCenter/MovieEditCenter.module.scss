@@ -1,0 +1,21 @@
+@import '../../../../../../styles/mixins';
+
+.container {
+	display: flex;
+	> div {
+		width: 50%;
+		margin-right: 2rem;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+@include media500 {
+	.container {
+		display: block;
+		> div {
+			width: 100%;
+			margin-right: 0;
+		}
+	}
+}

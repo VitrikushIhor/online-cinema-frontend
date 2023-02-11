@@ -1,9 +1,6 @@
 import { IUser } from '@/shared/interfaces/user.interface'
 
-export interface IUserState {
-	email: string
-	isAdmin: boolean
-}
+export interface IUserState extends IUser {}
 
 export interface ITokens {
 	accessToken: string

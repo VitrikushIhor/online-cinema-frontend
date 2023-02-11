@@ -1,0 +1,54 @@
+@import 'animations';
+.body_hidden {
+	overflow: hidden;
+}
+
+%boxShadow {
+	-webkit-box-shadow: 3px 0px 14px 7px rgba(15, 12, 15, 1);
+	-moz-box-shadow: 3px 0px 14px 7px rgba(15, 12, 15, 1);
+	box-shadow: 3px 0px 14px 7px rgba(15, 12, 15, 1);
+}
+
+%tShadow {
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+}
+%shadowItem {
+	box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.75);
+}
+//%linkShadowExtra {
+//	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #1db954,
+//		0 0 30px #1db954, 0 0 40px #1db954, 0 0 55px #1db954, 0 0 75px #1db954;
+//}
+%linkShadowPress {
+	text-shadow: 0 -1px 4px #1db954, 0 -2px 10px #1db954, 0 -5px 10px #1db954,
+		0 -8px 20px #1db954;
+}
+%linkShadowHover {
+	text-shadow: 0 0 15px #1db954, 0 0 10px #1db954;
+}
+%linkShadowPressAdmin {
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #1db954,
+		0 0 30px #1db954, 0 0 40px #1db954, 0 0 55px #1db954, 0 0 75px #1db954;
+}
+%btnStandard {
+	display: flex;
+	background-color: #1db954;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1.2rem;
+	color: #fff;
+	@extend %tColor;
+	&:hover {
+		background-color: #1db920;
+		box-shadow: 0px 0px 5px 5px rgba(29, 185, 32, 1);
+	}
+}
+
+%circleAnimation {
+	-webkit-transition: -webkit-transform 0.8s ease-in-out;
+	transition: transform 0.8s ease-in-out;
+	&:hover {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}

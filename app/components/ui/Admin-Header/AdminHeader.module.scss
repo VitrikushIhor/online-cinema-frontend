@@ -1,7 +1,21 @@
+@import '../../../../styles/mixins';
 .header {
-  @apply flex items-center justify-between mt-8;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 2.5rem 0;
 
-  > button {
-    @apply bg-primary bg-opacity-80;
-  }
+	> button {
+		background-color: rgb(29 185 84 / 1);
+		font-size: 1.6rem;
+	}
+}
+
+@include media500 {
+	.header {
+		> button {
+			background-color: rgb(29 185 84 / 1);
+			font-size: 1.2rem;
+		}
+	}
 }

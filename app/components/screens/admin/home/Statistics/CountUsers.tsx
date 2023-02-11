@@ -16,7 +16,7 @@ const CountUsers: FC = () => {
 		<div className={cn(styles.block, styles.countUsers)}>
 			<div>
 				{isLoading ? (
-					<SkeletonLoader />
+					<SkeletonLoader className={styles.loader} />
 				) : (
 					<>
 						<div className={styles.number}>{response?.data}</div>

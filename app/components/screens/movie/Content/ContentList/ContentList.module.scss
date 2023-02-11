@@ -1,14 +1,46 @@
+@import '../../../../../../styles/mixins';
+
 .list {
-  @apply flex items-center mb-1;
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
 
-  > .name {
-    @apply mr-2 text-white text-opacity-60;
-  }
+	> .name {
+		margin-right: 0.7rem;
+		font-size: 1.3rem;
+		color: rgb(255 255 255 / 0.6);
+	}
 
-  > .links {
-    @apply text-white text-opacity-90;
-    > a {
-      @apply text-link;
-    }
-  }
+	> .links {
+		color: rgb(255 255 255 / 0.9);
+		> a {
+			font-size: 1.3rem;
+			line-height: 2rem;
+			text-underline-offset: 0.4rem;
+			color: rgba(255, 255, 255, 0.9);
+			transition: text-decoration-color 0.3s ease-in-out;
+			text-decoration-line: underline;
+			text-decoration-color: rgba(255, 255, 255, 0.2);
+			&:hover {
+				text-decoration-color: #1db954;
+			}
+		}
+	}
+}
+
+@include media1024 {
+	.list {
+		margin-bottom: 0.5rem;
+
+		> .name {
+			font-size: 1rem;
+		}
+
+		> .links {
+			> a {
+				font-size: 1.1rem;
+				line-height: 1rem;
+			}
+		}
+	}
 }

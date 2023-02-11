@@ -1,7 +1,25 @@
-@import "../../../../styles/variables";
+@import '../../../../styles/mixins';
+@import '../../../../styles/class';
 
 .banner {
-  @apply relative overflow-hidden w-full h-80 rounded-layout shadow-lg flex flex-col justify-end;
+	@extend %boxShadow;
+	position: relative;
+	overflow: hidden;
+	height: 24rem;
+	border-radius: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	@include fade-bg-gradient();
+	img {
+		object-fit: cover;
+		pointer-events: none;
+		object-position: top;
+	}
+}
 
-  @include fade-bg-gradient();
+@include media1024 {
+	.banner {
+		height: 20rem;
+	}
 }

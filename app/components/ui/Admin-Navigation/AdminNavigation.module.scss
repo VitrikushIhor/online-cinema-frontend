@@ -1,27 +1,85 @@
+@import '../../../../styles/class';
+@import '../../../../styles/mixins';
+
 .nav {
-  @apply air-block w-4/5 mx-auto mb-10;
+	border-radius: 1.2rem;
+	background-color: #101215;
+	color: #fff;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10rem;
+	@extend %boxShadow;
 
-  > ul {
-    @apply flex justify-evenly items-center;
-    > li {
-      @apply inline-block;
+	> ul {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		> li {
+			display: inline-block;
 
-      > a {
-        @apply block px-5 py-4 text-lg transition-colors relative text-white text-opacity-60 hover:text-opacity-100;
+			> a {
+				position: relative;
+				color: white;
+				display: block;
+				padding: 2.5rem 1.25rem;
+				font-size: 1.7rem;
+				line-height: 2rem;
+				@extend %tColor;
+				&:hover {
+					@extend %linkShadowPress;
+				}
 
-        &::before {
-          @apply absolute w-full h-0.5 bg-transparent transition-colors left-0 bottom-0 rounded-md;
-          content: '';
-        }
+				&::before {
+					position: absolute;
+					width: 100%;
+					height: 0.12rem;
+					background-color: transparent;
+					@extend %tColor;
+					left: 0;
+					bottom: 0;
+					border-radius: 0.375rem;
+					content: '';
+				}
 
-        &.active {
-          @apply text-opacity-100;
+				&.active {
+					@extend %linkShadowPressAdmin;
+					&::before {
+						background-color: rgb(29 185 84 / 1);
+					}
+				}
+			}
+		}
+	}
+}
 
-          &::before {
-            @apply bg-primary;
-          }
-        }
-      }
-    }
-  }
+@include media1024 {
+	.nav {
+		width: 85%;
+		margin-bottom: 5rem;
+
+		> ul {
+			> li {
+				> a {
+					padding: 1.7rem 1rem;
+					font-size: 1.2rem;
+					line-height: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@include media500 {
+	.nav {
+		width: 95%;
+		> ul {
+			padding: 0;
+			> li {
+				> a {
+					padding: 1.7rem 0.5rem;
+				}
+			}
+		}
+	}
 }

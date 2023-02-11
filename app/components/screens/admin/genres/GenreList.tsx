@@ -8,6 +8,7 @@ import AdminTable from '@/ui/AdminTable/AdminTable'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 
+
 const GenreList: FC = () => {
 	const {
 		isLoading,
@@ -21,7 +22,7 @@ const GenreList: FC = () => {
 	return (
 		<Meta title={'Genre'}>
 			<AdminNavigation />
-			<Heading title={'Genres 12321'} />
+			<Heading title={'Genres'}/>
 			<AdminHeader
 				handleSearch={handleSearch}
 				searchTerm={searchTerm}

@@ -1,20 +1,17 @@
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
+import { ActorInfo } from '@/screens/admin/actor/ActorInfo/ActorInfo'
 import { IActorEditInput } from '@/screens/admin/actor/actor-edit-inteface'
 import { useGetActorEdit } from '@/screens/admin/actor/useActorEdit'
 
 import AdminNavigation from '@/ui/Admin-Navigation/AdminNavigation'
-import Button from '@/ui/Form-Elements/Button'
-import Field from '@/ui/Form-Elements/Field'
-import SlugField from '@/ui/Form-Elements/SlugField/SlugField'
+import Button from '@/ui/Form-Elements/Button/Button'
 import IUploadField from '@/ui/Form-Elements/UploadField/UploadField'
 import fromStyles from '@/ui/Form-Elements/admin-form.module.scss'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
-
-import generateSlug from '@/utils/string/generateSlug'
 
 const ActorEdit: FC = () => {
 	const {
@@ -39,23 +36,12 @@ const ActorEdit: FC = () => {
 				) : (
 					<>
 						<div className={fromStyles.fields}>
-							<Field
-								{...register('name', {
-									required: 'Name is required!',
-								})}
-								placeholder="Name"
-								error={errors.name}
-								style={{ width: '31%' }}
+							<ActorInfo
+								getValues={getValues}
+								setValue={setValue}
+								register={register}
+								errors={errors}
 							/>
-							<div style={{ width: '31%' }}>
-								<SlugField
-									register={register}
-									generate={() =>
-										setValue('slug', generateSlug(getValues('name')))
-									}
-									error={errors.slug}
-								/>
-							</div>
 							<Controller
 								name="photo"
 								control={control}

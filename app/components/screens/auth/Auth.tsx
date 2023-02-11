@@ -5,7 +5,7 @@ import AuthFields from '@/screens/auth/AuthField'
 import { IAuthInput } from '@/screens/auth/auth-interface'
 import { useAuthRedirect } from '@/screens/auth/useAuthRedirect'
 
-import Button from '@/ui/Form-Elements/Button'
+import Button from '@/ui/Form-Elements/Button/Button'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 
@@ -38,7 +38,7 @@ const Auth: FC = () => {
 		<Meta title={'Auth'}>
 			<section className={styles.wrapper}>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<Heading className={'mb-6'} title={'Auth'} />
+					<Heading className={styles.heading} title={'Auth'} />
 					<AuthFields
 						formState={formState}
 						register={registerInput}

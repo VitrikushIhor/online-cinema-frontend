@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { FieldError, UseFormRegister } from 'react-hook-form'
 
-import Field from '@/ui/Form-Elements/Field'
+import Field from '@/ui/Form-Elements/Field/Field'
 
 import styles from './SlugField.module.scss'
 
@@ -13,7 +13,7 @@ interface ISlugField {
 
 const SlugField: FC<ISlugField> = ({ generate, register, error }) => {
 	return (
-		<div className="relative">
+		<div style={{ position: 'relative' }}>
 			<Field
 				{...register('slug', {
 					required: 'Slug is required!',

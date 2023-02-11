@@ -1,26 +1,28 @@
-import {GetStaticProps, NextPage} from 'next'
+import { GetStaticProps, NextPage } from 'next'
 
-import Home, {IHome} from '@/screens/home/Home'
+import Home, { IHome } from '@/screens/home/Home'
 
-import {IGalleryItem} from '@/ui/Gallery/gallery-interface'
-import {ISlide} from '@/ui/Slider/slider-interface'
+import { IGalleryItem } from '@/ui/Gallery/gallery-interface'
+import { ISlide } from '@/ui/Slider/slider-interface'
 
-import {ActorsService} from '@/services/actor/actor-service'
-import {MoviesService} from '@/services/movies/movie.service'
+import { ActorsService } from '@/services/actor/actor-service'
+import { MoviesService } from '@/services/movies/movie.service'
 
-import {getGenresList} from '@/utils/movie/getGenreList'
+import { getGenresList } from '@/utils/movie/getGenreList'
 
-import {errorCatch} from '../app/api/api.helpers'
-import {getActorUrl, getMovieUrl} from '../app/config/url.config'
+import { errorCatch } from '../app/api/api.helpers'
+import { getActorUrl, getMovieUrl } from '../app/config/url.config'
 
-const HomePage: NextPage<IHome> = (props) => {
-	return <Home {...props} />
+const HomePage: NextPage<IHome> = ({ trendingMovies, actors, slides }) => {
+	return (
+		<Home trendingMovies={trendingMovies} actors={actors} slides={slides} />
+	)
 }
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const {data: movies} = await MoviesService.getMovies()
-		const {data: dataActors} = await ActorsService.getAllActors()
+		const { data: movies } = await MoviesService.getMovies()
+		const { data: dataActors } = await ActorsService.getAllActors()
 		const dataTrendingMovies = await MoviesService.getPopularMovies()
 
 		const slides: ISlide[] = movies.slice(0, 3).map((m) => ({

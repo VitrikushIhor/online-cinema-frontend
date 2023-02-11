@@ -14,11 +14,7 @@ const VideoPlayer: FC<IVideoPlayer> = ({ videoSource, slug }) => {
 	const { video, videoRef, actions } = useVideo()
 	const { user } = useAuth()
 	return (
-		<div
-			className={cn(styles.wrapper, {
-				'h-96': !user,
-			})}
-		>
+		<div className={cn(styles.wrapper, `${!user ? styles.notAuth : ''}`)}>
 			{user ? (
 				<>
 					<video

@@ -1,17 +1,29 @@
+@import '../../../../../styles/class';
+@import '../../../../../styles/mixins';
+
 .button {
-  @apply absolute right-0 bottom-20 pt-8 bg-no-repeat w-24 h-16 bg-left mx-auto bg-transparent;
-  background-size: 2900%;
+	position: absolute;
+	right: -1rem;
+	bottom: 5rem;
+	padding-top: 2rem;
+	background-repeat: no-repeat;
+	width: 10rem;
+	height: 5rem;
+	background-position: left;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: transparent;
+	background-size: 2900%;
+	@extend %circleAnimation;
 }
 
 .animate {
-  animation: heart-burst 0.8s steps(28) forwards;
+	@extend %animateBtn;
 }
-
-@keyframes heart-burst {
-  0% {
-    @apply bg-left;
-  }
-  100% {
-    @apply bg-right;
-  }
+@include media1024 {
+	.button {
+		right: -1.5rem;
+		bottom: 3rem;
+		width: 7rem;
+	}
 }

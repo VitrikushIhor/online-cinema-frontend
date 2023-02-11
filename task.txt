@@ -1,0 +1,2 @@
+[] - Add animation from slider
+[] - Add 500 monile

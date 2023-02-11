@@ -1,9 +1,8 @@
 import dynamic from 'next/dynamic'
 import { FC } from 'react'
 
-import PopularMovies from '@/components/layout/Sidebar/MoviesContainer/PopularMovies'
+import PopularMovies from '@/components/layout/Sidebar/MoviesContainer/PopularMovies/PopularMovies'
 
-import styles from './MoviesContainer.module.scss'
 
 const DynamicFavoriteMovies = dynamic(
 	() =>
@@ -15,7 +14,7 @@ const DynamicFavoriteMovies = dynamic(
 
 const MoviesContainer: FC = () => {
 	return (
-		<div className={styles.wrapper}>
+		<div>
 			<PopularMovies />
 			<DynamicFavoriteMovies />
 		</div>

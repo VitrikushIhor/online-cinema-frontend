@@ -1,0 +1,21 @@
+@import '../../../../../../styles/mixins';
+
+.wrapper {
+	margin-top: 2.75rem;
+	&.loader {
+		height: 7rem;
+		margin-bottom: 1rem;
+	}
+}
+
+@include media1024 {
+	// Зробити потім хз шо то!!!!
+	.wrapper {
+		margin-top: 0;
+		padding-bottom: 2rem;
+		&.loader {
+			height: 7rem;
+			margin-bottom: 1rem;
+		}
+	}
+}

@@ -18,6 +18,7 @@ const GalleryItem: FC<IGalleryItemProps> = ({ item, variant }) => {
 			})}
 		>
 			<Image
+				className={styles.testImage}
 				alt={item.name}
 				src={item.posterPath}
 				layout="fill"

@@ -1,0 +1,18 @@
+@import '../../../../styles/mixins';
+
+.arrowContainer {
+	position: relative;
+	bottom: 21rem;
+}
+
+@include media1024 {
+	.arrowContainer {
+		bottom: 17.4rem;
+	}
+}
+
+@include media500 {
+	.arrowContainer {
+		bottom: 15rem;
+	}
+}

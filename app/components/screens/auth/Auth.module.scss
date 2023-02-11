@@ -1,20 +1,70 @@
+@import '../../../../styles/class';
+@import '../../../../styles/mixins';
+
 .wrapper {
-  @apply mt-32;
-  > form {
-    @apply mx-auto w-1/2 air-block bg-opacity-80 p-7 text-center;
-    .button {
-      @apply mt-12 shadow-lg;
-      > button {
-        &:first-child {
-          @apply rounded-r-none;
-        }
+	margin-top: 20rem;
+	.heading {
+		margin-bottom: 2rem;
+		font-size: 3rem;
+	}
+	> form {
+		text-align: center;
+		padding: 1.75rem;
+		border-radius: 0.8rem;
+		background-color: #101215;
+		color: #fff;
+		@extend %boxShadow;
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+		.button {
+			margin-top: 2rem;
+			display: flex;
+			justify-content: center;
 
-        &:last-child {
-          @apply rounded-r-none opacity-80 hover:opacity-100 transition-opacity;
-          background-color: #8f050b;
-        }
-      }
-    }
-  }
+			> button {
+				font-size: 1.5rem;
+				height: 4rem;
+				width: 15rem;
+				padding: 0;
+				&:first-child {
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
+				}
 
+				&:last-child {
+					opacity: 0.8;
+					border-radius: 0 1.2rem 1.2rem 0;
+					background-color: #00630d;
+					@extend %tOpacity;
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media1024 {
+	.wrapper {
+		margin-top: 13rem;
+		.heading {
+			margin-bottom: 2rem;
+			font-size: 2rem;
+		}
+		> form {
+			padding: 1.75rem;
+			border-radius: 0.8rem;
+			width: 85%;
+			.button {
+				margin-top: 1rem;
+				> button {
+					font-size: 1.2rem;
+					height: 3rem;
+					width: 12rem;
+				}
+			}
+		}
+	}
 }

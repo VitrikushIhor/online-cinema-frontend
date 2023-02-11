@@ -1,70 +1,144 @@
-@import '../../../../styles/variables';
-
-$shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
-0 3px 3px 0 rgb(0 0 0 / 15%);
+@import '../../../../styles/mixins';
+@import '../../../../styles/class';
 
 .collections {
-  @apply flex flex-wrap items-center mt-10;
+	flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	margin-top: 3.5rem;
+	> a {
+		@extend %animateFade;
+		margin-right: 2rem;
+	}
 
-  > a {
-    @apply mr-8 animate-fade;
-  }
-
-  > a:nth-child(3n) {
-    @apply mr-0;
-  }
+	> a:nth-child(3n) {
+		margin-right: 0;
+	}
 }
 
 .collection {
-  @apply relative flex items-end mb-10 h-44 transition-transform;
-  width: 31%;
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	@extend %tTransform;
 
-  @include fade-bg-gradient(0deg);
+	height: 16rem;
+	width: 32%;
+	margin-bottom: 4rem;
 
-  &::before {
-    @apply rounded-layout;
-  }
+	@include fade-bg-gradient(0deg);
 
-  img {
-    @apply rounded-layout image-like-bg;
-    box-shadow: $shadow;
-  }
+	&::before {
+		border-radius: 0.8rem;
+	}
 
-  > span {
-    @apply z-1;
-  }
+	img {
+		border-radius: 0.8rem;
+		object-position: center;
+		object-fit: cover;
+		pointer-events: none;
+		box-shadow: $shadow;
+	}
 
-  .behind {
-    @apply absolute overflow-hidden z-0 transition-transform;
+	> span {
+		z-index: 131;
+	}
 
-    &.second {
-      @apply opacity-60 -top-1.5 left-2.5 right-2.5 bottom-4;
-    }
+	.behind {
+		overflow: hidden;
+		z-index: 0;
+		@extend %tTransform;
 
-    &.third {
-      @apply opacity-40 -top-3 left-5 right-5 bottom-8;
-    }
-  }
+		&.second {
+			position: absolute;
+			top: -0.5rem;
+			left: 1rem;
+			right: 1rem;
+			bottom: 1rem;
+		}
 
-  &:hover {
-    @apply -translate-y-1;
+		&.third {
+			position: absolute;
+			top: -1rem;
+			left: 2rem;
+			right: 2rem;
+			bottom: 2rem;
+		}
+	}
 
-    .behind {
-      &.second {
-        transform: translateY(1px);
-      }
+	&:hover {
+		@apply -translate-y-1;
 
-      &.third {
-        transform: translateY(2px);
-      }
-    }
-  }
+		.behind {
+			&.second {
+				transform: translateY(0.5px);
+			}
 
-  .content {
-    @apply relative z-2 text-center m-3 w-full;
+			&.third {
+				transform: translateY(1px);
+			}
+		}
+	}
 
-    .title {
-      @apply font-semibold mb-1 text-white text-shadow;
-    }
-  }
+	.content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		margin: 0.75rem;
+		width: 100%;
+
+		.title {
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin-bottom: 0.25rem;
+			color: rgb(255 255 255 / 1);
+			@extend %tShadow;
+		}
+	}
+}
+
+@include media1024 {
+	.collections {
+		> a {
+			margin-right: 1.5rem;
+		}
+		> a:nth-child(3n) {
+			margin-right: 1.5rem;
+		}
+		> a:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+
+	.collection {
+		height: 15rem;
+		width: 48%;
+		margin-bottom: 3rem;
+
+		&:hover {
+			transform: translateY(-0.3rem);
+		}
+
+		.content {
+			.title {
+				font-size: 1.2rem;
+			}
+		}
+	}
+}
+
+@include media500 {
+	@include media1024 {
+		.collections {
+			> a {
+				margin-right: 1rem;
+			}
+			> a:nth-child(3n) {
+				margin-right: 1.3rem;
+			}
+			> a:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+	}
 }

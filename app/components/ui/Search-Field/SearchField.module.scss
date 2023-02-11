@@ -1,17 +1,66 @@
+@import '../../../../styles/animations';
+@import '../../../../styles/mixins';
+
 .search {
-  @apply rounded-3xl border border-gray-700 px-3 py-2 flex items-center transition-colors;
-  > svg {
-    @apply fill-gray-600 mr-2 text-3xl transition-colors;
-  }
+	display: flex;
+	height: 5rem;
+	width: 29rem;
+	align-items: center;
+	border-radius: 2.3rem;
+	padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+	border: 0.2rem solid rgb(57 57 63 / 1);
+	@extend %tColor;
+	> svg {
+		@extend %tColor;
+		fill: #66676e;
+		margin-right: 0.5rem;
+		font-size: 3rem;
+		line-height: 2.25rem;
+	}
 
-  > input {
-    @apply text-white placeholder:text-gray-600 block w-full bg-transparent outline-none
-  }
+	> input {
+		display: block;
+		width: 100%;
+		background: transparent;
+		outline: 0.2rem solid transparent;
+		outline-offset: 2px;
+		color: rgb(255 255 255 / 1);
+		font-size: 1.8rem;
+		@extend %tColor;
+		&::placeholder {
+			--tw-text-opacity: 1;
+			color: rgb(102 103 110 / 1);
+			font-size: 1.8rem;
+		}
+	}
 
-  &:focus-within {
-    @apply border-gray-600;
-    > svg {
-      @apply fill-gray-500
-    }
-  }
+	&:focus-within {
+		border-color: rgb(102 103 110 / 1);
+		box-shadow: 0 0 13px 1px rgba(102, 102, 102, 1);
+		> svg {
+			fill: #999aa5;
+		}
+	}
+}
+
+@include media1024 {
+	.search {
+		height: 3rem;
+		width: 13rem;
+		border-radius: 1.5rem;
+		padding: 0.5rem 0.4rem 0.4rem 0.5rem;
+		border: 0.1.8rem solid rgb(57 57 63 / 1);
+		> svg {
+			margin-right: 0.2rem;
+			font-size: 2rem;
+		}
+
+		> input {
+			outline: 0.2rem solid transparent;
+			font-size: 1.3rem;
+			&::placeholder {
+				font-size: 1.3rem;
+			}
+		}
+	}
 }

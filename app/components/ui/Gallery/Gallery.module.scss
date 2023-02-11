@@ -1,53 +1,135 @@
-@import "../../../../styles/variables";
+@import '../../../../styles/mixins';
+@import '../../../../styles/class';
 
 .gallery {
-  @apply flex items-center overflow-x-auto flex-nowrap py-3;
-  -webkit-overflow-scrolling: touch;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+	display: flex;
+	align-items: center;
+	padding-top: 1.3rem;
 }
 
 .item {
-  @apply relative transition-transform flex items-end shadow-lg rounded-layout overflow-hidden;
-  flex: 0 0 auto;
+	@extend %shadowItem;
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	border-radius: 0.8rem;
+	flex: 0 0 auto;
 
-  &:hover {
-    transform: translateY(-5px);
-  }
+	@extend %tTransform;
 
-  &.vertical {
-    @apply mr-4 last:mr-0 w-1/5 h-72;
-    max-width: 200px;
-  }
+	&:hover {
+		transform: translateY(-5px);
+	}
 
-  &.horizontal {
-    @apply mb-8 h-44;
-    width: 31%;
-  }
+	&.vertical {
+		margin-right: 1rem;
+		width: 16%;
+		height: 22rem;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 
-  &.withText {
-    @include fade-bg-gradient(0deg);
+	&.horizontal {
+		height: 16rem;
+		width: 32%;
+		margin-bottom: 2rem;
+	}
 
-    &::before {
-      @apply rounded-layout;
-    }
-  }
+	&.withText {
+		@include fade-bg-gradient(0deg);
 
-  img {
-    @apply image-like-bg;
-  }
+		&::before {
+			border-radius: 0.8rem;
+		}
+	}
 
-  .content {
-    @apply relative z-2 text-center m-3 w-full;
+	img {
+		max-width: 100%;
+		max-height: 100%;
+		border-radius: 0.8rem;
+	}
 
-    .title {
-      @apply font-semibold mb-1 text-white text-shadow;
-    }
+	.content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		margin: 0.75rem;
+		width: 100%;
+		.title {
+			font-size: 1.6rem;
+			font-weight: 600;
+			margin-bottom: 0.25rem;
+			color: rgb(255 255 255 / 1);
+			@extend %tShadow;
+		}
 
-    .subTitle {
-      @apply text-gray-500 text-shadow;
-    }
-  }
+		.subTitle {
+			font-size: 1.4rem;
+			color: rgb(153 154 165 / 1);
+			@extend %tShadow;
+		}
+	}
+}
+
+@include media1024 {
+	.gallery {
+		padding-top: 1rem;
+		margin-bottom: 1.5rem;
+	}
+	.item {
+		&.horizontal {
+			height: 10rem;
+			width: 49%;
+			margin-bottom: 2rem;
+		}
+		&.vertical {
+			margin-right: 1.7rem;
+			width: 22%;
+			height: 16rem;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		.content {
+			margin: 0.75rem;
+			width: 100%;
+			.title {
+				font-size: 1.2rem;
+			}
+
+			.subTitle {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+@include media500 {
+	.item {
+		&.horizontal {
+			height: 13rem;
+			width: 100%;
+			margin-bottom: 2.5rem;
+		}
+		&.vertical {
+			margin-right: 1.3rem;
+			width: 22%;
+			height: 13.5rem;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		.content {
+			margin: 0.55rem;
+			width: 100%;
+			.title {
+				font-size: 1rem;
+			}
+
+			.subTitle {
+				font-size: 0.9rem;
+			}
+		}
+	}
 }
