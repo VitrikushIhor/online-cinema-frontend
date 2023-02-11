@@ -5,11 +5,16 @@ import { FC } from 'react'
 
 import { IMenuItem } from '@/components/layout/Navigation/MenuContainer/menu.interface'
 
+import MaterialIcon from '@/ui/MaterialIcons/MaterialIcon'
 
 import styles from './Menu.module.scss'
-import MaterialIcon from "@/ui/MaterialIcons/MaterialIcon";
 
-const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
+interface IMenuItemProps {
+	item: IMenuItem
+	toggleDropdown: () => void
+}
+
+const MenuItem: FC<IMenuItemProps> = ({ item, toggleDropdown }) => {
 	const { asPath } = useRouter()
 
 	return (
@@ -18,7 +23,7 @@ const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
 				[styles.active]: asPath === item.link,
 			})}
 		>
-			<Link href={item.link}>
+			<Link href={item.link} onClick={toggleDropdown}>
 				<MaterialIcon name={item.icon} />
 				<span>{item.title}</span>
 			</Link>
