@@ -1,6 +1,14 @@
+@import '../../../../styles/mixins';
+
 .containerHamburger {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem 2.7rem 0;
+}
+
+@include media500 {
+	.containerHamburger {
+		padding: 1rem 1rem 0;
+	}
 }

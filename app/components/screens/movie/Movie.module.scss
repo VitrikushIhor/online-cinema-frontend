@@ -25,3 +25,15 @@
 		}
 	}
 }
+
+@include media500 {
+	.subContainer {
+		.movieGallery {
+			a {
+				margin-right: 1.2rem;
+				width: 25%;
+				height: 14rem;
+			}
+		}
+	}
+}

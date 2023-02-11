@@ -43,3 +43,11 @@
 		}
 	}
 }
+
+@include media500 {
+	@include media1024 {
+		.arrow {
+			font-size: 1.2rem;
+		}
+	}
+}

@@ -1,8 +1,19 @@
-.infoContainer{
+@import '../../../../../../styles/mixins';
+
+.infoContainer {
 	display: flex;
 	justify-content: space-between;
-	div{
+	div {
 		width: 100%;
 		margin-right: 1rem;
+	}
+}
+
+@include media500 {
+	.infoContainer {
+		display: block;
+		div {
+			margin-right: 0;
 		}
 	}
+}

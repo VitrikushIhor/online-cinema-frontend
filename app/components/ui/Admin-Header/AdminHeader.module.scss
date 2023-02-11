@@ -1,3 +1,4 @@
+@import '../../../../styles/mixins';
 .header {
 	display: flex;
 	align-items: center;
@@ -7,5 +8,14 @@
 	> button {
 		background-color: rgb(29 185 84 / 1);
 		font-size: 1.6rem;
+	}
+}
+
+@include media500 {
+	.header {
+		> button {
+			background-color: rgb(29 185 84 / 1);
+			font-size: 1.2rem;
+		}
 	}
 }

@@ -37,3 +37,17 @@
 		margin: 0.3rem 0;
 	}
 }
+
+@include media500 {
+	.head {
+		font-size: 1.5rem;
+	}
+	.descriptionH {
+		font-size: 1.2rem;
+		margin: 1rem 0;
+	}
+	.subHead {
+		font-size: 1.3rem;
+		margin: 0.2rem 0;
+	}
+}

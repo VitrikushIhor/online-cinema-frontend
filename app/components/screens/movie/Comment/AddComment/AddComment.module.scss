@@ -54,3 +54,9 @@
 		}
 	}
 }
+
+@include media500 {
+	.container {
+		width: calc(100% - 1rem);
+	}
+}

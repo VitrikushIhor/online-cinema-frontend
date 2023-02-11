@@ -90,3 +90,11 @@
 		}
 	}
 }
+@include media500 {
+	.layout {
+		> .center {
+			padding: 1.5rem;
+			margin: 0;
+		}
+	}
+}
