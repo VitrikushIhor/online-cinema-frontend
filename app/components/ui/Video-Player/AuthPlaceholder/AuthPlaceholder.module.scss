@@ -18,13 +18,14 @@
 		color: rgb(255 255 255 /1);
 		font-size: 2rem;
 	}
-	a {
-		bottom: 14rem;
-		position: absolute;
-		left: 40%;
+	> a {
 		font-size: 1.8rem;
 		width: 20rem;
+		padding: 0.75rem 0;
 		@extend %btnStandard;
+		position: absolute;
+		top: 60%;
+		left: 41%;
 	}
 }
 
@@ -33,13 +34,12 @@
 		> div {
 			font-size: 1.5rem;
 		}
-		a {
-			bottom: 18rem;
+		> a {
 			position: absolute;
 			left: 35%;
 			width: 13rem;
-			font-size: 1.5rem;
-			@extend %btnStandard;
+			font-size: 1.4rem;
+			padding: 0.5rem;
 		}
 	}
 }

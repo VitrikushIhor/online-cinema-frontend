@@ -39,13 +39,21 @@
 		font-weight: 600;
 	}
 
-	.btn {
-		width: 14rem;
+	> a {
+		width: 13rem;
+		padding: 0.5rem;
+		font-size: 1.5rem;
+		margin: auto;
+		@extend %btnStandard;
 	}
 }
 
 @include media1024 {
 	.wrapper {
 		width: 85%;
+		> a {
+			padding: 0.5rem;
+			font-size: 1rem;
+		}
 	}
 }
