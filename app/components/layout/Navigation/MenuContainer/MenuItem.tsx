@@ -11,7 +11,7 @@ import styles from './Menu.module.scss'
 
 interface IMenuItemProps {
 	item: IMenuItem
-	toggleDropdown: () => void
+	toggleDropdown?: () => void
 }
 
 const MenuItem: FC<IMenuItemProps> = ({ item, toggleDropdown }) => {
