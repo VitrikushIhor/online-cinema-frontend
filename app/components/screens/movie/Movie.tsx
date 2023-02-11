@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 import Comments from '@/screens/movie/Comment/Comment'
 import Content from '@/screens/movie/Content/Content'
@@ -10,6 +10,8 @@ import Gallery from '@/ui/Gallery/Gallery'
 import { IGalleryItem } from '@/ui/Gallery/gallery-interface'
 import SubHeading from '@/ui/Heading/SubHeading'
 import Meta from '@/ui/Meta/Meta'
+
+import { useWindowSize } from '@/hooks/useWindowSize'
 
 import { IMovie } from '@/shared/interfaces/movie.interface'
 
@@ -33,6 +35,15 @@ const DynamicRateMovie = dynamic(
 const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 	useUpdateCountOpened(movie.slug)
 
+	const size = useWindowSize()
+	const [PageSize, setPageSize] = useState(0)
+
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			setPageSize(size <= 1024 ? 4 : 5)
+		}
+	}, [size])
+
 	return (
 		<Meta title={movie.title} description={`Watch ${movie.title}`}>
 			<Banner
@@ -44,7 +55,7 @@ const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 			<div className={styles.subContainer}>
 				<SubHeading title={'Similar'} />
 				<Gallery
-					items={similarMovies.slice(0, 5)}
+					items={similarMovies.slice(0, PageSize)}
 					className={styles.movieGallery}
 				/>
 				<DynamicRateMovie slug={movie.slug} id={movie._id} />
