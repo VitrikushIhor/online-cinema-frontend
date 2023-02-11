@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from 'react'
+import { FC, useEffect } from 'react'
 
 import Logo from '@/components/layout/Navigation/Logo/Logo'
 import { usePopularGenres } from '@/components/layout/Navigation/MenuContainer/genres/usePopularGenres'
@@ -8,7 +8,7 @@ import {
 } from '@/components/layout/Navigation/MenuContainer/menu.data'
 import Search from '@/components/layout/Sidebar/Search/Search'
 
-import { Accordion } from '@/ui/Acordion/Accordion'
+import { Dropdown } from '@/ui/DropDownMenu/DropDownMenu'
 import { IBurger } from '@/ui/Hamburger/Burger/Burger'
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
 
@@ -16,9 +16,11 @@ import styles from './BurgerMenu.module.scss'
 
 const BurgerMenu: FC<IBurger> = ({ open, setOpen }) => {
 	const { isLoading, data } = usePopularGenres()
-	const hamburger = useRef<HTMLDivElement>(null)
 
-	// useOnClickOutside(hamburger, () => setOpen(false))
+	const toggleMenu = () => {
+		setOpen(!open)
+	}
+
 	useEffect(() => {
 		if (open) {
 			document.body.classList.add('body_hidden')
@@ -35,15 +37,20 @@ const BurgerMenu: FC<IBurger> = ({ open, setOpen }) => {
 			}}
 		>
 			<Logo />
-			<Search />
-			<div>
-				<Accordion menu={firstMenu} />
-				{isLoading ? (
-					<SkeletonLoader count={1} className="" />
-				) : (
-					<Accordion menu={{ title: 'Genres', items: data || [] }} />
-				)}
-				<Accordion menu={userMenu} />
+			<div className={styles.menuContent}>
+				<Search />
+				<div>
+					<Dropdown toggleMenu={toggleMenu} menu={firstMenu} />
+					{isLoading ? (
+						<SkeletonLoader count={1} className="" />
+					) : (
+						<Dropdown
+							toggleMenu={toggleMenu}
+							menu={{ title: 'Genres', items: data || [] }}
+						/>
+					)}
+					<Dropdown toggleMenu={toggleMenu} menu={userMenu} />
+				</div>
 			</div>
 		</nav>
 	)

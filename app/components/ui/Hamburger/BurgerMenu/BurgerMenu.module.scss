@@ -1,19 +1,35 @@
+@import '../../../../../styles/animations';
+
 .nav {
-	background-color: rgb(25 27 31 / 1);
+	height: 100vh;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	height: 110vh;
-	text-align: left;
-	padding: 2rem;
 	position: fixed;
-	top: -1.6rem;
-	transition: transform 0.3s ease-in-out;
+	justify-content: space-between;
+	top: 0;
+	left: 0;
 	z-index: 100;
-	width: 100%;
+	padding: 3rem 2rem 2rem;
+	background-color: rgb(25 27 31 / 1);
+	text-align: left;
+	> a:first-child {
+		top: -1.7rem;
+	}
+	@extend %tTransform;
+	.menuContent {
+		height: 60%;
 
-	> a {
-		position: absolute;
-		top: 3rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 0 auto 10rem;
+
+		> div:first-child {
+			margin: 0 auto;
+			> div {
+				width: 100%;
+			}
+		}
 	}
 }
