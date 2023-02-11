@@ -104,3 +104,32 @@
 		}
 	}
 }
+
+@include media500 {
+	.item {
+		&.horizontal {
+			height: 13rem;
+			width: 100%;
+			margin-bottom: 2.5rem;
+		}
+		&.vertical {
+			margin-right: 1.3rem;
+			width: 22%;
+			height: 13.5rem;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		.content {
+			margin: 0.55rem;
+			width: 100%;
+			.title {
+				font-size: 1rem;
+			}
+
+			.subTitle {
+				font-size: 0.9rem;
+			}
+		}
+	}
+}

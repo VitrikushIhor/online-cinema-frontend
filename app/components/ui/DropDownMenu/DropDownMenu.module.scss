@@ -1,0 +1,84 @@
+@import '../../../../styles/class';
+
+.dropdown {
+	width: 30rem;
+	border-radius: 10px;
+	margin-bottom: 2rem;
+	background-color: rgb(57, 57, 63);
+	color: white;
+	@extend %boxShadow;
+}
+
+.dropdownHeader {
+	padding: 1rem;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.2rem;
+	animation: 5s show ease;
+	svg {
+		@extend %circleAnimation;
+	}
+}
+
+.dropdownBody {
+	padding: 1rem;
+	border-top: 1px solid #1db954;
+	display: none;
+	list-style-type: none;
+	animation: 5s show ease;
+	a {
+		display: flex;
+		align-items: center;
+		padding: 0.5rem 0;
+		span {
+			cursor: pointer;
+			&:hover {
+				color: #ffffff;
+				@extend %linkShadowHover;
+				svg {
+					color: #1db954;
+				}
+			}
+		}
+
+		&:hover {
+			svg {
+				color: #1db954;
+			}
+		}
+
+		> span {
+			margin-left: 0.5rem;
+			font-size: 1.2rem;
+			line-height: 1rem;
+		}
+
+		> svg {
+			font-size: 1.5rem;
+		}
+
+		> span,
+		> svg {
+			@extend %tColor;
+		}
+	}
+}
+
+.active {
+	@extend %linkShadowPress;
+}
+
+.dropdownBody.open {
+	display: block;
+}
+
+@keyframes show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

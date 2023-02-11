@@ -69,3 +69,17 @@
 		}
 	}
 }
+
+@include media500 {
+	.nav {
+		width: 95%;
+		> ul {
+			padding: 0;
+			> li {
+				> a {
+					padding: 1.7rem 0.5rem;
+				}
+			}
+		}
+	}
+}

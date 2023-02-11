@@ -21,3 +21,14 @@
 		}
 	}
 }
+
+@include media500 {
+	.wrapper {
+		.container {
+			display: block;
+			> div {
+				width: 100%;
+			}
+		}
+	}
+}

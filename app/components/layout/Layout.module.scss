@@ -73,3 +73,28 @@
 		}
 	}
 }
+
+@include media767 {
+	.layout {
+		> div:nth-child(2) {
+			display: block;
+		}
+
+		> div:first-child,
+		> div:last-child {
+			display: none;
+		}
+		> .center {
+			padding: 2.75rem;
+			margin: 0;
+		}
+	}
+}
+@include media500 {
+	.layout {
+		> .center {
+			padding: 1.5rem;
+			margin: 0;
+		}
+	}
+}

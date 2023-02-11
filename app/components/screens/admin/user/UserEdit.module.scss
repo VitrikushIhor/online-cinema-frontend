@@ -1,4 +1,6 @@
 @import '../../../../../styles/animations';
+@import '../../../../../styles/mixins';
+
 .adminForm {
 	margin-top: 3rem;
 }
@@ -20,5 +22,11 @@
 	@extend %tColor;
 	&:hover {
 		text-decoration-color: #1db920;
+	}
+}
+
+@include media500 {
+	.textLink {
+		font-size: 1.5rem;
 	}
 }

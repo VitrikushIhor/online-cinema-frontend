@@ -126,3 +126,19 @@
 		}
 	}
 }
+
+@include media500 {
+	@include media1024 {
+		.collections {
+			> a {
+				margin-right: 1rem;
+			}
+			> a:nth-child(3n) {
+				margin-right: 1.3rem;
+			}
+			> a:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+	}
+}

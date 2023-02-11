@@ -111,3 +111,19 @@
 		}
 	}
 }
+
+@include media500 {
+	.loader {
+		height: 15rem;
+	}
+
+	.statistics {
+		display: block;
+
+		.block {
+			height: 20rem;
+			margin-bottom: 2rem;
+			width: 100%;
+		}
+	}
+}
