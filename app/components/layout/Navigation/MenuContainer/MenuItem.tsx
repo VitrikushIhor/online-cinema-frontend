@@ -24,7 +24,7 @@ const MenuItem: FC<IMenuItemProps> = ({ item, toggleDropdown }) => {
 			})}
 		>
 			<Link href={item.link} onClick={toggleDropdown}>
-				<MaterialIcon name={item.icon} />
+				<MaterialIcon name={item.icon ? item.icon : 'MdHiking'} />
 				<span>{item.title}</span>
 			</Link>
 		</li>
