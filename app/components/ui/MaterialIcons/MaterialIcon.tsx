@@ -7,7 +7,6 @@ import { TypeMaterialIconName } from '@/shared/interfaces/icon.interface'
 
 const MaterialIcon: FC<{ name: TypeMaterialIconName }> = ({ name }) => {
 	const { isRenderClient } = useRenderClient()
-
 	const IconComponent = MaterialIcons[name]
 
 	if (isRenderClient)
