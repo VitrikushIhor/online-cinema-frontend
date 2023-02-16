@@ -1,11 +1,4 @@
 import { FC } from 'react'
-import {
-	FieldPath,
-	RegisterOptions,
-	UseFormRegisterReturn,
-} from 'react-hook-form'
-
-import { IMovieEditInput } from '@/screens/admin/movie/movie-edit-inteface'
 
 import Field from '@/ui/Form-Elements/Field/Field'
 import SlugField from '@/ui/Form-Elements/SlugField/SlugField'
@@ -20,6 +13,7 @@ export const MovieTop: FC<any> = ({
 	getValues,
 	setValue,
 }) => {
+	debugger
 	return (
 		<div className={styles.infoContainer}>
 			<Field
@@ -49,7 +43,7 @@ export const MovieTop: FC<any> = ({
 					required: 'Duration is required!',
 				})}
 				placeholder="Duration (min)"
-				error={errors.parameters?.duration}
+				error={errors.parameters.duration}
 			/>
 
 			<Field
@@ -57,7 +51,7 @@ export const MovieTop: FC<any> = ({
 					required: 'Year is required!',
 				})}
 				placeholder="Year"
-				error={errors.parameters?.year}
+				error={errors.parameters.year}
 			/>
 		</div>
 	)

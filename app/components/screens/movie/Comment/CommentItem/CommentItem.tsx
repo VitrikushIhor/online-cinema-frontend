@@ -21,7 +21,7 @@ const CommentItem: FC<{ comment: IComment }> = ({ comment }) => {
 			</div>
 			<div className={styles.avatarNameMessage}>
 				<div className={styles.avatarName}>
-					{comment.user.userName ? comment.user.userName : 'Anonym'}
+					{comment.user.userName ? comment.user.userName : comment.user.email}
 				</div>
 				<div className={styles.message}>{comment.message}</div>
 			</div>
