@@ -6,10 +6,10 @@ import logoImage from '@/assets/Logo.svg'
 
 import styles from './Logo.module.scss'
 
-const Logo: FC = () => {
+const Logo: FC<{ toggleMenu?: () => void }> = ({ toggleMenu }) => {
 	return (
-		<Link className={`${styles.Logo} logo`} href="/">
-			<Image src={logoImage} alt={'LOGO'} layout="fill" draggable={false} />
+		<Link className={`${styles.Logo} logo`} href="/" onClick={toggleMenu}>
+			<Image src={logoImage} alt="logo" layout="fill" draggable={false} />
 		</Link>
 	)
 }

@@ -15,7 +15,7 @@ export interface IProfileContent {
 	control: any
 }
 
-export const ProfileContent: FC<IProfileContent> = ({
+export const ProfileContent: FC<any> = ({
 	register,
 	formState: { errors },
 	isPasswordRequired = false,
@@ -33,7 +33,6 @@ export const ProfileContent: FC<IProfileContent> = ({
 						},
 					})}
 					placeholder="E-mail"
-					/*@ts-ignore*/
 					error={errors.email}
 				/>
 				<Field
@@ -51,14 +50,12 @@ export const ProfileContent: FC<IProfileContent> = ({
 					)}
 					placeholder="Password"
 					type="password"
-					/*@ts-ignore*/
-					error={errors.password}
+					error={errors.errors}
 				/>
 				<Field
 					{...register('userName')}
-					placeholder="User name"
+					placeholder="userName"
 					type="text"
-					/*@ts-ignore*/
 					error={errors.userName}
 				/>
 			</div>

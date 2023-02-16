@@ -8,11 +8,16 @@ import { UsersService } from '@/services/users/users-service'
 
 import { toastError } from '@/utils/toast-error'
 
-export const useProfile = (setValue: UseFormSetValue<IProfileInput>) => {
+interface IuseProfile {
+	setValue: UseFormSetValue<IProfileInput>
+	reset: any
+}
+export const useProfile = ({ setValue, reset }: IuseProfile) => {
 	const { isLoading } = useQuery('Profile', () => UsersService.getProfile(), {
 		onSuccess({ data }) {
-			console.log(data)
 			setValue('email', data.email)
+			setValue('avatar', data.avatar)
+			setValue('userName', data.userName)
 		},
 		onError(error) {
 			toastError(error, 'Get Profile')
@@ -25,6 +30,7 @@ export const useProfile = (setValue: UseFormSetValue<IProfileInput>) => {
 		{
 			onSuccess() {
 				toastr.success('Update User', 'Update was successful')
+				reset()
 			},
 		}
 	)
