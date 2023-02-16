@@ -30,6 +30,7 @@
 				&:first-child {
 					border-top-right-radius: 0;
 					border-bottom-right-radius: 0;
+					z-index: 1;
 				}
 
 				&:last-child {

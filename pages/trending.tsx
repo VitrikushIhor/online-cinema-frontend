@@ -21,7 +21,6 @@ export const getStaticProps: () => Promise<
 > = async () => {
 	try {
 		const movies = await MoviesService.getPopularMovies()
-		console.log(movies)
 		return {
 			props: {
 				movies,

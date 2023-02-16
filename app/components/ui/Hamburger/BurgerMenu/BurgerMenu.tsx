@@ -36,7 +36,7 @@ const BurgerMenu: FC<IBurger> = ({ open, setOpen }) => {
 				transform: `${open ? 'translateX(0)' : 'translateX(100%) '}`,
 			}}
 		>
-			<Logo />
+			<Logo toggleMenu={toggleMenu} />
 			<div className={styles.menuContent}>
 				<Search />
 				<div>

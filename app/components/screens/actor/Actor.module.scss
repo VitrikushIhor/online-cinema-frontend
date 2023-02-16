@@ -8,6 +8,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	img {
+		width: 20rem;
+		height: 27rem;
+	}
 
 	> div:last-child {
 		text-align: center;

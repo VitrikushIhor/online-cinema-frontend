@@ -8,7 +8,7 @@ const ReduxToast: FC = () => {
 			progressBar={true}
 			preventDuplicates={true}
 			closeOnToastrClick={true}
-			timeOut={4000}
+			timeOut={3000}
 			transitionIn={'fadeIn'}
 			transitionOut={'fadeOut'}
 		/>

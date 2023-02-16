@@ -38,7 +38,6 @@ const AddCommentForm: FC<{ movieId: string; refetch: any }> = ({
 	const onSubmit: SubmitHandler<ICommentDto> = async (data) => {
 		await mutateAsync(data)
 	}
-
 	return (
 		<form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
 			<div className={styles.comment}>

@@ -7,7 +7,4 @@ export const errorCatch = (error: any): string =>
 
 export const getContentType = () => ({
 	'Content-Type': 'application/json',
-	'Accept-Encoding': 'identity'
-
-
 })

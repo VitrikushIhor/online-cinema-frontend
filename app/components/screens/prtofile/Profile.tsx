@@ -13,18 +13,19 @@ import { IUser } from '@/shared/interfaces/user.interface'
 
 import styles from './Profile.module.scss'
 
-export interface IProfileInput extends Pick<IUser, 'email' | 'password'> {}
+export interface IProfileInput
+	extends Pick<IUser, 'email' | 'password' | 'userName' | 'avatar'> {}
 
 const Profile: FC = () => {
-	const { formState, register, handleSubmit, setValue, control } =
+	const { formState, register, handleSubmit, setValue, control, reset } =
 		useForm<IProfileInput>({
 			mode: 'onChange',
 		})
-	const { isLoading, onSubmit } = useProfile(setValue)
+	const { isLoading, onSubmit } = useProfile({ reset, setValue })
 	return (
 		<Meta title={'Profile'}>
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.from}>
-				<Heading  title={'Profile'} />
+				<Heading title={'Profile'} />
 				{isLoading ? (
 					<SkeletonLoader count={2} />
 				) : (
