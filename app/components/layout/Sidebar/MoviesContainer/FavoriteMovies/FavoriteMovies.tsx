@@ -8,10 +8,11 @@ import MovieList from '@/components/layout/Sidebar/MoviesContainer/MovieList/Mov
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
 
 import { useAuth } from '@/hooks/useAuth'
+
 import styles from './FavoriteMovies.module.scss'
 
 const FavoriteMovies: FC = () => {
-	const { isLoading, favoritesMovies } = useFavorites()
+	const { isLoading, favoriteMovies } = useFavorites()
 	const { user } = useAuth()
 
 	if (!user) return <NotAuthFavorites className={styles.notAuth} />
@@ -20,15 +21,15 @@ const FavoriteMovies: FC = () => {
 		<div className={styles.wrapper}>
 			<SkeletonLoader count={3} className={styles.loader} />
 		</div>
-	) : (
-		favoritesMovies!.length > 0 ?	<MovieList
+	) : favoriteMovies!.length > 0 ? (
+		<MovieList
 			list={{
 				link: '/favorites',
-				movies: favoritesMovies?.slice(0, 3) || [],
+				movies: favoriteMovies?.slice(0, 3) || [],
 				title: 'Favorites',
 			}}
-		/>: null
-	)
+		/>
+	) : null
 }
 
 export default FavoriteMovies

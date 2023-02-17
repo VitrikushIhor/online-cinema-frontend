@@ -3,7 +3,7 @@ import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
-import { IActorEditInput } from '@/screens/admin/actor/actor-edit-inteface'
+import { IActorEditInput } from '@/shared/interfaces/actor-edit-inteface'
 
 import { ActorsService } from '@/services/actor/actor-service'
 
@@ -14,6 +14,7 @@ import { getAdminUrl } from '../../../../config/url.config'
 
 export const useGetActorEdit = (setValue: UseFormSetValue<IActorEditInput>) => {
 	const { push, query } = useRouter()
+
 	const actorId = String(query.id)
 
 	const { isLoading } = useQuery(

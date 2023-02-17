@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import {FC} from 'react'
+import { FC } from 'react'
 
-import {useUpload} from '@/ui/Form-Elements/UploadField/useUpload'
-import {IUploadField} from '@/ui/Form-Elements/field-interface'
+import { useUpload } from '@/ui/Form-Elements/UploadField/useUpload'
+import { IUploadField } from '@/shared/interfaces/field-interface'
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
 
 import styles from './UploadFiled.module.scss'

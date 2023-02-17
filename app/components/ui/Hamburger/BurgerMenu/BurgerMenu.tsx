@@ -5,7 +5,7 @@ import { usePopularGenres } from '@/components/layout/Navigation/MenuContainer/g
 import {
 	firstMenu,
 	userMenu,
-} from '@/components/layout/Navigation/MenuContainer/menu.data'
+} from '@/shared/data/menu.data'
 import Search from '@/components/layout/Sidebar/Search/Search'
 
 import { Dropdown } from '@/ui/DropDownMenu/DropDownMenu'

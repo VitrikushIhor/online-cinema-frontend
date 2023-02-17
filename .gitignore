@@ -2,3 +2,5 @@ node_modules
 .idea
 .next
 .swc
+public/sw.js
+public/workbox-*.js

@@ -2,9 +2,9 @@ import dynamic from 'next/dynamic'
 import { FC } from 'react'
 import { Control, Controller } from 'react-hook-form'
 
-import { useAdminActors } from '@/screens/admin/movie/MovieEditCenter/useAdminActors'
-import { useAdminGenres } from '@/screens/admin/movie/MovieEditCenter/useAdminGenres'
-import { IMovieEditInput } from '@/screens/admin/movie/movie-edit-inteface'
+import { useAdminActorsOrGenres } from '@/screens/admin/movie/MovieEditCenter/useAdminActorsOrGenres'
+
+import { IMovieEditInput } from '@/shared/interfaces/movie-edit-inteface'
 
 import styles from './MovieEditCenter.module.scss'
 
@@ -17,8 +17,8 @@ const DynamicSelect = dynamic(() => import('@/ui/Select/Select'), {
 })
 
 export const MovieEditCenter: FC<IMovieEditCenter> = ({ control }) => {
-	const { isLoading: isGenresLoading, data: genres } = useAdminGenres()
-	const { isLoading: isActorsLoading, data: actors } = useAdminActors()
+	const { genres, genresLoading, actorsLoading, actors } =
+		useAdminActorsOrGenres()
 
 	return (
 		<div className={styles.container}>
@@ -29,7 +29,7 @@ export const MovieEditCenter: FC<IMovieEditCenter> = ({ control }) => {
 					<DynamicSelect
 						field={field}
 						options={genres || []}
-						isLoading={isGenresLoading}
+						isLoading={genresLoading}
 						isMulti
 						placeholder={'Geners'}
 						error={error}
@@ -47,7 +47,7 @@ export const MovieEditCenter: FC<IMovieEditCenter> = ({ control }) => {
 					<DynamicSelect
 						field={field}
 						options={actors || []}
-						isLoading={isActorsLoading}
+						isLoading={actorsLoading}
 						isMulti
 						placeholder={'Actors'}
 						error={error}

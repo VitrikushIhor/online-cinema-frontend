@@ -10,6 +10,7 @@ export default function Document() {
 					}
 					rel={'stylesheet'}
 				/>
+				<link rel="manifest" href="/manifest.json" />
 			</Head>
 			<body>
 				<Main />

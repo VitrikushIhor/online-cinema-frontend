@@ -1,10 +1,11 @@
 import { FC } from 'react'
 import { CSSTransition } from 'react-transition-group'
 
+import { ISlide } from '@/shared/interfaces/slider-interface'
+
 import SlideArrow from './SlideArrow/SlideArrow'
 import SlideItem from './SlideItem'
 import styles from './Slider.module.scss'
-import { ISlide } from './slider-interface'
 import { useSlider } from './useSlider'
 
 interface ISlider {

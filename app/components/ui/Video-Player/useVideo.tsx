@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
-import { IVideoElement } from '@/ui/Video-Player/videoPlayer-interface'
+import { IVideoElement } from '@/shared/interfaces/videoPlayer-interface'
 
 export const useVideo = () => {
 	const videoRef = useRef<IVideoElement>(null)
-	const [isPlaying, setIsPlaying] = useState(false)
-	const [currentTime, setCurrentTime] = useState(0)
-	const [videoTime, setVideoTime] = useState(0)
-	const [progress, setProgress] = useState(0)
+	const [isPlaying, setIsPlaying] = useState<boolean>(false)
+	const [currentTime, setCurrentTime] = useState<number>(0)
+	const [videoTime, setVideoTime] = useState<number>(0)
+	const [progress, setProgress] = useState<number>(0)
 
 	useEffect(() => {
 		if (videoRef.current?.duration) {

@@ -1,21 +1,29 @@
 import { FC } from 'react'
-import { Controller, FormState, UseFormRegister } from 'react-hook-form'
+import {
+	Control,
+	Controller,
+	FormState,
+	UseFormRegister,
+} from 'react-hook-form'
 
 import { validEmail } from '@/screens/auth/AuthField'
+import { IProfileInput } from '@/screens/prtofile/Profile'
 
 import Field from '@/ui/Form-Elements/Field/Field'
 import IUploadField from '@/ui/Form-Elements/UploadField/UploadField'
+
+import { IUserEditInput } from '@/shared/interfaces/user-edit-inteface'
 
 import styles from './ProfileContent.module.scss'
 
 export interface IProfileContent {
 	register: UseFormRegister<any>
-	formState: FormState<any>
+	formState: FormState<IProfileInput | IUserEditInput>
 	isPasswordRequired?: boolean
-	control: any
+	control: Control<any, any>
 }
 
-export const ProfileContent: FC<any> = ({
+export const ProfileContent: FC<IProfileContent> = ({
 	register,
 	formState: { errors },
 	isPasswordRequired = false,
@@ -50,7 +58,7 @@ export const ProfileContent: FC<any> = ({
 					)}
 					placeholder="Password"
 					type="password"
-					error={errors.errors}
+					error={errors.password}
 				/>
 				<Field
 					{...register('userName')}
@@ -63,7 +71,6 @@ export const ProfileContent: FC<any> = ({
 			<Controller
 				name="avatar"
 				control={control}
-				defaultValue=""
 				render={({ field: { value, onChange }, fieldState: { error } }) => (
 					<IUploadField
 						onChange={onChange}

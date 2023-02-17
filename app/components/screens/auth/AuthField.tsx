@@ -3,9 +3,11 @@ import { FormState, UseFormRegister } from 'react-hook-form'
 
 import Field from '@/ui/Form-Elements/Field/Field'
 
+import { IAuthInput } from '@/shared/interfaces/auth-interface'
+
 interface IAuthFields {
-	register: UseFormRegister<any>
-	formState: FormState<any>
+	register: UseFormRegister<IAuthInput>
+	formState: FormState<IAuthInput>
 	isPasswordRequired?: boolean
 }
 
@@ -28,7 +30,6 @@ const AuthFields: FC<IAuthFields> = ({
 					},
 				})}
 				placeholder="E-mail"
-				/*@ts-ignore*/
 				error={errors.email}
 			/>
 			<Field
@@ -46,7 +47,6 @@ const AuthFields: FC<IAuthFields> = ({
 				)}
 				placeholder="Password"
 				type="password"
-				/*@ts-ignore*/
 				error={errors.password}
 			/>
 		</>

@@ -1,7 +1,7 @@
 import { ControllerRenderProps } from 'react-hook-form'
 import { Options } from 'react-select'
 
-import { IFieldProps } from '@/ui/Form-Elements/field-interface'
+import { IFieldProps } from '@/shared/interfaces/field-interface'
 
 export interface IOption {
 	value: string

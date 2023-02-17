@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query'
 
-import { IMenuItem } from '@/components/layout/Navigation/MenuContainer/menu.interface'
+import { IMenuItem } from '@/shared/interfaces/menu.interface'
 
 import { GenresService } from '@/services/genres/genres.service'
 

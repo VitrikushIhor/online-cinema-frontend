@@ -1,9 +1,5 @@
-import { IMovieEditInput } from '@/screens/admin/movie/movie-edit-inteface'
-import {
-	IComment,
-	ICommentDto,
-} from '@/screens/movie/Comment/comment-interface'
-
+import { IComment, ICommentDto } from '@/shared/interfaces/comment-interface'
+import { IMovieEditInput } from '@/shared/interfaces/movie-edit-inteface'
 import { IMovie } from '@/shared/interfaces/movie.interface'
 
 import axios, { axiosClassic } from '../../api/interceptors'

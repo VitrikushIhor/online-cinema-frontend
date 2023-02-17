@@ -3,7 +3,7 @@ import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
-import { IGenreEditInput } from '@/screens/admin/genre/genre-edit-inteface'
+import { IGenreEditInput } from '@/shared/interfaces/genre-edit-inteface'
 
 import { GenresService } from '@/services/genres/genres.service'
 
@@ -14,7 +14,9 @@ import { getAdminUrl } from '../../../../config/url.config'
 
 export const useGetGenreEdit = (setValue: UseFormSetValue<IGenreEditInput>) => {
 	const { push, query } = useRouter()
+
 	const genreId = String(query.id)
+
 	const { isLoading } = useQuery(
 		['genres edit', genreId],
 		() => GenresService.getById(genreId),

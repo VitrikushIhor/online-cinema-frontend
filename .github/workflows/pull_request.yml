@@ -1,0 +1,24 @@
+name: Pull Request
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, edited, reopened]
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: yarn install
+      - name: Test app
+        run: yarn run test
+      - name: Lint code
+        run: yarn run lint
+      - name: Build App
+        run: yarn run build
+
+
+
+
+
