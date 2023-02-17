@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
+      - name: Install deps set
+        run: yarn config set legacy-peer-deps true
       - name: Install deps
         run: yarn install
       - name: Test app
