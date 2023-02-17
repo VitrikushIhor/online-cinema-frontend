@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
-import { IGalleryItemProps } from '@/ui/Gallery/gallery-interface'
+import { IGalleryItemProps } from '@/shared/interfaces/gallery-interface'
 
 import styles from './Gallery.module.scss'
 

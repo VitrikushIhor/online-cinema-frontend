@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import FavoriteItem from '@/screens/admin/favorites/FavoritItem'
+import FavoriteItem from '@/screens/admin/favorites/FavoriteItem'
 import { useFavorites } from '@/screens/admin/favorites/useFavorites'
 
 import Heading from '@/ui/Heading/Heading'
@@ -12,7 +12,7 @@ import { getMovieUrl } from '../../../../config/url.config'
 import styles from './Favorites.module.scss'
 
 const Favorites: FC = () => {
-	const { isLoading, favoritesMovies } = useFavorites()
+	const { isLoading, favoriteMovies } = useFavorites()
 	return (
 		<Meta title="Favorites">
 			<Heading title={'Favorites'} />
@@ -24,7 +24,7 @@ const Favorites: FC = () => {
 						containerClassName={styles.containerLoader}
 					/>
 				) : (
-					favoritesMovies?.map((movie) => (
+					favoriteMovies?.map((movie) => (
 						<FavoriteItem
 							key={movie._id}
 							item={{

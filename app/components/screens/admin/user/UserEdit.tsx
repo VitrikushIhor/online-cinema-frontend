@@ -2,7 +2,6 @@ import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
 import { useUserEdit } from '@/screens/admin/user/useUserEdit'
-import { IUserEditInput } from '@/screens/admin/user/user-edit-inteface'
 import { ProfileContent } from '@/screens/prtofile/ProfileContent/ProfileContent'
 
 import AdminNavigation from '@/ui/Admin-Navigation/AdminNavigation'
@@ -10,6 +9,8 @@ import Button from '@/ui/Form-Elements/Button/Button'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
+
+import { IUserEditInput } from '@/shared/interfaces/user-edit-inteface'
 
 import styles from './UserEdit.module.scss'
 

@@ -5,7 +5,7 @@ import GenresMenu from '@/components/layout/Navigation/MenuContainer/genres/Genr
 import {
 	firstMenu,
 	userMenu,
-} from '@/components/layout/Navigation/MenuContainer/menu.data'
+} from '@/shared/data/menu.data'
 
 const MenuContainer: FC = () => {
 	return (

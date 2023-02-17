@@ -6,7 +6,7 @@ import { FC, useEffect, useState } from 'react'
 import { Editor } from 'react-draft-wysiwyg'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 
-import { ITextEditor } from '@/ui/Form-Elements/field-interface'
+import { ITextEditor } from '@/shared/interfaces/field-interface'
 
 import styles from './TextEditor.module.scss'
 
@@ -17,7 +17,9 @@ const TextEditor: FC<ITextEditor> = ({
 	value,
 }) => {
 	const [editorState, setEditorState] = useState(EditorState.createEmpty())
-	const [isUpdated, setIsUpdated] = useState(false)
+
+	const [isUpdated, setIsUpdated] = useState<boolean>(false)
+
 	useEffect(() => {
 		if (!isUpdated) {
 			const defaultValue = value ? value : ''

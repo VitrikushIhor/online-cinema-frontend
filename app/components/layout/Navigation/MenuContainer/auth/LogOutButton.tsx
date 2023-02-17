@@ -7,7 +7,7 @@ import { useActions } from '@/hooks/useActions'
 const LogOutButton: FC = () => {
 	const { logOut } = useActions()
 
-	const logoutHandler = (e: any) => {
+	const logoutHandler = (e: { preventDefault: () => void }) => {
 		e.preventDefault()
 		logOut()
 	}

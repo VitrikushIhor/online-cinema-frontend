@@ -5,9 +5,7 @@ import PopularMovies from '@/screens/admin/home/Statistics/PopularMovies'
 
 import styles from '../Admin.module.scss'
 
-interface IStatistics {}
-
-const Statistics: FC<IStatistics> = () => {
+const Statistics: FC = () => {
 	return (
 		<div className={styles.statistics}>
 			<CountUsers />

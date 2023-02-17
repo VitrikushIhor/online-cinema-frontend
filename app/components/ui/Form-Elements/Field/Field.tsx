@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import { forwardRef } from 'react'
 
-import { IField } from '@/ui/Form-Elements/field-interface'
+import { IField } from '@/shared/interfaces/field-interface'
 
 import styles from './Field.module.scss'
 

@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 import { FC } from 'react'
 
 import MenuItem from '@/components/layout/Navigation/MenuContainer/MenuItem'
-import { IMenu } from '@/components/layout/Navigation/MenuContainer/menu.interface'
+import { IMenu } from '@/shared/interfaces/menu.interface'
 
 import styles from './Menu.module.scss'
 

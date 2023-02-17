@@ -21,7 +21,9 @@ const Profile: FC = () => {
 		useForm<IProfileInput>({
 			mode: 'onChange',
 		})
+
 	const { isLoading, onSubmit } = useProfile({ reset, setValue })
+
 	return (
 		<Meta title={'Profile'}>
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.from}>

@@ -1,5 +1,4 @@
-import { IActorEditInput } from '@/screens/admin/actor/actor-edit-inteface'
-
+import { IActorEditInput } from '@/shared/interfaces/actor-edit-inteface'
 import { IActor } from '@/shared/interfaces/movie.interface'
 
 import axios, { axiosClassic } from '../../api/interceptors'

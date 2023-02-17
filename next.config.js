@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const withPWA = require('next-pwa')
+
+const runtimeCaching = require('next-pwa/cache.js')
+
+const config = {
 	// distDir: 'build',
 	poweredByHeader: false,
 	optimizeFonts: false,
@@ -13,15 +17,18 @@ const nextConfig = {
 			{
 				source: '/api/:path*',
 				destination: `https://online-cinema-api.onrender.com/api/:path*`,
-				// destination: `http://localhost:5001/api/:path*`,
 			},
 			{
 				source: '/uploads/:path*',
 				destination: `https://online-cinema-api.onrender.com/uploads/:path*`,
-				// destination: `http://localhost:5001/api/uploads/:path*`,
 			},
 		]
 	},
 }
+
+const nextConfig = withPWA({
+	dest: 'public',
+	runtimeCaching,
+})(config)
 
 module.exports = nextConfig

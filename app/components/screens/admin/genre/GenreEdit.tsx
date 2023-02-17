@@ -4,7 +4,6 @@ import { Controller, useForm } from 'react-hook-form'
 import { stripHtml } from 'string-strip-html'
 
 import { GenreEditInfo } from '@/screens/admin/genre/GenreEditInfo/GenreEditInfo'
-import { IGenreEditInput } from '@/screens/admin/genre/genre-edit-inteface'
 import { useGetGenreEdit } from '@/screens/admin/genre/useGenreEdit'
 
 import AdminNavigation from '@/ui/Admin-Navigation/AdminNavigation'
@@ -13,6 +12,8 @@ import fromStyles from '@/ui/Form-Elements/admin-form.module.scss'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
+
+import { IGenreEditInput } from '@/shared/interfaces/genre-edit-inteface'
 
 const DynamicTextEditor = dynamic(
 	() => import('@/ui/Form-Elements/TextEditor/TextEditor'),

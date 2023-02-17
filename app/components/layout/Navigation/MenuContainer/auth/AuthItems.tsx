@@ -9,7 +9,6 @@ import { getAdminHomeUrl } from '../../../../../config/url.config'
 
 const AuthItems: FC = () => {
 	const { user } = useAuth()
-
 	return (
 		<>
 			{user ? (
@@ -26,7 +25,6 @@ const AuthItems: FC = () => {
 			) : (
 				<MenuItem item={{ icon: 'MdLogin', link: '/auth', title: 'Login' }} />
 			)}
-
 			{user?.isAdmin && (
 				<MenuItem
 					item={{

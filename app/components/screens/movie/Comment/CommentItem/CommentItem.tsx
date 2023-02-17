@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { FC } from 'react'
 
-import { IComment } from '@/screens/movie/Comment/comment-interface'
+import { IComment } from '@/shared/interfaces/comment-interface'
 
 import Avatar from '@/assets/avatar.jpg'
 

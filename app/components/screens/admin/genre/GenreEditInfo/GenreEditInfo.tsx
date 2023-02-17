@@ -1,13 +1,28 @@
 import { FC } from 'react'
+import {
+	FieldErrors,
+	UseFormGetValues,
+	UseFormRegister,
+	UseFormSetValue,
+} from 'react-hook-form'
 
 import Field from '@/ui/Form-Elements/Field/Field'
 import SlugField from '@/ui/Form-Elements/SlugField/SlugField'
+
+import { IGenreEditInput } from '@/shared/interfaces/genre-edit-inteface'
 
 import generateSlug from '@/utils/string/generateSlug'
 
 import styles from './GenreEditInfo.module.scss'
 
-export const GenreEditInfo: FC<any> = ({
+interface IGenreEditInfo {
+	register: UseFormRegister<IGenreEditInput>
+	errors: FieldErrors<IGenreEditInput>
+	getValues: UseFormGetValues<IGenreEditInput>
+	setValue: UseFormSetValue<IGenreEditInput>
+}
+
+export const GenreEditInfo: FC<IGenreEditInfo> = ({
 	register,
 	errors,
 	getValues,

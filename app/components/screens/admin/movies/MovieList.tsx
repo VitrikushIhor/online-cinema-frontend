@@ -8,7 +8,6 @@ import AdminTable from '@/ui/AdminTable/AdminTable'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 
-
 const MovieList: FC = () => {
 	const {
 		isLoading,
@@ -18,7 +17,7 @@ const MovieList: FC = () => {
 		mutateAsync,
 		createAsync,
 	} = useMovies()
-	console.log(data)
+
 	return (
 		<Meta title={'Movie'}>
 			<AdminNavigation />

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { FC, Fragment } from 'react'
 
-import { IContentList } from '@/screens/movie/Content/content-interface'
+import { IContentList } from '@/shared/interfaces/content-interface'
 
 import styles from './ContentList.module.scss'
 

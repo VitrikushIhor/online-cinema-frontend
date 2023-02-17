@@ -3,9 +3,9 @@ import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
-import { ITableItem } from '@/ui/AdminTable/admint-table-interface'
-
 import { useDebounce } from '@/hooks/useDebounce'
+
+import { ITableItem } from '@/shared/interfaces/admint-table-interface'
 
 import { GenresService } from '@/services/genres/genres.service'
 
@@ -14,9 +14,12 @@ import { toastError } from '@/utils/toast-error'
 import { getAdminUrl } from '../../../../config/url.config'
 
 export const useGenres = () => {
-	const [searchTerm, setSearchTerm] = useState()
+	const [searchTerm, setSearchTerm] = useState<string>()
+
 	const debouncedSearch = useDebounce(searchTerm, 500)
+
 	const { push } = useRouter()
+
 	const queryData = useQuery(
 		['genres list', debouncedSearch],
 		() => GenresService.getAll(debouncedSearch),
@@ -64,7 +67,6 @@ export const useGenres = () => {
 	)
 
 	const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-		// @ts-ignore
 		setSearchTerm(e.target.value)
 	}
 

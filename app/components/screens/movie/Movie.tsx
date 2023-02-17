@@ -7,12 +7,12 @@ import { useUpdateCountOpened } from '@/screens/movie/useUpdateCountOpened'
 
 import Banner from '@/ui/Banner/Banner'
 import Gallery from '@/ui/Gallery/Gallery'
-import { IGalleryItem } from '@/ui/Gallery/gallery-interface'
 import SubHeading from '@/ui/Heading/SubHeading'
 import Meta from '@/ui/Meta/Meta'
 
 import { useWindowSize } from '@/hooks/useWindowSize'
 
+import { IGalleryItem } from '@/shared/interfaces/gallery-interface'
 import { IMovie } from '@/shared/interfaces/movie.interface'
 
 import styles from './Movie.module.scss'
@@ -32,11 +32,12 @@ const DynamicRateMovie = dynamic(
 		ssr: false,
 	}
 )
+
 const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 	useUpdateCountOpened(movie.slug)
 
 	const size = useWindowSize()
-	const [PageSize, setPageSize] = useState(0)
+	const [pageSize, setPageSize] = useState<number>(0)
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
@@ -55,7 +56,7 @@ const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 			<div className={styles.subContainer}>
 				<SubHeading title={'Similar'} />
 				<Gallery
-					items={similarMovies.slice(0, PageSize)}
+					items={similarMovies.slice(0, pageSize)}
 					className={styles.movieGallery}
 				/>
 				<DynamicRateMovie slug={movie.slug} id={movie._id} />

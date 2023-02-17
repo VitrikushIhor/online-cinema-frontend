@@ -1,21 +1,22 @@
-import {useQuery} from 'react-query'
+import { useQuery } from 'react-query'
 
-import {UsersService} from '@/services/users/users-service'
-import {useAuth} from "@/hooks/useAuth";
+import { useAuth } from '@/hooks/useAuth'
+
+import { UsersService } from '@/services/users/users-service'
 
 export const useFavorites = () => {
-	const {user} = useAuth()
+	const { user } = useAuth()
 	const {
 		isLoading,
-		data: favoritesMovies,
+		data: favoriteMovies,
 		refetch,
 	} = useQuery('favorites Movie', () => UsersService.getFavorites(), {
-		select: ({data}) => data,
-		enabled: !!user
+		select: ({ data }) => data,
+		enabled: !!user,
 	})
 
 	return {
-		favoritesMovies,
+		favoriteMovies,
 		refetch,
 		isLoading,
 	}

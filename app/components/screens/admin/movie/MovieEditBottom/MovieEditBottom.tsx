@@ -13,7 +13,6 @@ export const MovieEditBottom: FC<IMovieEditCenter> = ({ control }) => {
 			<Controller
 				name="poster"
 				control={control}
-				defaultValue=""
 				render={({ field: { value, onChange }, fieldState: { error } }) => (
 					<IUploadField
 						onChange={onChange}
@@ -30,7 +29,6 @@ export const MovieEditBottom: FC<IMovieEditCenter> = ({ control }) => {
 			<Controller
 				name="bigPoster"
 				control={control}
-				defaultValue=""
 				render={({ field: { value, onChange }, fieldState: { error } }) => (
 					<IUploadField
 						onChange={onChange}
@@ -41,13 +39,12 @@ export const MovieEditBottom: FC<IMovieEditCenter> = ({ control }) => {
 					/>
 				)}
 				rules={{
-					required: 'Big Poste is required',
+					required: 'Big Poster is required',
 				}}
 			/>
 			<Controller
 				name="videoUrl"
 				control={control}
-				defaultValue=""
 				render={({ field: { value, onChange }, fieldState: { error } }) => (
 					<IUploadField
 						onChange={onChange}
