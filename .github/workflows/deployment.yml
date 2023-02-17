@@ -8,8 +8,6 @@ on:
       branches:
         - master
         - releases/**
-    paths-ignore:
-      - '.github/workflows/*'
 jobs:
   deployment:
     runs-on: ubuntu-latest

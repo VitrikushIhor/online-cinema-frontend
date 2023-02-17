@@ -1,2 +1,3 @@
-[] - Add animation from slider
-[] - Add 500 monile
+
+    paths-ignore:
+      - '.github/workflows/*'
