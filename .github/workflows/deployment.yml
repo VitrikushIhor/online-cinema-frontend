@@ -15,10 +15,10 @@ jobs:
       - name: Get repository code
         uses: actions/checkout@v3
       - name: Install deps
-        run: npm install
+        run: yarn install
       - name: Test app
-        run: npm run test
+        run: yarn run test
       - name: Lint code
-        run: npm run lint
+        run: yarn run lint
       - name: Build App
-        run: npm run build
+        run: yarn run build
