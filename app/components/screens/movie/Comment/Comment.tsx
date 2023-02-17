@@ -3,11 +3,12 @@ import { useQuery } from 'react-query'
 
 import AddCommentForm from '@/screens/movie/Comment/AddComment/AddComment'
 import CommentItem from '@/screens/movie/Comment/CommentItem/CommentItem'
-import { IComment } from '@/screens/movie/Comment/comment-interface'
 
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
 
 import { useAuth } from '@/hooks/useAuth'
+
+import { IComment } from '@/shared/interfaces/comment-interface'
 
 import { MoviesService } from '@/services/movies/movie.service'
 

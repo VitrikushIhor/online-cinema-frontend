@@ -3,9 +3,9 @@ import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
-import { ITableItem } from '@/ui/AdminTable/admint-table-interface'
-
 import { useDebounce } from '@/hooks/useDebounce'
+
+import { ITableItem } from '@/shared/interfaces/admint-table-interface'
 
 import { MoviesService } from '@/services/movies/movie.service'
 
@@ -15,9 +15,12 @@ import { toastError } from '@/utils/toast-error'
 import { getAdminUrl } from '../../../../config/url.config'
 
 export const useMovies = () => {
-	const [searchTerm, setSearchTerm] = useState()
+	const [searchTerm, setSearchTerm] = useState<string>()
+
 	const debouncedSearch = useDebounce(searchTerm, 500)
+
 	const { push } = useRouter()
+
 	const queryData = useQuery(
 		['Movie list', debouncedSearch],
 		() => MoviesService.getMovies(debouncedSearch),
@@ -34,9 +37,6 @@ export const useMovies = () => {
 						],
 					})
 				),
-			onSuccess(data) {
-				console.log(data)
-			},
 			onError(error) {
 				toastError(error, 'movies list')
 			},
@@ -72,7 +72,6 @@ export const useMovies = () => {
 	)
 
 	const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-		// @ts-ignore
 		setSearchTerm(e.target.value)
 	}
 

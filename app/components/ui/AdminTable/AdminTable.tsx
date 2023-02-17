@@ -2,8 +2,9 @@ import { FC } from 'react'
 
 import AdminTableHeader from '@/ui/AdminTable/AdminTableHeader'
 import AdminTableItem from '@/ui/AdminTable/AdminTableItem'
-import { ITableItem } from '@/ui/AdminTable/admint-table-interface'
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
+
+import { ITableItem } from '@/shared/interfaces/admint-table-interface'
 
 import styles from './AdminTable.module.scss'
 

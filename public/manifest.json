@@ -2,11 +2,13 @@
   "theme_color": "#1db954",
   "background_color": "#181B1E",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "name": "Online Cinema",
   "app_name": "Online Cinema",
   "short_name": "Online Cinema",
   "description": "Watch MovieApp movies and TV shows online or stream right to your browser",
+  "display": "standalone",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "/favicons/apple-touch-icon-57x57.png",

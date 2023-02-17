@@ -1,4 +1,9 @@
-import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
+import {
+	DefaultValues,
+	KeepStateOptions,
+	SubmitHandler,
+	UseFormSetValue,
+} from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
@@ -8,11 +13,14 @@ import { UsersService } from '@/services/users/users-service'
 
 import { toastError } from '@/utils/toast-error'
 
-interface IuseProfile {
+interface IUseProfile {
 	setValue: UseFormSetValue<IProfileInput>
-	reset: any
+	reset: (
+		values?: DefaultValues<IProfileInput> | IProfileInput,
+		keepStateOptions?: KeepStateOptions
+	) => void
 }
-export const useProfile = ({ setValue, reset }: IuseProfile) => {
+export const useProfile = ({ setValue, reset }: IUseProfile) => {
 	const { isLoading } = useQuery('Profile', () => UsersService.getProfile(), {
 		onSuccess({ data }) {
 			setValue('email', data.email)

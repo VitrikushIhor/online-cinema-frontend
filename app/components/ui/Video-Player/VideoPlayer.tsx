@@ -4,9 +4,10 @@ import { FC } from 'react'
 import MaterialIcon from '@/ui/MaterialIcons/MaterialIcon'
 import AuthPlaceholder from '@/ui/Video-Player/AuthPlaceholder/AuthPlaceHolder'
 import { useVideo } from '@/ui/Video-Player/useVideo'
-import { IVideoPlayer } from '@/ui/Video-Player/videoPlayer-interface'
 
 import { useAuth } from '@/hooks/useAuth'
+
+import { IVideoPlayer } from '@/shared/interfaces/videoPlayer-interface'
 
 import styles from './VideoPlayer.module.scss'
 

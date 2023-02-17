@@ -3,7 +3,7 @@ import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
-import { IMovieEditInput } from '@/screens/admin/movie/movie-edit-inteface'
+import { IMovieEditInput } from '@/shared/interfaces/movie-edit-inteface'
 
 import { MoviesService } from '@/services/movies/movie.service'
 
@@ -14,7 +14,9 @@ import { getAdminUrl } from '../../../../config/url.config'
 
 export const useGetMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 	const { push, query } = useRouter()
+
 	const movieId = String(query.id)
+
 	const { isLoading } = useQuery(
 		['Movie edit', movieId],
 		() => MoviesService.getById(movieId),

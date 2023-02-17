@@ -10,7 +10,5 @@ export const useUpdateCountOpened = (slug: string) => {
 
 	useEffect(() => {
 		mutateAsync()
-
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 }

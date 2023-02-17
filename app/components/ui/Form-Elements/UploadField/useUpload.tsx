@@ -9,12 +9,13 @@ type TypeUpload = (
 	onChange: ((...event: any[]) => any) | undefined,
 	folder?: string | undefined
 ) => {
-	uploadImage: (e: React.ChangeEvent<HTMLInputElement>) => Promise<void>
+	uploadImage: (e: ChangeEvent<HTMLInputElement>) => Promise<void>
 	isLoading: boolean
 }
 
 export const useUpload: TypeUpload = (onChange, folder) => {
-	const [isLoading, setIsLoading] = useState(false)
+	const [isLoading, setIsLoading] = useState<boolean>(false)
+
 	const { mutateAsync } = useMutation(
 		'Upload file',
 		(data: FormData) => FileService.update(data, folder),
@@ -22,7 +23,6 @@ export const useUpload: TypeUpload = (onChange, folder) => {
 			onSuccess({ data }) {
 				if (onChange) {
 					onChange(data[0].url)
-					console.log(data[0].url)
 				}
 			},
 			onError(error) {

@@ -1,6 +1,6 @@
-import { IGenreEditInput } from '@/screens/admin/genre/genre-edit-inteface'
 import { ICollection } from '@/screens/collections/Collection'
 
+import { IGenreEditInput } from '@/shared/interfaces/genre-edit-inteface'
 import { IGenre } from '@/shared/interfaces/movie.interface'
 
 import axios, { axiosClassic } from '../../api/interceptors'

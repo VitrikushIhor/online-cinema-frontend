@@ -2,7 +2,6 @@ import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import AuthFields from '@/screens/auth/AuthField'
-import { IAuthInput } from '@/screens/auth/auth-interface'
 import { useAuthRedirect } from '@/screens/auth/useAuthRedirect'
 
 import Button from '@/ui/Form-Elements/Button/Button'
@@ -12,12 +11,17 @@ import Meta from '@/ui/Meta/Meta'
 import { useActions } from '@/hooks/useActions'
 import { useAuth } from '@/hooks/useAuth'
 
+import { IAuthInput } from '@/shared/interfaces/auth-interface'
+
 import styles from './Auth.module.scss'
 
 const Auth: FC = () => {
 	useAuthRedirect()
+
 	const { isLoading } = useAuth()
+
 	const [type, setType] = useState<'login' | 'register'>('login')
+
 	const {
 		handleSubmit,
 		register: registerInput,

@@ -7,7 +7,7 @@ import { usePagination } from '@/hooks/usePagination'
 import styles from './Pagination.module.scss'
 
 interface IPagination {
-	onPageChange: any
+	onPageChange: (page: number) => void
 	totalCount: number
 	siblingCount?: number
 	currentPage: number

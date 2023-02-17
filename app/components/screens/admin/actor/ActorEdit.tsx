@@ -2,7 +2,6 @@ import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
 import { ActorInfo } from '@/screens/admin/actor/ActorInfo/ActorInfo'
-import { IActorEditInput } from '@/screens/admin/actor/actor-edit-inteface'
 import { useGetActorEdit } from '@/screens/admin/actor/useActorEdit'
 
 import AdminNavigation from '@/ui/Admin-Navigation/AdminNavigation'
@@ -12,6 +11,8 @@ import fromStyles from '@/ui/Form-Elements/admin-form.module.scss'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 import SkeletonLoader from '@/ui/SkeletonLoader/SkeletonLoader'
+
+import { IActorEditInput } from '@/shared/interfaces/actor-edit-inteface'
 
 const ActorEdit: FC = () => {
 	const {
@@ -45,7 +46,6 @@ const ActorEdit: FC = () => {
 							<Controller
 								name="photo"
 								control={control}
-								defaultValue=""
 								render={({
 									field: { value, onChange },
 									fieldState: { error },

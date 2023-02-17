@@ -1,10 +1,11 @@
 import { FC } from 'react'
 
-import { ICatalog } from '@/ui/Catalog-Movies/catalog-inteface'
 import GalleryItem from '@/ui/Gallery/GalleryItem'
 import Description from '@/ui/Heading/Description'
 import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
+
+import { ICatalog } from '@/shared/interfaces/catalog-inteface'
 
 import { getMovieUrl } from '../../../config/url.config'
 
@@ -14,9 +15,7 @@ const Catalog: FC<ICatalog> = ({ title, movies, description }) => {
 	return (
 		<Meta title={title} description={description}>
 			<Heading title={title} />
-			{description && (
-				<Description text={description}/>
-			)}
+			{description && <Description text={description} />}
 
 			<section className={styles.movies}>
 				{movies.map((movie) => (

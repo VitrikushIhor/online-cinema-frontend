@@ -3,9 +3,10 @@ import { FC } from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 
 import MenuItem from '@/components/layout/Navigation/MenuContainer/MenuItem'
-import { IMenu } from '@/components/layout/Navigation/MenuContainer/menu.interface'
 
 import useOutside from '@/hooks/useOutside'
+
+import { IMenu } from '@/shared/interfaces/menu.interface'
 
 import styles from './DropDownMenu.module.scss'
 
@@ -14,10 +15,11 @@ export const Dropdown: FC<{ menu: IMenu; toggleMenu: () => void }> = ({
 	toggleMenu,
 }) => {
 	const { isShow, setIsShow, ref } = useOutside(false)
+
 	const toggleDropdown = () => {
 		setIsShow(!isShow)
 	}
-	const toggleDropdown2 = () => {
+	const toggleDropdownAndMenu = () => {
 		setIsShow(!isShow)
 		toggleMenu()
 	}
@@ -41,7 +43,7 @@ export const Dropdown: FC<{ menu: IMenu; toggleMenu: () => void }> = ({
 			<div className={`${styles.dropdownBody} ${isShow && `${styles.open}`}`}>
 				{items.map((item) => (
 					<MenuItem
-						toggleDropdown={toggleDropdown2}
+						toggleDropdown={toggleDropdownAndMenu}
 						item={item}
 						key={item.title}
 					/>

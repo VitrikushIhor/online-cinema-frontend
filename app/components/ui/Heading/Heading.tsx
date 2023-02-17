@@ -7,7 +7,7 @@ export interface IHeading {
 	className?: string
 }
 
-const Heading: FC<IHeading> = ({ title, className }) => {
+const Heading: FC<IHeading> = ({ title, className = '' }) => {
 	return <h1 className={`${styles.head} ${className}`}>{title}</h1>
 }
 

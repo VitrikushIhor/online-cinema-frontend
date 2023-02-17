@@ -67,8 +67,6 @@
 	}
 
 	&:hover {
-		@apply -translate-y-1;
-
 		.behind {
 			&.second {
 				transform: translateY(0.5px);

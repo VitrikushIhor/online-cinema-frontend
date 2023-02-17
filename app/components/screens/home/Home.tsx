@@ -1,15 +1,16 @@
 import React, { FC, useEffect, useMemo, useState } from 'react'
 
 import Gallery from '@/ui/Gallery/Gallery'
-import { IGalleryItem } from '@/ui/Gallery/gallery-interface'
 import Heading from '@/ui/Heading/Heading'
 import SubHeading from '@/ui/Heading/SubHeading'
 import Meta from '@/ui/Meta/Meta'
 import Pagination from '@/ui/Pagination/Pagination'
 import Slider from '@/ui/Slider/Slider'
-import { ISlide } from '@/ui/Slider/slider-interface'
 
 import { useWindowSize } from '@/hooks/useWindowSize'
+
+import { IGalleryItem } from '@/shared/interfaces/gallery-interface'
+import { ISlide } from '@/shared/interfaces/slider-interface'
 
 import styles from './Home.module.scss'
 
@@ -21,7 +22,8 @@ export interface IHome {
 
 const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 	const size = useWindowSize()
-	const [PageSize, setPageSize] = useState(0)
+	const [pageSize, setPageSize] = useState<number>(0)
+	const [currentPage, setCurrentPage] = useState<number>(1)
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
@@ -29,12 +31,11 @@ const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 		}
 	}, [size])
 
-	const [currentPage, setCurrentPage] = useState(1)
 	const currentTableData = useMemo(() => {
-		const firstPageIndex = (currentPage - 1) * PageSize
-		const lastPageIndex = firstPageIndex + PageSize
+		const firstPageIndex = (currentPage - 1) * pageSize
+		const lastPageIndex = firstPageIndex + pageSize
 		return trendingMovies.slice(firstPageIndex, lastPageIndex)
-	}, [currentPage, trendingMovies, PageSize])
+	}, [currentPage, trendingMovies, pageSize])
 
 	return (
 		<>
@@ -54,7 +55,7 @@ const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 							<Pagination
 								currentPage={currentPage}
 								totalCount={trendingMovies.length}
-								pageSize={PageSize}
+								pageSize={pageSize}
 								onPageChange={(page: number) => setCurrentPage(page)}
 							/>
 						</>
@@ -63,7 +64,7 @@ const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 
 				<div>
 					<SubHeading title="Best actors" />
-					{actors.length && <Gallery items={actors.slice(0, PageSize)} />}
+					{actors.length && <Gallery items={actors.slice(0, pageSize)} />}
 				</div>
 			</Meta>
 		</>

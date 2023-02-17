@@ -2,7 +2,7 @@ import { FC } from 'react'
 import ReactSelect, { OnChangeValue } from 'react-select'
 import makeAnimated from 'react-select/animated'
 
-import { IOption, ISelect } from '@/ui/Select/select-interface'
+import { IOption, ISelect } from '@/shared/interfaces/select-interface'
 
 import formStyles from '../Form-Elements/Field/Field.module.scss'
 
