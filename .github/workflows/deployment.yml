@@ -1,0 +1,26 @@
+name: Deployment
+on:
+  push:
+    branches:
+        - "master"
+        - "releases/**"
+    pull_request:
+      branches:
+        - master
+        - releases/**
+    paths-ignore:
+      - '.github/workflows/*'
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm install
+      - name: Test app
+        run: npm run test
+      - name: Lint code
+        run: npm run lint
+      - name: Build App
+        run: npm run build
