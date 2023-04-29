@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
 import { useUserEdit } from '@/screens/admin/user/useUserEdit'
-import { ProfileContent } from '@/screens/prtofile/ProfileContent/ProfileContent'
+import { ProfileContent } from '@/screens/profile/ProfileContent/ProfileContent'
 
 import AdminNavigation from '@/ui/Admin-Navigation/AdminNavigation'
 import Button from '@/ui/Form-Elements/Button/Button'

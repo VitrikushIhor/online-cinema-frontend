@@ -1,4 +1,4 @@
-import { IProfileInput } from '@/screens/prtofile/Profile'
+import { IProfileInput } from '@/screens/profile/Profile'
 
 import { IMovie } from '@/shared/interfaces/movie.interface'
 import { IUser } from '@/shared/interfaces/user.interface'
