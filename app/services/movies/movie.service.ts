@@ -52,6 +52,9 @@ export const MoviesService = {
 	async createComment(body: ICommentDto) {
 		return axios.post<string>(getCommentUrl(``), body)
 	},
+	async deleteComment(commentId: string) {
+		return axios.delete<string>(getCommentUrl(`/${commentId}`),)
+	},
 	async getByComments(movieId: string) {
 		return axios.get<IComment[]>(getCommentUrl(`/by-movie/${movieId}`))
 	},

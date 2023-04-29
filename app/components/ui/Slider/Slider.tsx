@@ -26,7 +26,7 @@ const Slider: FC<ISlider> = ({ buttonTitle, slides }) => {
 
 			<CSSTransition
 				in={slideIn}
-				timeout={300}
+				timeout={500}
 				classNames="slide-animation"
 				unmountOnExit
 			>

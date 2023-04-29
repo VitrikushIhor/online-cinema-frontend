@@ -11,6 +11,8 @@ const Field = forwardRef<HTMLInputElement, IField>(
 			<div className={cn(styles.common, styles.field)} style={style}>
 				<label>
 					<span>{placeholder}</span>
+					{placeholder === "E-mail" && <span style={{textTransform:'none'}}>Admin test@gmail.com</span>}
+					{placeholder === "Password" && <span style={{textTransform:'none'}}>Admin test@gmail.com</span>}
 					<input ref={ref} type={type} {...rest} />
 				</label>
 				{error && <div className={styles.error}>{error.message}</div>}

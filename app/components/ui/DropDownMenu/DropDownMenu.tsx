@@ -48,7 +48,7 @@ export const Dropdown: FC<{ menu: IMenu; toggleMenu: () => void }> = ({
 						key={item.title}
 					/>
 				))}
-				{title === 'General' ? <DynamicAuthItems /> : null}
+				{title === 'General' ? <DynamicAuthItems toggleDropdownAndMenu={toggleDropdownAndMenu} /> : null}
 			</div>
 		</div>
 	)

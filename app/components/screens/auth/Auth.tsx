@@ -20,7 +20,7 @@ const Auth: FC = () => {
 
 	const { isLoading } = useAuth()
 
-	const [type, setType] = useState<'login' | 'register'>('login')
+	const [type, setType] = useState<'Login' | 'Register'>('Register')
 
 	const {
 		handleSubmit,
@@ -34,15 +34,15 @@ const Auth: FC = () => {
 	const { login, register } = useActions()
 
 	const onSubmit: SubmitHandler<IAuthInput> = (data) => {
-		if (type === 'login') login(data)
-		else if (type === 'register') register(data)
+		if (type === 'Login') login(data)
+		else if (type === 'Register') register(data)
 		reset()
 	}
 	return (
 		<Meta title={'Auth'}>
 			<section className={styles.wrapper}>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<Heading className={styles.heading} title={'Auth'} />
+					<Heading className={styles.heading} title={`${type}`} />
 					<AuthFields
 						formState={formState}
 						register={registerInput}
@@ -51,14 +51,14 @@ const Auth: FC = () => {
 					<div className={styles.button}>
 						<Button
 							type={'submit'}
-							onClick={() => setType('login')}
+							onClick={() => setType('Login')}
 							disabled={isLoading}
 						>
 							Login
 						</Button>
 						<Button
 							type={'submit'}
-							onClick={() => setType('register')}
+							onClick={() => setType('Register')}
 							disabled={isLoading}
 						>
 							Register

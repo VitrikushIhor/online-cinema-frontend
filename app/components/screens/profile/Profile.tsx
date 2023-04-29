@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { ProfileContent } from '@/screens/prtofile/ProfileContent/ProfileContent'
-import { useProfile } from '@/screens/prtofile/useProfile'
+import { ProfileContent } from '@/screens/profile/ProfileContent/ProfileContent'
+import { useProfile } from '@/screens/profile/useProfile'
 
 import Button from '@/ui/Form-Elements/Button/Button'
 import Heading from '@/ui/Heading/Heading'

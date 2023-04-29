@@ -7,7 +7,7 @@ import { useAuth } from '@/hooks/useAuth'
 
 import { getAdminHomeUrl } from '../../../../../config/url.config'
 
-const AuthItems: FC = () => {
+const AuthItems: FC<{toggleDropdownAndMenu?:()=>void}> = ({toggleDropdownAndMenu}) => {
 	const { user } = useAuth()
 	return (
 		<>
@@ -19,14 +19,16 @@ const AuthItems: FC = () => {
 							link: '/profile',
 							title: 'Profile',
 						}}
+						toggleDropdown={toggleDropdownAndMenu}
 					/>
 					<LogOutButton />
 				</>
 			) : (
-				<MenuItem item={{ icon: 'MdLogin', link: '/auth', title: 'Login' }} />
+				<MenuItem item={{ icon: 'MdLogin', link: '/auth', title: 'Login' }} toggleDropdown={toggleDropdownAndMenu} />
 			)}
 			{user?.isAdmin && (
 				<MenuItem
+					 toggleDropdown={toggleDropdownAndMenu}
 					item={{
 						icon: 'MdOutlineLock',
 						link: getAdminHomeUrl(),

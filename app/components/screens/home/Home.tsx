@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useMemo, useState } from 'react'
 
+import React, { FC, useEffect, useMemo, useState } from 'react'
 import Gallery from '@/ui/Gallery/Gallery'
 import Heading from '@/ui/Heading/Heading'
 import SubHeading from '@/ui/Heading/SubHeading'

@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic'
 import { FC, useEffect, useState } from 'react'
 
-import Comments from '@/screens/movie/Comment/Comment'
 import Content from '@/screens/movie/Content/Content'
 import { useUpdateCountOpened } from '@/screens/movie/useUpdateCountOpened'
 
@@ -33,6 +32,20 @@ const DynamicRateMovie = dynamic(
 	}
 )
 
+const DynamicComments = dynamic(
+	() => import('@/screens/movie/Comment/Comment'),
+	{
+		ssr: false,
+	}
+)
+
+const DynamicBanner= dynamic(
+	() => import('@/ui/Banner/Banner'),
+	{
+		ssr: false,
+	}
+)
+
 const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 	useUpdateCountOpened(movie.slug)
 
@@ -47,12 +60,12 @@ const Movie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 
 	return (
 		<Meta title={movie.title} description={`Watch ${movie.title}`}>
-			<Banner
+			<DynamicBanner
 				image={movie.bigPoster}
 				Detail={() => <Content movie={movie} />}
 			/>
 			<DynamicPlayer slug={movie.slug} videoSource={movie.videoUrl} />
-			<Comments movieId={movie._id} />
+			<DynamicComments movieId={movie._id} />
 			<div className={styles.subContainer}>
 				<SubHeading title={'Similar'} />
 				<Gallery

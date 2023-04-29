@@ -4,7 +4,6 @@ const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache.js')
 
 const config = {
-	// distDir: 'build',
 	poweredByHeader: false,
 	optimizeFonts: false,
 	env: {
@@ -12,6 +11,9 @@ const config = {
 		APP_ENV: process.env.REACT_APP_ENV,
 		APP_SERVER_URL: process.env.REACT_APP_SERVER_URL,
 	},
+	images: {
+		domains: ['upload.wikimedia.org'],
+	  },
 	async rewrites() {
 		return [
 			{
