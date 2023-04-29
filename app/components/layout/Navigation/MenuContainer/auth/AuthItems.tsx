@@ -7,7 +7,7 @@ import { useAuth } from '@/hooks/useAuth'
 
 import { getAdminHomeUrl } from '../../../../../config/url.config'
 
-const AuthItems: FC<{toggleDropdownAndMenu:()=>void}> = ({toggleDropdownAndMenu}) => {
+const AuthItems: FC<{toggleDropdownAndMenu?:()=>void}> = ({toggleDropdownAndMenu}) => {
 	const { user } = useAuth()
 	return (
 		<>
