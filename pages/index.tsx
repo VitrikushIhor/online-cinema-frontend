@@ -10,7 +10,6 @@ import { MoviesService } from '@/services/movies/movie.service'
 
 import { getGenresList } from '@/utils/movie/getGenreList'
 
-import { errorCatch } from '../app/api/api.helpers'
 import { getActorUrl, getMovieUrl } from '../app/config/url.config'
 
 const HomePage: NextPage<IHome> = ({ trendingMovies, actors, slides }) => {
@@ -60,7 +59,6 @@ export const getStaticProps: GetStaticProps = async () => {
 			revalidate: 30,
 		}
 	} catch (error) {
-		console.log(errorCatch(error))
 
 		return {
 			props: {

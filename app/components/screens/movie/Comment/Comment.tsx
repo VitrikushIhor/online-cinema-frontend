@@ -40,7 +40,7 @@ const Comments: FC<{ movieId: string }> = ({ movieId }) => {
 					<>
 						<div>
 							{data.map((comment: IComment, index: number) => (
-								<CommentItem comment={comment} key={index + comment._id} />
+								<CommentItem refetch={refetch} comment={comment} key={index + comment._id} />
 							))}
 						</div>
 					</>

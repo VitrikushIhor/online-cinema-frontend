@@ -7,7 +7,7 @@ import {
 } from 'react-hook-form'
 
 import { validEmail } from '@/screens/auth/AuthField'
-import { IProfileInput } from '@/screens/prtofile/Profile'
+import { IProfileInput } from '@/screens/profile/Profile'
 
 import Field from '@/ui/Form-Elements/Field/Field'
 import IUploadField from '@/ui/Form-Elements/UploadField/UploadField'

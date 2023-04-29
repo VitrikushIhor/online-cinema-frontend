@@ -7,7 +7,7 @@ import {
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
-import { IProfileInput } from '@/screens/prtofile/Profile'
+import { IProfileInput } from '@/screens/profile/Profile'
 
 import { UsersService } from '@/services/users/users-service'
 
