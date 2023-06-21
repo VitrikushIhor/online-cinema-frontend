@@ -16,7 +16,7 @@ Overall, the Online Cinema project aims to provide users with a convenient and a
 
 **Server:** Node, NestJs, Mongodb
 
-## Deployment-Frontend: [CLICK](https://online-cinema-frontend-sand.vercel.app/)
+## Deployment-Frontend: [CLICK](https://online-cinema-frontend-iz5knjy2o-kseroks.vercel.app/)
 ## Deployment-Backend: [CLICK](https://online-cinema-api.onrender.com/api/docs)
 ## Backend Repo: [CLICK](https://github.com/VitrikushIhor/online-cinema-backend)
 
