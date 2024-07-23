@@ -28,9 +28,9 @@ export const MoviesService = {
 		return axiosClassic.get<IMovie>(getMoviesUrl(`/by-slug/${slug}`))
 	},
 	async getByGenres(genreIds: string[]) {
-		return axiosClassic.post<IMovie[]>(getMoviesUrl(`/by-genres`), {
-			genreIds,
-		})
+		return axiosClassic.post<IMovie[]>(getMoviesUrl(`/by-genres`),
+			genreIds
+		)
 	},
 	async deleteMovie(id: string) {
 		return axios.delete<string>(getMoviesUrl(`/${id}`))

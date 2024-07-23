@@ -29,9 +29,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	}
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async (context) => {
 	try {
-		const { data: genre } = await GenresService.getBySlug(String(params?.slug))
+		const { data: genre } = await GenresService.getBySlug(String(context.params?.slug))
 		const { data: movies } = await MoviesService.getByGenres([genre._id])
 		return {
 			props: { movies, genre },
