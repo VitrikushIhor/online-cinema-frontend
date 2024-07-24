@@ -34,6 +34,7 @@ const UserEdit: FC = () => {
 							formState={formState}
 							register={register}
 							control={control}
+							adminEdit={true}
 						/>
 						<Controller
 							name={'isAdmin'}

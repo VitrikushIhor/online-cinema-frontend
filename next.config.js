@@ -12,8 +12,8 @@ const config = {
 		APP_SERVER_URL: process.env.REACT_APP_SERVER_URL,
 	},
 	images: {
-		domains: ['upload.wikimedia.org'],
-	  },
+		domains: ['cloudinary.com', 'res.cloudinary.com'],
+	},
 	async rewrites() {
 		return [
 			{

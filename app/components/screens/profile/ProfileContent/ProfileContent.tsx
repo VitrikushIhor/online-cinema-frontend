@@ -21,6 +21,7 @@ export interface IProfileContent {
 	formState: FormState<IProfileInput | IUserEditInput>
 	isPasswordRequired?: boolean
 	control: Control<any, any>
+	adminEdit?: boolean
 }
 
 export const ProfileContent: FC<IProfileContent> = ({
@@ -28,6 +29,7 @@ export const ProfileContent: FC<IProfileContent> = ({
 	formState: { errors },
 	isPasswordRequired = false,
 	control,
+	adminEdit = false
 }) => {
 	return (
 		<div className={styles.wrapper}>
@@ -43,23 +45,23 @@ export const ProfileContent: FC<IProfileContent> = ({
 					placeholder="E-mail"
 					error={errors.email}
 				/>
-				<Field
+				{!adminEdit && <Field
 					{...register(
 						'password',
 						isPasswordRequired
 							? {
-									required: 'Password is required!',
-									minLength: {
-										value: 6,
-										message: 'Min length should more 6 symbols!',
-									},
-							  }
+								required: 'Password is required!',
+								minLength: {
+									value: 6,
+									message: 'Min length should more 6 symbols!',
+								},
+							}
 							: {}
 					)}
 					placeholder="Password"
 					type="password"
 					error={errors.password}
-				/>
+				/>}
 				<Field
 					{...register('userName')}
 					placeholder="userName"

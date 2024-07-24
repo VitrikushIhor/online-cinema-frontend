@@ -4,3 +4,4 @@ node_modules
 .swc
 public/sw.js
 public/workbox-*.js
+.env
